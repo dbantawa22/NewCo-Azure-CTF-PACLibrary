@@ -24,8 +24,12 @@ pipeline {
     
     stage('Deploy ARM') {
       steps {
-          sh "pwd"
-          sh "/var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth/BICEP-azure-security-policies-subscription/run.sh"
+        dir("${DIR}"){
+          script{
+            sh "pwd"
+            sh "/var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth/BICEP-azure-security-policies-subscription/run.sh"
+          }
+        }
       }
     }
   }
