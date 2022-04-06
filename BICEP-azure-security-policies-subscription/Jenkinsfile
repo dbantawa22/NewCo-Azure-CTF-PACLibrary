@@ -27,7 +27,7 @@ pipeline {
         dir("${DIR}"){
           script{
             sh "pwd"
-            sh "/var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth/BICEP-azure-security-policies-subscription/run.sh"
+            sh "./run.sh"
           }
         }
       }
