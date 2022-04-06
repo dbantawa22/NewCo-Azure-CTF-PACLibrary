@@ -6,15 +6,7 @@ pipeline {
   }
 
   stages {
-    
-    stage('GitCheckout') {
-        steps {
-            dir("${DIR}"){
-              git branch: 'main', credentialsId: 'github-privatekey', url: 'git@github.com:dbantawa22/NewCo-Azure-CTF-PACLibrary.git'
-            }
-        }
-      }
-  
+
    stage('Az Authentication') {
       steps {
         sh 'az login --service-principal -u d477bc25-9605-4f7b-9d57-183a8023aedd -p Gen7Q~McGigoaFDq1RR_Xm3AwipWq3btGsZ7P -t 2eaefbef-4530-46a0-9c3a-1bae7a45d64d'
@@ -31,6 +23,11 @@ pipeline {
           }
         }
       }
+    }
+  }
+  post('CleanWorkspace'){
+    always{
+      cleanWs()
     }
   }
 }
