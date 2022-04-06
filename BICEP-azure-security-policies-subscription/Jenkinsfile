@@ -12,7 +12,6 @@ pipeline {
             dir("${DIR}"){
               git branch: 'main', credentialsId: 'github-privatekey', url: 'git@github.com:dbantawa22/NewCo-Azure-CTF-PACLibrary.git'
             }
-
         }
       }
   
@@ -32,15 +31,12 @@ pipeline {
       }
     }
   }
+  post('CleanWorkspace'){
+    always{
+      cleanWs()
+    }
+  }
 }
-
-
-
-
-
-
-
-
 
 
 
