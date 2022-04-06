@@ -16,9 +16,9 @@ targetScope = 'subscription'
 // 	name: 'initiative_Diagnostic_ToLogAnalytics'
 // }
 
-// resource initiative_Global 'Microsoft.Authorization/policySetDefinitions@2020-09-01' existing = {
-// 	name: 'initiative_Global'
-// }
+resource initiative_Global 'Microsoft.Authorization/policySetDefinitions@2020-09-01' existing = {
+	name: 'initiative_Global'
+}
 
 // resource initiative_Microsoft_ApiManagement 'Microsoft.Authorization/policySetDefinitions@2020-09-01' existing = {
 // 	name: 'initiative_Microsoft_ApiManagement'
@@ -184,13 +184,13 @@ resource assignment_Microsoft_KeyVault 'Microsoft.Authorization/policyAssignment
 // 	}
 // }
 
-// resource assignment_Global 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
-// 	name: 'assignment_Global'
-// 	properties: {
-// 		policyDefinitionId: initiative_Global.id
-// 		displayName: initiative_Global.properties.displayName
-// 	}
-// }
+resource assignment_Global 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
+	name: 'assignment_Global'
+	properties: {
+		policyDefinitionId: initiative_Global.id
+		displayName: initiative_Global.properties.displayName
+	}
+}
 
 // resource assignment_Microsoft_DataLakeStore 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
 // 	name: 'assignment_Microsoft_DataLakeStore'
