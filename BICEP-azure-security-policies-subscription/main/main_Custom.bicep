@@ -12,9 +12,9 @@
 // 	name: 'custom_Diagnostic_ToLogAnalytics'
 // }
 
-// module custom_Global '../custom/custom_Global.bicep' = {
-// 	name: 'custom_Global'
-// }
+module custom_Global '../custom/custom_Global.bicep' = {
+	name: 'custom_Global'
+}
 
 // module custom_Microsoft_ApiManagement '../custom/custom_Microsoft_ApiManagement.bicep' = {
 // 	name: 'custom_Microsoft_ApiManagement'

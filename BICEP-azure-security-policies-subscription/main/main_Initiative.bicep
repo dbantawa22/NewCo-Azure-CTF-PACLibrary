@@ -12,9 +12,9 @@ targetScope = 'subscription'
 // 	name: 'initiative_Diagnostic_ToLogAnalytics'
 // }
 
-// module initiative_Global '../initiative/initiative_Global.bicep' = {
-// 	name: 'initiative_Global'
-// }
+module initiative_Global '../initiative/initiative_Global.bicep' = {
+	name: 'initiative_Global'
+}
 
 // module initiative_Microsoft_ApiManagement '../initiative/initiative_Microsoft_ApiManagement.bicep' = {
 // 	name: 'initiative_Microsoft_ApiManagement'
