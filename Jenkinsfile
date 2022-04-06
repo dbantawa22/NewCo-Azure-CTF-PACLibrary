@@ -19,6 +19,7 @@ pipeline {
         dir("${DIR}"){
           script{
             sh "pwd"
+            sh "chmod -R 777 /var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth"
             sh "./run.sh"
           }
         }
