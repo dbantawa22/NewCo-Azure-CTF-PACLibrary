@@ -25,6 +25,11 @@ pipeline {
       }
     }
   }
+  post('CleanWorkspace'){
+    always{
+      cleanWs()
+    }
+  }
 }
 
 
