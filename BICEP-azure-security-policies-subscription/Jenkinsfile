@@ -24,10 +24,8 @@ pipeline {
     
     stage('Deploy ARM') {
       steps {
-        dir("${DIR}"){
           sh "pwd"
           sh "./run.sh"
-        }
       }
     }
   }
