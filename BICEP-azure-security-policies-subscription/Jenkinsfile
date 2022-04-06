@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DIR = "/var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth"
+    DIR = "/var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth/BICEP-azure-security-policies-subscription"
   }
 
   stages {
