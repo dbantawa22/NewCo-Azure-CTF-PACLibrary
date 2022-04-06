@@ -27,7 +27,7 @@ pipeline {
       steps {
         dir("${DIR}"){
           sh "pwd"
-          sh "./run.sh"
+          sh './run.sh'
         }
       }
     }
