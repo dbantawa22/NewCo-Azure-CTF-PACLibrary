@@ -1,0 +1,40 @@
+{
+ "properties": {
+  "displayName": "test initiative 1",
+  "policyType": "Custom",
+  "description": "test",
+  "metadata": {
+   "category": "SQL",
+   "version": "v1",
+   "createdBy": "faa92aa6-1579-4b8a-831e-a928090ae69e",
+   "createdOn": "2022-04-11T19:24:32.1949218Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "MySQL database servers enforce SSL connections._1",
+    "policyDefinitionId": "/subscriptions/39001ea0-1927-4cca-a6cc-a9334864c058/providers/Microsoft.Authorization/policyDefinitions/Deny-MySql-http",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "PostgreSQL database servers enforce SSL connection._1",
+    "policyDefinitionId": "/subscriptions/39001ea0-1927-4cca-a6cc-a9334864c058/providers/Microsoft.Authorization/policyDefinitions/Deny-PostgreSql-http",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Azure SQL Database should have the minimal TLS version set to the highest version_1",
+    "policyDefinitionId": "/subscriptions/39001ea0-1927-4cca-a6cc-a9334864c058/providers/Microsoft.Authorization/policyDefinitions/Deny-Sql-minTLS",
+    "parameters": {},
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/subscriptions/39001ea0-1927-4cca-a6cc-a9334864c058/providers/Microsoft.Authorization/policySetDefinitions/fb6559906a4b408792be6c03",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "fb6559906a4b408792be6c03"
+}
