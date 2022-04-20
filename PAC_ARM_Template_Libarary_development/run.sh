@@ -30,6 +30,8 @@ connect_deployment()
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_denyIP.json --name policy-Deployment-2
   
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./DENY-PublicEndpointsPolicySetDefinition.json --name policy-Deployment-3
+
 }
 
 
