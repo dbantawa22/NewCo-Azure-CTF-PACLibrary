@@ -24,18 +24,23 @@ connect_deployment()
      echo '------------------- RESOURCE GROUPS --------------------'
 
     echo $DEPLOYMENT_NAME
+    az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
 
-    az deployment mg create --location $LOCATION --management-group-id MGMT_ROOT --template-file .\policies.json --name policy-deployment-1 
+    echo '------------------- BICEP POLICY --------------------'
+    # resource_group="connect-rg-kv-eus1-01"
+    # az deployment group create --resource-group $resource_group --template-uri $AZ_IAC_LIBRARY_PATH"KeyVault/kv.json" --parameters "EUS/kv.parameters.json"
 
-    az deployment mg create --location $LOCATION --management-group-id MGMT_ROOT --template-file .\policyset_denyIP.json --name policy-deployment-
+    echo '------------------- BICEP BUILD --------------------'
+    # az bicep build --file ./main/main.bicep   
     
-    # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"PAC_ARM_Template_Libarary_development/main"
+    echo '------------------- BICEP DEPLOY --------------------'
+    # az deployment sub create --l WestUS -f ./main/main.bicep
 
-    # az deployment sub create --location uksouth --template-file ./main/main_Custom.bicep 
+    az deployment sub create --location uksouth --template-file ./main/main_Custom.bicep 
 
-    # az deployment sub create --location uksouth --template-file ./main/main_Initiative.bicep 
+    az deployment sub create --location uksouth --template-file ./main/main_Initiative.bicep 
 
-    # az deployment sub create --location uksouth --template-file ./main/main_Assignment.bicep
+    az deployment sub create --location uksouth --template-file ./main/main_Assignment.bicep
     
 
 
