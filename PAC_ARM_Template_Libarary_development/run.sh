@@ -21,7 +21,7 @@ connect_deployment()
     echo '------------------- Policy Definition --------------------'
 
     echo $DEPLOYMENT_NAME
-    echo '------------------- Policy Set Definition --------------------'
+    echo '------------------- Policy Sets Definition --------------------'
 
     echo $DEPLOYMENT_NAME
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
