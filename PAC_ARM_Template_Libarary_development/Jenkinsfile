@@ -19,7 +19,7 @@ pipeline {
         dir("${DIR}"){
           script{
             sh "pwd"
-            sh "chmod -R 777 /var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth"
+            sh "chmod -R 777 /var/lib/jenkins/workspace/Newco-CTF-PAC-UKSouth/PAC_ARM_Template_Libarary_development"
             sh "./run.sh"
           }
         }
@@ -27,31 +27,3 @@ pipeline {
     }
   }
 }
-
-
-
-// import groovy.json.JsonSlurper
-// node {
-//     stage('Checkout') {
-//         checkout scm
-//     }
-//     astage('Authenticate') {
-//         withCredentials([azureServicePrincipal('Jenkins_SP')]) { //'Azure-private-sp' will need to be changed for client environment's credentials
-//             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
-// }
-        
-//     }
-//     stage('Build') {
-//         withCredentials([azureServicePrincipal('Jenkins_SP')]) { //'Azure-private-sp' will need to be changed for client environment credentials
-//             sh 'az bicep build --file ./main/main.bicep'
-// }
-        
-//     }
-    
-//     stage('Deploy') {
-//         withCredentials([azureServicePrincipal('Jenkins_SP')]) { //'Azure-private-sp' will need to be changed for client environment credentials
-//             sh 'az deployment sub create --l WestUS -f ./main/main.bicep'
-// }
-        
-//     }
-// }
