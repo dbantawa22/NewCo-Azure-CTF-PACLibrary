@@ -19,7 +19,7 @@ pipeline {
         dir("${DIR}"){
           script{
             sh "pwd"
-            sh "chmod -R 777 /var/lib/jenkins/workspace/Newco-CTF-PAC-CloudCore/PAC_ARM_Template_Libarary_development"
+            sh "chmod -R 777 /var/lib/jenkins/workspace/Newco-CTF-PAC-CloudCore"
             sh "./run.sh"
           }
         }
