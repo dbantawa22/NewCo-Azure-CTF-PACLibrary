@@ -58,9 +58,6 @@
                         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MGMT_ROOT/providers/Microsoft.Authorization/policyDefinitions/Deploy-DDoSProtection",
                         "policyDefinitionReferenceId": "Deploy-DDoSProtection",
                         "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
-                            },
                              "ddosName": {
                                 "value": "[[parameters('ddosName')]"
                             },
@@ -69,6 +66,9 @@
                             },
                              "rgName": {
                                 "value": "[[parameters('rgName')]"
+                            },
+                                                        "effect": {
+                                "value": "[[parameters('effect')]"
                             }
                         }
                     }
