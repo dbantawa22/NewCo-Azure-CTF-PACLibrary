@@ -85,9 +85,7 @@
                     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9a7c7a7d-49e5-4213-bea8-6a502b6272e0",
                     "policyDefinitionReferenceId": "Deploy_AzureSQLDB",
                     "parameters": {
-                        "effect": {
-                            "value": "[[parameters('effect')]"
-                        },
+                      
                         "eventHubRuleId": {
                             "value": "[[parameters('eventHubRuleId')]"
                         }  
