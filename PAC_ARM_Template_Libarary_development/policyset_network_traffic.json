@@ -24,11 +24,11 @@
                             "description": "Enable or disable the execution of the policy"
                         },
                         "allowedValues": [
-                            "AuditifNotExists",
+                            "AuditIfNotExists",
                             "Disabled"
 
                         ],
-                        "defaultValue": "AuditifNotExists"
+                        "defaultValue": "AuditIfNotExists"
                     },
                     "effect1": {
                         "type": "string",
