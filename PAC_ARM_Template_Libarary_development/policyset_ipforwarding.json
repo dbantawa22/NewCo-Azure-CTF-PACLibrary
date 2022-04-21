@@ -17,18 +17,8 @@
 				"displayName": "Prevent IP forwarding on VMs",
 				"description": "Prevent IP forwarding on VMs",
 				"parameters": {
-					"effect": {
-						"type": "string",
-						"metadata": {
-							"displayName": "Effect",
-							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-							"Deny"
-						
-						],
-						"defaultValue": "Deny"
-					}
+                    "defaultValue": "Deny"
+
 				},
 				"policyDefinitions": [
 					{
