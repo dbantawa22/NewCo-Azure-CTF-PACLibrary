@@ -24,12 +24,11 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"Audit",
-							"Deny",
+							"DeployIfNotExists",
 							"Disabled"
 
 						],
-						"defaultValue": "Deny"
+						"defaultValue": "Disabled"
 					},
 					"profileName": {
 						"type": "String",
