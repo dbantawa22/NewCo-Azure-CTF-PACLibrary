@@ -96,7 +96,7 @@
                             "requiredRoutes": {
                                 "value": "[[parameters('requiredRoutes')]"
                             },
-                            "effvnetRegionect": {
+                            "vnetRegion": {
                                 "value": "[[parameters('effvnetRegionect')]"
                             },
                             "routeTableName": {
