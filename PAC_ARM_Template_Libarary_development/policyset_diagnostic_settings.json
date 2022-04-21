@@ -87,6 +87,9 @@
 						      "effect": {
                                 "value": "[[parameters('effect')]"
                             },
+                              "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
+                            },
                             "profileName": {
                                 "value": "[[parameters('profileName')]"
                             },
@@ -95,6 +98,9 @@
                                 "value": "[[parameters('eventHubLocation')]"
                             },
                             "metricsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            },
+                            "logsEnabled": {
                                 "value": "[[parameters('metricsEnabled')]"
                             }
 						}
