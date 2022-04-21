@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {  
+        },
+	"resources": [
+		{
+			"type": "Microsoft.Authorization/policySetDefinitions",
+			"apiVersion": "2020-09-01",
+			"name": "Enforce-network-traffic",
+        	"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+			"properties": {
+				"metadata": {
+					"version": "2.0.0",
+					"category": "Network"
+				},
+				"displayName": "Enforce network traffic control",
+				"description": "This policy sets enforces network traffic control",
+				"parameters": {
+					"effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+						    "AuditifNotExists",
+							"Disabled"
+						
+						],
+						"defaultValue": "AuditifNotExists"
+					},
+                    	"effect1": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+						    "DeployIfNotExists",
+							"Disabled"
+						
+						],
+						"defaultValue": "DeployIfNotExists"
+					}
+				},
+				"policyDefinitions": [
+                    	{
+						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f1776c76-f58c-4245-a8d0-2b207198dc8b",
+						"policyDefinitionReferenceId": "Deploy_VNET_Gateway",
+						"parameters": {
+							"effect": {
+								"value": "[[parameters('effect')]"
+							}
+						}
+					},
+                    {
+						"policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MGMT_ROOT/providers/Microsoft.Authorization/policyDefinitions/Deploy-Custom-Route-Table",
+						"policyDefinitionReferenceId": "Deploy_Route_Table",
+						"parameters": {
+							"effect": {
+								"value": "[[parameters('effect1')]"
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}
