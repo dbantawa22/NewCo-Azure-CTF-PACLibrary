@@ -127,6 +127,15 @@
                             }
                         }
                     },
+                      {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed7c8c13-51e7-49d1-8a43-8490431a0da2",
+                        "policyDefinitionReferenceId": "Deploy_StreamAnalytics",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    },
                     {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/edf3780c-3d70-40fe-b17e-ab72013dafca",
                         "policyDefinitionReferenceId": "Deploy_StreamAnalytics",
