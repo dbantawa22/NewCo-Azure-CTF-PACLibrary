@@ -7,7 +7,7 @@
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
-            "name": "Deny-public-IP",
+            "name": "DDOS-Protect",
             "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
             "properties": {
                 "metadata": {
@@ -17,7 +17,28 @@
                 "displayName": "Protect against distributed denial of service attacks",
                 "description": "Protect against distributed denial of service attacks",
                 "parameters": {
-                 
+                    "ddosName": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "ddosName",
+                            "description": "DDoSVnet"
+                        }
+                    },
+                    "ddosRegion": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "ddosRegion",
+                            "description": "DDoSVnet location",
+                            "strongType": "location"
+                        }
+                    },
+                    "rgName": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "rgName",
+                            "description": "Provide name for resource group."
+                        }
+                    },
                     "effect": {
                         "type": "string",
                         "metadata": {
@@ -39,6 +60,15 @@
                         "parameters": {
                             "effect": {
                                 "value": "[[parameters('effect')]"
+                            },
+                             "ddosName": {
+                                "value": "[[parameters('ddosName')]"
+                            },
+                             "ddosRegion": {
+                                "value": "[[parameters('ddosRegion')]"
+                            },
+                             "rgName": {
+                                "value": "[[parameters('rgName')]"
                             }
                         }
                     }
