@@ -1,55 +1,110 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {  
-        },
-	"resources": [
-		{
-			"type": "Microsoft.Authorization/policySetDefinitions",
-			"apiVersion": "2020-09-01",
-			"name": "Deny-public-IP",
-        	"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
-			"properties": {
-				"metadata": {
-					"version": "2.0.0",
-					"category": "Network"
-				},
-				"displayName": "Provision default configurations for Azure Monitor",
-				"description": "Provision default configurations for Azure Monitor",
-				"parameters": {
-					"effect": {
-						"type": "string",
-						"metadata": {
-							"displayName": "Effect",
-							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-						    "Audit",
-							"Deny",
-							"Disabled"
-						
-						],
-						"defaultValue": "Deny"
-					}
-				},
-				"policyDefinitions": [
-					{
-						   "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/08ba64b8-738f-4918-9686-730d2ed79c7d",
-                                "policyDefinitionReferenceId": "SearchServicesDeployDiagnosticLogDeployLogAnalytics",
-                                "parameters": {
-                                    "logAnalytics": {
-                                        "value": "[[parameters('logAnalytics')]"
-                                    },
-                                    "effect": {
-                                        "value": "[[parameters('SearchServicesLogAnalyticsEffect')]"
-                                    },
-                                    "profileName": {
-                                        "value": "[[parameters('profileName')]"
-                                    }
-                                }
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policySetDefinitions",
+            "apiVersion": "2020-09-01",
+            "name": "Deny-public-IP",
+            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+            "properties": {
+                "metadata": {
+                    "version": "2.0.0",
+                    "category": "Network"
+                },
+                "displayName": "Provision default configurations for Azure Monitor",
+                "description": "Provision default configurations for Azure Monitor",
+                "parameters": {
+                    "effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy",
+                            "allowedValues": [
+                                "DeployIfNotExists",
+                                "Disabled"
+
+                            ],
+                            "defaultValue": "DeployIfNotExists"
+                        },
+                        "profileName": {
+                            "type": "String",
+                            "metadata": {
+                                "displayName": "Profile name",
+                                "description": "The diagnostic settings profile name"
+                            },
+                            "defaultValue": "setbypolicy_eventHub"
+                        },
+                        "eventHubRuleId": {
+                            "type": "String",
+                            "metadata": {
+                                "displayName": "Event Hub Authorization Rule Id",
+                                "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+                                "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
+                                "assignPermissions": true
                             }
-				]
-			}
-		}
-	]
+                        },
+                        "eventHubLocation": {
+                            "type": "String",
+                            "metadata": {
+                                "displayName": "Event Hub Location",
+                                "description": "The location the Event Hub resides in. Only Search Services in this location will be linked to this Event Hub.",
+                                "strongType": "location"
+                            },
+                            "defaultValue": ""
+                        },
+                        "metricsEnabled": {
+                            "type": "String",
+                            "metadata": {
+                                "displayName": "Enable metrics",
+                                "description": "Whether to enable metrics stream to the Event Hub - True or False"
+                            },
+                            "allowedValues": [
+                                "True",
+                                "False"
+                            ],
+                            "defaultValue": "False"
+                        },
+                        "logsEnabled": {
+                            "type": "String",
+                            "metadata": {
+                                "displayName": "Enable logs",
+                                "description": "Whether to enable logs stream to the Event Hub  - True or False"
+                            }
+
+                        }
+                    }
+                },
+                "policyDefinitions": [
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/3d5da587-71bd-41f5-ac95-dd3330c2d58d",
+                        "policyDefinitionReferenceId": "SearchServicesDeploytoEventHub",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "profileName": {
+                                "value": "[[parameters('profileName')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
+                            },
+                            "eventHubLocation": {
+                                "value": "[[parameters('eventHubLocation')]"
+                            },
+                            "metricsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            },
+                            "logsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            }
+
+                        }
+                    }
+                ]
+            }
+        }
+    ]
 }
