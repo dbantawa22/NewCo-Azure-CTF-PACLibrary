@@ -90,16 +90,11 @@
                             "profileName": {
                                 "value": "[[parameters('profileName')]"
                             },
-                            "eventHubRuleId": {
-                                "value": "[[parameters('eventHubRuleId')]"
-                            },
+                          
                             "eventHubLocation": {
                                 "value": "[[parameters('eventHubLocation')]"
                             },
                             "metricsEnabled": {
-                                "value": "[[parameters('metricsEnabled')]"
-                            },
-                            "logsEnabled": {
                                 "value": "[[parameters('metricsEnabled')]"
                             }
 						}
