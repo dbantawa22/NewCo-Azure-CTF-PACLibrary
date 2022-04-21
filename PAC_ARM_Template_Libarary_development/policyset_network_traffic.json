@@ -49,28 +49,6 @@
                             "displayName": "Virtual network gateway Id",
                             "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
                         }
-                    },
-
-                    "requiredRoutes": {
-                        "type": "Array",
-                        "metadata": {
-                            "displayName": "requiredRoutes",
-                            "description": "Routes that must exist in compliant route tables deployed by this policy"
-                        }
-                    },
-                    "vnetRegion": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "vnetRegion",
-                            "description": "Only VNets in this region will be evaluated against this policy"
-                        }
-                    },
-                    "routeTableName": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "routeTableName",
-                            "description": "Name of the route table automatically deployed by this policy"
-                        }
                     }
                 },
                 "policyDefinitions": [
@@ -92,16 +70,8 @@
                         "parameters": {
                             "effect": {
                                 "value": "[[parameters('effect1')]"
-                            },
-                            "requiredRoutes": {
-                                "value": "[[parameters('requiredRoutes')]"
-                            },
-                            "vnetRegion": {
-                                "value": "[[parameters('vnetRegion')]"
-                            },
-                            "routeTableName": {
-                                "value": "[[parameters('routeTableName')]"
                             }
+                            
                         }
                     }
                 ]

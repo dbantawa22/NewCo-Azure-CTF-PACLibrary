@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {  
+        },
+	"resources": [
+		{
+			"type": "Microsoft.Authorization/policySetDefinitions",
+			"apiVersion": "2020-09-01",
+			"name": "Deny-public-IP",
+        	"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+			"properties": {
+				"metadata": {
+					"version": "2.0.0",
+					"category": "Network"
+				},
+				"displayName": "Provision default configurations for Azure Monitor",
+				"description": "Provision default configurations for Azure Monitor",
+				"parameters": {
+					"effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+						    "Audit",
+							"Deny",
+							"Disabled"
+						
+						],
+						"defaultValue": "Deny"
+					}
+				},
+				"policyDefinitions": [
+					{
+						   "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/08ba64b8-738f-4918-9686-730d2ed79c7d",
+                                "policyDefinitionReferenceId": "SearchServicesDeployDiagnosticLogDeployLogAnalytics",
+                                "parameters": {
+                                    "logAnalytics": {
+                                        "value": "[[parameters('logAnalytics')]"
+                                    },
+                                    "effect": {
+                                        "value": "[[parameters('SearchServicesLogAnalyticsEffect')]"
+                                    },
+                                    "profileName": {
+                                        "value": "[[parameters('profileName')]"
+                                    }
+                                }
+                            }
+				]
+			}
+		}
+	]
+}
