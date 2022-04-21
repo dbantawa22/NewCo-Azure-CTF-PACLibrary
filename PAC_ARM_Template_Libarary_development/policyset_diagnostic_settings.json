@@ -86,25 +86,26 @@
 						"parameters": {
 						      "effect": {
                                 "value": "[[parameters('effect')]"
-                            },
-                              "eventHubRuleId": {
-                                "value": "[[parameters('eventHubRuleId')]"
-                            },
-                            "profileName": {
-                                "value": "[[parameters('profileName')]"
-                            },
-                          
-                            "eventHubLocation": {
-                                "value": "[[parameters('eventHubLocation')]"
-                            },
-                            "metricsEnabled": {
-                                "value": "[[parameters('metricsEnabled')]"
-                            },
-                            "logsEnabled": {
-                                "value": "[[parameters('metricsEnabled')]"
                             }
-						}
-					}
+
+                        //       "eventHubRuleId": {
+                        //         "value": "[[parameters('eventHubRuleId')]"
+                        //     },
+                        //     "profileName": {
+                        //         "value": "[[parameters('profileName')]"
+                        //     },
+                          
+                        //     "eventHubLocation": {
+                        //         "value": "[[parameters('eventHubLocation')]"
+                        //     },
+                        //     "metricsEnabled": {
+                        //         "value": "[[parameters('metricsEnabled')]"
+                        //     },
+                        //     "logsEnabled": {
+                        //         "value": "[[parameters('metricsEnabled')]"
+                        //     }
+						// }
+					}}
 				]
 			}
 		}
