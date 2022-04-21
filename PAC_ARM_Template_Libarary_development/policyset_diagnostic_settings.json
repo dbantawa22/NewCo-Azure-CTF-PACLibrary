@@ -42,45 +42,6 @@
 					}
                 
 
-                // "profileName": {
-                // 	"type": "String",
-                // 	"metadata": {
-                // 		"displayName": "Profile name",
-                // 		"description": "The diagnostic settings profile name"
-                // 	},
-                // 	"defaultValue": "setbypolicy_eventHub"
-                // },
-
-                // },
-                // "eventHubLocation": {
-                // 	"type": "String",
-                // 	"metadata": {
-                // 		"displayName": "Event Hub Location",
-                // 		"description": "The location the Event Hub resides in. Only Search Services in this location will be linked to this Event Hub.",
-                // 		"strongType": "location"
-                // 	},
-                // 	"defaultValue": ""
-                // },
-                // "metricsEnabled": {
-                // 	"type": "String",
-                // 	"metadata": {
-                // 		"displayName": "Enable metrics",
-                // 		"description": "Whether to enable metrics stream to the Event Hub - True or False"
-                // 	},
-                // 	"allowedValues": [
-                // 		"True",
-                // 		"False"
-                // 	],
-                // 	"defaultValue": "False"
-                // },
-                // "logsEnabled": {
-                // 	"type": "String",
-                // 	"metadata": {
-                // 		"displayName": "Enable logs",
-                // 		"description": "Whether to enable logs stream to the Event Hub  - True or False"
-                // 	}
-
-
 
             },
             "policyDefinitions": [
@@ -90,25 +51,80 @@
                     "parameters": {
                         "effect": {
                             "value": "[[parameters('effect')]"
+                        }  
+                    }
+                },
+                       {
+                    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4daddf25-4823-43d4-88eb-2419eb6dcc08",
+                    "policyDefinitionReferenceId": "Deploy_DataLakeAnalytics",
+                    "parameters": {
+                        "effect": {
+                            "value": "[[parameters('effect')]"
                         },
                         "eventHubRuleId": {
                             "value": "[[parameters('eventHubRuleId')]"
-                        }
-                        // "profileName": {
-                        //     "value": "[[parameters('profileName')]"
-                        // },
-
-                        // "eventHubLocation": {
-                        //     "value": "[[parameters('eventHubLocation')]"
-                        // },
-                        // "metricsEnabled": {
-                        //     "value": "[[parameters('metricsEnabled')]"
-                        // },
-                        // "logsEnabled": {
-                        //     "value": "[[parameters('metricsEnabled')]"
-                        // }
+                        }  
                     }
-
+                },
+                       {
+                    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6b51af03-9277-49a9-a3f8-1c69c9ff7403",
+                    "policyDefinitionReferenceId": "Deploy_ServiceBus",
+                    "parameters": {
+                        "effect": {
+                            "value": "[[parameters('effect')]"
+                        },
+                        "eventHubRuleId": {
+                            "value": "[[parameters('eventHubRuleId')]"
+                        }  
+                    }
+                },
+                       {
+                    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9a7c7a7d-49e5-4213-bea8-6a502b6272e0",
+                    "policyDefinitionReferenceId": "Deploy_AzureSQLDB",
+                    "parameters": {
+                        "effect": {
+                            "value": "[[parameters('effect')]"
+                        },
+                        "eventHubRuleId": {
+                            "value": "[[parameters('eventHubRuleId')]"
+                        }  
+                    }
+                },
+                       {
+                    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a1dae6c7-13f3-48ea-a149-ff8442661f60",
+                    "policyDefinitionReferenceId": "Deploy_LogicApps",
+                    "parameters": {
+                        "effect": {
+                            "value": "[[parameters('effect')]"
+                        },
+                        "eventHubRuleId": {
+                            "value": "[[parameters('eventHubRuleId')]"
+                        }  
+                    }
+                },
+                       {
+                    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/db51110f-0865-4a6e-b274-e2e07a5b2cd7",
+                    "policyDefinitionReferenceId": "Deploy_BatchAccount",
+                    "parameters": {
+                        "effect": {
+                            "value": "[[parameters('effect')]"
+                        },
+                        "eventHubRuleId": {
+                            "value": "[[parameters('eventHubRuleId')]"
+                        }  
+                    }
+                },
+                       {
+                    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e8d096bc-85de-4c5f-8cfb-857bd1b9d62d",
+                    "policyDefinitionReferenceId": "Deploy_DataLakeStorage",
+                    "parameters": {
+                        "effect": {
+                            "value": "[[parameters('effect')]"
+                        },
+                        "eventHubRuleId": {
+                            "value": "[[parameters('eventHubRuleId')]"
+                        }  
+                    }
                 }
             ]
         }
