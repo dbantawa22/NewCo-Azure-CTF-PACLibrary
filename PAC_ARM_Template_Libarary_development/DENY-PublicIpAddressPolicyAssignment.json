@@ -8,7 +8,7 @@
                 "Default",
                 "DoNotEnforce"
             ],
-            "defaultValue": "Default"
+            "defaultValue": "DoNotEnforce"
         }
     },
     "variables": {
