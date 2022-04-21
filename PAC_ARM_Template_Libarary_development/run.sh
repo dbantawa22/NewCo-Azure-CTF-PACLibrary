@@ -41,6 +41,8 @@ connect_deployment()
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic.json --name policy-Deployment-8
 
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_ddos.json --name policy-Deployment-9
+
 }
 
 
