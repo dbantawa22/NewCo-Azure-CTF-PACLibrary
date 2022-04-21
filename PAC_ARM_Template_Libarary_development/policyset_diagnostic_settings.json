@@ -17,6 +17,15 @@
 				"displayName": "Provision default configurations for Azure Monitor",
 				"description": "Provision default configurations for Azure Monitor",
 				"parameters": {
+                    
+		"eventHubRuleId": {
+						"type": "String",
+						"metadata": {
+							"displayName": "Event Hub Authorization Rule Id",
+							"description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+							"strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
+							"assignPermissions": true
+						},
 					"effect": {
 						"type": "string",
 						"metadata": {
@@ -29,16 +38,8 @@
 
 						],
 						"defaultValue": "Disabled"
-					},
+					}
 
-		"eventHubRuleId": {
-						"type": "String",
-						"metadata": {
-							"displayName": "Event Hub Authorization Rule Id",
-							"description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
-							"strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
-							"assignPermissions": true
-						}
 					// "profileName": {
 					// 	"type": "String",
 					// 	"metadata": {
