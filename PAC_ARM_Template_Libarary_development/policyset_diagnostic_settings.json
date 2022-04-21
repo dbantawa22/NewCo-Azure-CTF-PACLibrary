@@ -74,6 +74,15 @@
                                 "description": "Whether to enable logs stream to the Event Hub  - True or False"
                             }
 
+                        },
+                        "logAnalytics": {
+                            "type": "String",
+                            "metadata": {
+                                "displayName": "Log Analytics workspace",
+                                "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+                                "strongType": "omsWorkspace",
+                                "assignPermissions": true
+                            }
                         }
                     }
                 },
@@ -93,6 +102,53 @@
                             },
                             "eventHubLocation": {
                                 "value": "[[parameters('eventHubLocation')]"
+                            },
+                            "metricsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            },
+                            "logsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            }
+
+                        }
+                    },
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4daddf25-4823-43d4-88eb-2419eb6dcc08",
+                        "policyDefinitionReferenceId": "DataLakeAnalyticsDeploytoEventHub",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "profileName": {
+                                "value": "[[parameters('profileName')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
+                            },
+                            "eventHubLocation": {
+                                "value": "[[parameters('eventHubLocation')]"
+                            },
+                            "metricsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            },
+                            "logsEnabled": {
+                                "value": "[[parameters('metricsEnabled')]"
+                            }
+
+                        }
+                    },
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/04d53d87-841c-4f23-8a5b-21564380b55e",
+                        "policyDefinitionReferenceId": "DataLakeAnalyticsDeploytoEventHub",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "profileName": {
+                                "value": "[[parameters('profileName')]"
+                            },
+                            "logAnalytics": {
+                                "value": "[[parameters('logAnalytics')]"
                             },
                             "metricsEnabled": {
                                 "value": "[[parameters('metricsEnabled')]"
