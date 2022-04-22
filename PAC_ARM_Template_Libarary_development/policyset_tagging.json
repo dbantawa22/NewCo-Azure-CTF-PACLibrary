@@ -7,7 +7,7 @@
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
-            "name": "Enforce-Collection-Logs",
+            "name": "Require-tagging",
             "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
             "properties": {
                 "metadata": {
@@ -16,9 +16,43 @@
                 },
                 "displayName": "Require Tag for resources and resource groups",
                 "description": "Require Tag for resources and resource groups",
-                "parameters": {
-            
-                    
+                "parameters": {   
+                    "tagName": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Name",
+                            "description": "Name of the tag, such as 'environment'"
+                        }
+                    },
+                     "tagName2": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Name",
+                            "description": "Name of the tag, such as 'environment'"
+                        }
+                    },
+                     "tagName3": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Name",
+                            "description": "Name of the tag, such as 'environment'"
+                        }
+                    },
+                    "tagValue1": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Value",
+                            "description": "Value of the tag, such as 'production'"
+                        }
+                    },
+                    "tagValue2": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Value",
+                            "description": "Value of the tag, such as 'production'"
+                        }
+                    }
+                  
                     },
                     "policyDefinitions": [
                         {
@@ -26,25 +60,34 @@
                             "policyDefinitionReferenceId": "Require_Tag_value_Resources",
                             "parameters": {
                                 "tagName": {
-                                     "value": "testname"
+                                    "value": "[[parameters('tagName1')]"
+                                },
+                                "tagValue": {
+                                    "value": "[[parameters('tagValue1')]"
                                 }
-
+                            }
+                        },
+                        {
+                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8ce3da23-7156-49e4-b145-24f95f9dcb46",
+                            "policyDefinitionReferenceId": "Require_Tag_value_Resource_Groups",
+                            "parameters": {
+                                 "tagName": {
+                                    "value": "[[parameters('tagName2')]"
+                                },
+                                "tagValue": {
+                                    "value": "[[parameters('tagValue2')]"
+                                }
+                            }
+                        },
+                        {
+                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
+                            "policyDefinitionReferenceId": "Inherit_Tag_value_Resource_Groups",
+                            "parameters": {
+                                "tagName": {
+                                    "value": "[[parameters('tagName3')]"
+                                }
                             }
                         }
-                        // {
-                        //     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8ce3da23-7156-49e4-b145-24f95f9dcb46",
-                        //     "policyDefinitionReferenceId": "Require_Tag_value_Resource_Groups",
-                        //     "parameters": {
-                                
-                        //     }
-                        // },
-                        // {
-                        //     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
-                        //     "policyDefinitionReferenceId": "Inherit_Tag_value_Resource_Groups",
-                        //     "parameters": {
-                              
-                        //     }
-                        // }
                     ]
                 }
             }
