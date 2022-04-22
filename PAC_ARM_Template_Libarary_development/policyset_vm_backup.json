@@ -34,23 +34,8 @@
                         ],
                         "defaultValue": "DeployIfNotExists"
                     },
-                    "vaultLocation": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Location (Specify the location of the VMs that you want to protect)",
-                            "description": "Specify the location of the VMs that you want to protect. VMs should be backed up to a vault in the same location. For example - CanadaCentral",
-                            "strongType": "location"
-                        }
-                    },
-
-                    "backupPolicyId": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Backup Policy (of type Azure VM from a vault in the location chosen above)",
-                            "description": "Specify the id of the Azure backup policy to configure backup of the virtual machines. The selected Azure backup policy should be of type Azure virtual machine. This policy needs to be in a vault that is present in the location chosen above. For example - /subscriptions/<SubscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RecoveryServices/vaults/<VaultName>/backupPolicies/<BackupPolicyName>.",
-                            "strongType": "Microsoft.RecoveryServices/vaults/backupPolicies"
-                        }
-                    },
+                  
+                  
                     "exclusionTagName": {
                         "type": "String",
                         "metadata": {
@@ -74,13 +59,6 @@
                             "description": "Name of the tag to use for including VMs in the scope of this policy. This should be used along with the Inclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy"
                         },
                         "defaultValue": ""
-                    },
-                    "inclusionTagValue": {
-                        "type": "Array",
-                        "metadata": {
-                            "displayName": "Inclusion Tag Values",
-                            "description": "Value of the tag to use for including VMs in the scope of this policy (in case of multiple values, use a comma-separated list). This should be used along with the Inclusion Tag Name parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
-                        }
                     }
                 },
                 "policyDefinitions": [
@@ -89,18 +67,11 @@
                         "policyDefinitionReferenceId": "Configure_Backup_With_Tag",
                         "parameters": {
                            
-                            "vaultLocation": {
-                                "value": "[[parameters('vaultLocation')]"
-                            },
                              "inclusionTagName": {
                                 "value": "[[parameters('inclusionTagName')]"
                             },
-                            "inclusionTagValue": {
-                                "value": "[[parameters('inclusionTagValue')]"
-                            },
-                            "backupPolicyId": {
-                                "value": "[[parameters('backupPolicyId')]"
-                            },
+                          
+                           
                              "effect": {
                                 "value": "[[parameters('effect')]"
                             }
@@ -110,12 +81,8 @@
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
                         "policyDefinitionReferenceId": "Configure_Backup_Without_Tag",
                         "parameters": {
-                            "vaultLocation": {
-                                "value": "[[parameters('vaultLocation')]"
-                            },
-                            "backupPolicyId": {
-                                "value": "[[parameters('backupPolicyId')]"
-                            },
+                        
+                          
                             "exclusionTagName": {
                                 "value": "[[parameters('exclusionTagName')]"
                             },
