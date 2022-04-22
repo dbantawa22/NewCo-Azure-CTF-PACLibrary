@@ -52,14 +52,6 @@
                             "description": "Value of the tag to use for excluding VMs from the scope of this policy (in case of multiple values, use a comma-separated list). This should be used along with the Exclusion Tag Name parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
                         },
                         "defaultValue": []
-                    },
-                    "inclusionTagName": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Inclusion Tag Name",
-                            "description": "Name of the tag to use for including VMs in the scope of this policy. This should be used along with the Inclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy"
-                        },
-                        "defaultValue": ""
                     }
                 },
                 "policyDefinitions": [
@@ -75,7 +67,7 @@
                             },
 
                             "inclusionTagValue": {
-                                "value": "[[parameters('inclusionTagValue')]"
+                                "value": ""
                             },
                             "inclusionTagName": {
                                 "value": "[[parameters('inclusionTagName')]"
