@@ -174,6 +174,10 @@
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed66d4f5-8220-45dc-ab4a-20d1749c74e6",
                         "policyDefinitionReferenceId": "Configure_EventHubNamespace_DNSZones",
                         "parameters": {
+                             "privateDnsZoneId": {
+                                "value": "[[parameters('privateDnsZoneId')]"
+                             },
+
                               "effect": {
                                 "value": "[[parameters('effect')]"
                             }
