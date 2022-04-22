@@ -17,30 +17,7 @@
                 "displayName": "Require Tag for resources and resource groups",
                 "description": "Require Tag for resources and resource groups",
                 "parameters": {
-                    "effect": {
-                        "type": "string",
-                        "metadata": {
-                            "displayName": "Effect",
-                            "description": "Enable or disable the execution of the policy"
-                        },
-                        "allowedValues": [
-                            "Deny"
-
-                        ],
-                        "defaultValue": "Deny"
-                    },
-                    "effect1": {
-                        "type": "string",
-                        "metadata": {
-                            "displayName": "Effect",
-                            "description": "Enable or disable the execution of the policy"
-                        },
-                        "allowedValues": [
-                            "Modify"
-
-                        ],
-                        "defaultValue": "Modify"
-                    },
+            
                     "tagName": {
                         "type": "String",
                         "metadata": {
