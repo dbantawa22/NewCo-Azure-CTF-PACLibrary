@@ -32,6 +32,22 @@
 							"southuk"
 						]
 
+					},
+                    	"listOfAllowedLocationsRG": {
+						"type": "Array",
+						"metadata": {
+							"displayName": "Allowed locations",
+							"strongType": "location",
+							"description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements. Excludes resource groups, Microsoft.AzureActiveDirectory/b2cDirectories, and resources that use the 'global' region."
+						},
+						"defaultValue": [
+							"eastus2",
+							"eastus",
+							"westus2",
+							"northeurope",
+							"southuk"
+						]
+
 					}
 
 
@@ -51,7 +67,7 @@
 						"policyDefinitionReferenceId": "listOfAllowedLocationsRG",
 						"parameters": {
 							"listOfAllowedLocations": {
-								"value": "[[parameters('listOfAllowedLocations')]"
+								"value": "[[parameters('listOfAllowedLocationsRG')]"
 							}
 						}
 					}
