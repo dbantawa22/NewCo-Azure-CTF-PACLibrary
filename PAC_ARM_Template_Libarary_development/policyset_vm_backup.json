@@ -58,36 +58,36 @@
                         }
                     }
                 },
-                    "policyDefinitions": [
-                        {
-                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/345fa903-145c-4fe1-8bcd-93ec2adccde8",
-                            "policyDefinitionReferenceId": "Configure_Backup_With_Tag",
-                            "parameters": {
-                                "effect": {
-                                    "value": "[[parameters('effect')]"
-                                },
-                                 "vaultLocation": {
-                                    "value": "[[parameters('vaultLocation')]"
-                                },
-                                       "inclusionTagValue": {
-                                    "value": "[[parameters('inclusionTagValue')]"
-                                },
-                                       "backupPolicyId": {
-                                    "value": "[[parameters('backupPolicyId')]"
-                                }
-                            }
-                        },
-                        {
-                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
-                            "policyDefinitionReferenceId": "Configure_Backup_Without_Tag",
-                            "parameters": {
-                                "effect": {
-                                    "value": "[[parameters('effect')]"
-                                }
+                "policyDefinitions": [
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/345fa903-145c-4fe1-8bcd-93ec2adccde8",
+                        "policyDefinitionReferenceId": "Configure_Backup_With_Tag",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "vaultLocation": {
+                                "value": "[[parameters('vaultLocation')]"
+                            },
+                            "inclusionTagValue": {
+                                "value": "[[parameters('inclusionTagValue')]"
+                            },
+                            "backupPolicyId": {
+                                "value": "[[parameters('backupPolicyId')]"
                             }
                         }
-                    ]
-                }
+                    },
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
+                        "policyDefinitionReferenceId": "Configure_Backup_Without_Tag",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    }
+                ]
             }
+        }
     ]
 }

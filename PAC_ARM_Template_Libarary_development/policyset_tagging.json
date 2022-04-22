@@ -29,7 +29,7 @@
                         ],
                         "defaultValue": "Deny"
                     },
-                       "effect1": {
+                    "effect1": {
                         "type": "string",
                         "metadata": {
                             "displayName": "Effect",
@@ -40,38 +40,55 @@
 
                         ],
                         "defaultValue": "Modify"
-                    }
-                },
-                "policyDefinitions": [
-                    {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62",
-                        "policyDefinitionReferenceId": "Require_Tag_value_Resources",
-                        "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
-                            }
+                    },
+                    "tagName": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Name",
+                            "description": "Name of the tag, such as 'environment'"
                         }
                     },
-                    {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8ce3da23-7156-49e4-b145-24f95f9dcb46",
-                        "policyDefinitionReferenceId": "Require_Tag_value_Resource_Groups",
-                        "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
-                            }
-                        }
-                    },
-                     {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
-                        "policyDefinitionReferenceId": "Inherit_Tag_value_Resource_Groups",
-                        "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect1')]"
-                            }
+                    "tagValue": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Tag Value",
+                            "description": "Value of the tag, such as 'production'"
                         }
                     }
-                ]
+                    },
+                    "policyDefinitions": [
+                        {
+                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62",
+                            "policyDefinitionReferenceId": "Require_Tag_value_Resources",
+                            "parameters": {
+                                "tagName": {
+                                    "value": "[[parameters('tagName')]"
+                                },
+                                "tagValue": {
+                                    "value": "[[parameters('tagValue')]"
+                                }
+                            }
+                        },
+                        {
+                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8ce3da23-7156-49e4-b145-24f95f9dcb46",
+                            "policyDefinitionReferenceId": "Require_Tag_value_Resource_Groups",
+                            "parameters": {
+                                "effect": {
+                                    "value": "[[parameters('effect')]"
+                                }
+                            }
+                        },
+                        {
+                            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
+                            "policyDefinitionReferenceId": "Inherit_Tag_value_Resource_Groups",
+                            "parameters": {
+                                "effect": {
+                                    "value": "[[parameters('effect1')]"
+                                }
+                            }
+                        }
+                    ]
+                }
             }
-        }
     ]
 }
