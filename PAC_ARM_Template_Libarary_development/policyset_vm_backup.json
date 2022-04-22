@@ -88,17 +88,21 @@
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/345fa903-145c-4fe1-8bcd-93ec2adccde8",
                         "policyDefinitionReferenceId": "Configure_Backup_With_Tag",
                         "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
-                            },
+                           
                             "vaultLocation": {
                                 "value": "[[parameters('vaultLocation')]"
+                            },
+                             "inclusionTagName": {
+                                "value": "[[parameters('inclusionTagName')]"
                             },
                             "inclusionTagValue": {
                                 "value": "[[parameters('inclusionTagValue')]"
                             },
                             "backupPolicyId": {
                                 "value": "[[parameters('backupPolicyId')]"
+                            },
+                             "effect": {
+                                "value": "[[parameters('effect')]"
                             }
                         }
                     },
@@ -117,7 +121,11 @@
                             },
                             "exclusionTagValue": {
                                 "value": "[[parameters('exclusionTagValue')]"
+                            },
+                            "effect": {
+                                "value": "[[parameters('effect')]"
                             }
+
 
                         }
                     }
