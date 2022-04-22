@@ -1,52 +1,55 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {  
-        },
-	"resources": [
-		{
-			"type": "Microsoft.Authorization/policySetDefinitions",
-			"apiVersion": "2020-09-01",
-			"name": "Not-allowed-resource-types",
-        	"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
-			"properties": {
-				"metadata": {
-					"version": "2.0.0",
-					"category": "General"
-				},
-				"displayName": "Not allowed resource types",
-				"description": "Not allowed resource types",
-				"parameters": {
-					"effect": {
-						"type": "string",
-						"metadata": {
-							"displayName": "Effect",
-							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-						    "Audit",
-							"Deny",
-							"Disabled"
-						
-						],
-						"defaultValue": "Deny"
-					}
-				},
-				"policyDefinitions": [
-					{
-						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
-						"policyDefinitionReferenceId": "notallowed_resourcetypes",
-						"parameters": {
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policySetDefinitions",
+            "apiVersion": "2020-09-01",
+            "name": "Not-allowed-resource-types",
+            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+            "properties": {
+                "metadata": {
+                    "version": "2.0.0",
+                    "category": "General"
+                },
+                "displayName": "Not allowed resource types",
+                "description": "Not allowed resource types",
+                "parameters": {
+                    "effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy"
+                        },
+                        "allowedValues": [
+                            "Audit",
+                            "Deny",
+                            "Disabled"
+
+                        ],
+                        "defaultValue": "Deny"
+                    }
+                },
+                "policyDefinitions": [
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+                        "policyDefinitionReferenceId": "notallowed_resourcetypes",
+                        "parameters": {
                             "listOfResourceTypesNotAllowed": {
-								"value": "[[]]"
-							},
-							"effect": {
-								"value": "[[parameters('effect')]"
-							}
-						}
-					}
-				]
-			}
-		}
-	]
+                                "value": [
+                                    "testvalue",
+                                    "testvalue2"
+                                ]
+                            },
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
 }
