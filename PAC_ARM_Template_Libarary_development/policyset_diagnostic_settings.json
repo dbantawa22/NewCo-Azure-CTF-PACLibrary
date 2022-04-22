@@ -129,7 +129,7 @@
                     },
                     {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed7c8c13-51e7-49d1-8a43-8490431a0da2",
-                        "policyDefinitionReferenceId": "Deploy_StreamAnalytics",
+                        "policyDefinitionReferenceId": "Deploy_KV_EventHub",
                         "parameters": {
                             "eventHubRuleId": {
                                 "value": "[[parameters('eventHubRuleId')]"
