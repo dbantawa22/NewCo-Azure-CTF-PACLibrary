@@ -184,11 +184,8 @@
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/91678b7c-d721-4fc5-b179-3cdf74e96b1c",
                         "policyDefinitionReferenceId": "Configure_EventHubNamespace",
                         "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
-                            },
-                            "eventHubRuleId": {
-                                "value": "[[parameters('eventHubRuleId')]"
+                            "privateEndpointSubnetId":{
+                                "value": "[[parameters('privateEndpointSubnetId')]"
                             }
                         }
                     },
