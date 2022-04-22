@@ -25,7 +25,12 @@
                             "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62",
                             "policyDefinitionReferenceId": "Require_Tag_value_Resources",
                             "parameters": {
-                                
+                                "tagName": {
+                                     "value": "testname"
+                                },
+                             "tagValue": {
+                                     "value": "testval"
+                                } 
 
                             }
                         }
