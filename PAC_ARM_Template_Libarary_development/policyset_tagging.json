@@ -54,6 +54,7 @@
                             "displayName": "Tag Value",
                             "description": "Value of the tag, such as 'production'"
                         }
+                    }
                     },
                     "policyDefinitions": [
                         {
