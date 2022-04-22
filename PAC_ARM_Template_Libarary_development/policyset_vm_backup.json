@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policySetDefinitions",
+            "apiVersion": "2020-09-01",
+            "name": "Enforce-Collection-Logs",
+            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+            "properties": {
+                "metadata": {
+                    "version": "2.0.0",
+                    "category": "Backup"
+                },
+                "displayName": "Back up virtual machines",
+                "description": "Back up virtual machines",
+                "parameters": {
+                    "effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy"
+                        },
+                        "allowedValues": [
+                            "auditIfNotExists",
+                            "AuditIfNotExists",
+                            "deployIfNotExists",
+                            "DeployIfNotExists",
+                            "disabled",
+                            "Disabled"
+
+                        ],
+                        "defaultValue": "DeployIfNotExists"
+                    }
+                },
+                "policyDefinitions": [
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/345fa903-145c-4fe1-8bcd-93ec2adccde8",
+                        "policyDefinitionReferenceId": "Configure_Backup_With_Tag",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    },
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
+                        "policyDefinitionReferenceId": "Configure_Backup_Without_Tag",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

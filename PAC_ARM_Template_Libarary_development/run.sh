@@ -32,6 +32,9 @@ connect_deployment()
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic_logs.json --name policy-Deployment-10
  
+     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-10
+
+
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policies.json --name policy-Deployment-1
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_denyIP.json --name policy-Deployment-2
