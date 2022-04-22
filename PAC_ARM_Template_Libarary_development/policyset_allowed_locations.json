@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {  
+        },
+	"resources": [
+		{
+			"type": "Microsoft.Authorization/policySetDefinitions",
+			"apiVersion": "2020-09-01",
+			"name": "Deny-public-IP",
+        	"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+			"properties": {
+				"metadata": {
+					"version": "2.0.0",
+					"category": "Network"
+				},
+				"displayName": "Deny the creation of public IP",
+				"description": "This policy denies creation of Public IPs under the assigned scope.",
+				"parameters": {
+					"effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Deny"
+						],
+						"defaultValue": "Deny"
+					}
+				},
+				"policyDefinitions": [
+					{
+						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+						"policyDefinitionReferenceId": "Allowed_locations_resources",
+						"parameters": {
+							"effect": {
+								"value": "[[parameters('effect')]"
+							}
+						}
+					},
+                   	{
+						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e765b5de-1225-4ba3-bd56-1ac6695af988",
+						"policyDefinitionReferenceId": "Allowed_locations_RG",
+						"parameters": {
+							"effect": {
+								"value": "[[parameters('effect')]"
+							}
+						}
+					} 
+				]
+			}
+		}
+	]
+}
