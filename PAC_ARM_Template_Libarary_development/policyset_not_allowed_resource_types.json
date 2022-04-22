@@ -39,8 +39,7 @@
                         "parameters": {
                             "listOfResourceTypesNotAllowed": {
                                 "value": [
-                                    "testvalue",
-                                    "testvalue2"
+                                    ""
                                 ]
                             },
                             "effect": {
