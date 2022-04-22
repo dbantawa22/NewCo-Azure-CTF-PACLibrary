@@ -17,7 +17,7 @@
                 "displayName": "Require Tag for resources and resource groups",
                 "description": "Require Tag for resources and resource groups",
                 "parameters": {   
-                    "tagName": {
+                    "tagName1": {
                         "type": "String",
                         "metadata": {
                             "displayName": "Tag Name",
