@@ -127,7 +127,7 @@
                             }
                         }
                     },
-                      {
+                    {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed7c8c13-51e7-49d1-8a43-8490431a0da2",
                         "policyDefinitionReferenceId": "Deploy_StreamAnalytics",
                         "parameters": {
@@ -159,8 +159,63 @@
                                 "value": "[[parameters('eventHubRuleId')]"
                             }
                         }
-                    }
+                    },
 
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/57f35901-8389-40bb-ac49-3ba4f86d889d",
+                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
+                            }
+                        }
+                    },
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed66d4f5-8220-45dc-ab4a-20d1749c74e6",
+                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
+                            }
+                        }
+                    },
+
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/91678b7c-d721-4fc5-b179-3cdf74e96b1c",
+                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
+                            }
+                        }
+                    },
+                         {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a1ad735a-e96f-45d2-a7b2-9a4932cab7ec",
+                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    },
+                      {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b8564268-eb4a-4337-89be-a19db070c59d",
+                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
+                        "parameters": {
+                            "effect": {
+                                "value": "[[parameters('effect')]"
+                            }
+                        }
+                    }
                 ]
             }
         }
