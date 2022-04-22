@@ -101,7 +101,7 @@
                                 "value": "[[parameters('exclusionTagName')]"
                             },
                             "exclusionTagValue": {
-                                "value": "[[]]"
+                                "value": "[[parameters('exclusionTagValue')]"
                             },
                             "effect": {
                                 "value": "[[parameters('effect')]"
