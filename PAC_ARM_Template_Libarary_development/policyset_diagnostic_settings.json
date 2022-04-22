@@ -169,40 +169,15 @@
                             }
                         }
                     },
-
                     {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/57f35901-8389-40bb-ac49-3ba4f86d889d",
-                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6d2c800-5230-4a40-bff3-8268b4987d42",
+                        "policyDefinitionReferenceId": "Deploy_DiagnosticSettings_KV_HSM",
                         "parameters": {
                             "effect": {
                                 "value": "[[parameters('effect')]"
-                            }
-                        }
-                    },
-                    {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/91678b7c-d721-4fc5-b179-3cdf74e96b1c",
-                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
-                        "parameters": {
-                            "privateEndpointSubnetId": {
-                                "value": "[[parameters('privateEndpointSubnetId')]"
-                            }
-                        }
-                    },
-                    {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a1ad735a-e96f-45d2-a7b2-9a4932cab7ec",
-                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
-                        "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
-                            }
-                        }
-                    },
-                    {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b8564268-eb4a-4337-89be-a19db070c59d",
-                        "policyDefinitionReferenceId": "Configure_EventHubNamespace",
-                        "parameters": {
-                            "effect": {
-                                "value": "[[parameters('effect')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
                             }
                         }
                     }
