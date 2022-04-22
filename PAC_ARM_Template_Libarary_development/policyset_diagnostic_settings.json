@@ -133,6 +133,9 @@
                         "parameters": {
                             "effect": {
                                 "value": "[[parameters('effect')]"
+                            },
+                            "eventHubRuleId": {
+                                "value": "[[parameters('eventHubRuleId')]"
                             }
                         }
                     },
