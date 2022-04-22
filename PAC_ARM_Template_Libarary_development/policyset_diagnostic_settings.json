@@ -198,7 +198,7 @@
                             }
                         }
                     },
-                         {
+                    {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a1ad735a-e96f-45d2-a7b2-9a4932cab7ec",
                         "policyDefinitionReferenceId": "Configure_EventHubNamespace",
                         "parameters": {
@@ -207,7 +207,7 @@
                             }
                         }
                     },
-                      {
+                    {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b8564268-eb4a-4337-89be-a19db070c59d",
                         "policyDefinitionReferenceId": "Configure_EventHubNamespace",
                         "parameters": {
