@@ -27,10 +27,7 @@
                             "parameters": {
                                 "tagName": {
                                      "value": "testname"
-                                },
-                             "tagValue": {
-                                     "value": "testval"
-                                } 
+                                }
 
                             }
                         }
