@@ -12,10 +12,10 @@
             "properties": {
                 "metadata": {
                     "version": "2.0.0",
-                    "category": "Backup"
+                    "category": "Tags"
                 },
-                "displayName": "Back up virtual machines",
-                "description": "Back up virtual machines",
+                "displayName": "Require Tag for resources and resource groups",
+                "description": "Require Tag for resources and resource groups",
                 "parameters": {
                     "effect": {
                         "type": "string",
