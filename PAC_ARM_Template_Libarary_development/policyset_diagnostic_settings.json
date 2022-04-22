@@ -31,15 +31,6 @@
                         "defaultValue": "Disabled"
                     },
 
-                    "privateDnsZoneId": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Private DNS Zone ID",
-                            "description": "Specifies the private DNS zone to use to configure private endpoint",
-                            "strongType": "Microsoft.Network/privateDnsZones"
-                        }
-                    },
-
                     "eventHubRuleId": {
                         "type": "String",
                         "metadata": {
