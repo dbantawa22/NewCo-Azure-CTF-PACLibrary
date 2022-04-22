@@ -67,7 +67,9 @@
                             },
 
                             "inclusionTagValue": {
-                                "value": ""
+                                "value": [
+                                    ""
+                                ]
                             },
                             "inclusionTagName": {
                                 "value": "[[parameters('inclusionTagName')]"
