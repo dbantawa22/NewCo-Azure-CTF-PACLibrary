@@ -27,7 +27,8 @@ connect_deployment()
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
 
 
-    
+        az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
+
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_tagging.json --name policy-Deployment-14
 
 
@@ -55,7 +56,6 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic_logs.json --name policy-Deployment-12
  
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
 
     
  
