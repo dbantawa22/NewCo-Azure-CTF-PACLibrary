@@ -36,9 +36,9 @@
                     	"listOfAllowedLocationsRG": {
 						"type": "Array",
 						"metadata": {
-							"displayName": "Allowed locations",
+							"displayName": "Allowed locations for resource groups",
 							"strongType": "location",
-							"description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements. Excludes resource groups, Microsoft.AzureActiveDirectory/b2cDirectories, and resources that use the 'global' region."
+							"description": "This policy enables you to restrict the locations your organization can create resource groups in. Use to enforce your geo-compliance requirements."
 						},
 						"defaultValue": [
 							"eastus2",
