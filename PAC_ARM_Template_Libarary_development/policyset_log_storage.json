@@ -25,7 +25,10 @@
 						},
 						"allowedValues": [
 						    "Audit",
+                            "audit",
+                            "deny",
 							"Deny",
+                            "disabled",
 							"Disabled"
 						
 						],
