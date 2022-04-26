@@ -66,11 +66,12 @@ connect_deployment()
  
     # echo '------------------- Policy Sets Assignments --------------------'
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_ddos.json --name policy-set-assignment-deployment-9
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_ddos.json --name policy-set-assignment-deployment-9 --parameters ./Parameters/assignment_ddos.parameters.json
+ 
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_diagnostic_settings.json --name policy-set-assignment-deployment-10
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_diagnostic_settings.json --name policy-set-assignment-deployment-10
-
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_log_storage.json --name policy-set-assignment-deployment-11
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_log_storage.json --name policy-set-assignment-deployment-11
+    
 
 }
 
