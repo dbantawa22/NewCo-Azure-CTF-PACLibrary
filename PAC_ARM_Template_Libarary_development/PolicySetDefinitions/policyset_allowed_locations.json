@@ -7,7 +7,7 @@
 		{
 			"type": "Microsoft.Authorization/policySetDefinitions",
 			"apiVersion": "2019-09-01",
-			"name": "Allowed Location and Allowed Locations for Resource Groups",
+			"name": "Allowed-Locations",
             "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
 			"properties": {
 				"metadata": {

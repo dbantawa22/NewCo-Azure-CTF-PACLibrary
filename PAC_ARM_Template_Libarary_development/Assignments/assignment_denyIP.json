@@ -2,25 +2,18 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "enforcementMode": {
-            "type": "string",
-            "allowedValues": [
-                "Default",
-                "DoNotEnforce"
-            ],
-            "defaultValue": "DoNotEnforce"
-        }
+     
     },
     "variables": {
         "policyDefinitions": {
             "denyPip": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deny-public-IP')]"
-         },
+        },
         "policyAssignmentNames": {
             "denyPip": "Deny-Public-IP",
             "description": "This policy denies creation of Public IPs under the assigned scope.",
             "displayName": "Deny the creation of public IP"
-         }
-        },
+        }
+    },
     "resources": [
         {
             "type": "Microsoft.Authorization/policyAssignments",
@@ -29,10 +22,9 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').denyPip]",
-                "enforcementMode": "[parameters('enforcementMode')]"
+                "policyDefinitionId": "[variables('policyDefinitions').denyPip]"
             }
-        }        
+        }
     ],
     "outputs": {}
 }
