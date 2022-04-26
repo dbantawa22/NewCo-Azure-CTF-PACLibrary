@@ -66,7 +66,7 @@ connect_deployment()
  
     # echo '------------------- Policy Sets Assignments --------------------'
 
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./DENY-PublicIpAddressPolicyAssignment.json --name policy-set-assignment-deployment-1
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_ddos.json --name policy-set-assignment-deployment-9
 
 
 }
