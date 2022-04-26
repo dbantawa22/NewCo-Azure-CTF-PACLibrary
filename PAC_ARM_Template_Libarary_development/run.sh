@@ -32,7 +32,7 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicyDefinitions/policyset_tagging.json --name policy-Deployment-14
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_tagging.json --name policy-Deployment-14
    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_allowed_vm_sizes.json --name policy-Deployment-15
 
@@ -68,6 +68,9 @@ connect_deployment()
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_ddos.json --name policy-set-assignment-deployment-9
 
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_diagnostic_settings.json --name policy-set-assignment-deployment-10
+
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_log_storage.json --name policy-set-assignment-deployment-11
 
 }
 
