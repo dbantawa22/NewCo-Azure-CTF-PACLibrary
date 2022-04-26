@@ -6,10 +6,10 @@
     },
     "variables": {
         "policyDefinitions": {
-            "LogStorage": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/LogStorage')]"
+            "LogStorage": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Log-Storage')]"
         },
         "policyAssignmentNames": {
-            "LogStorage": "LogStorage",
+            "LogStorage": "Log-Storage",
             "description": "Enable log storage and queries ",
             "displayName": "Enable log storage and queries "
 
