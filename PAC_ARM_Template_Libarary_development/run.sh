@@ -20,8 +20,10 @@ connect_deployment()
 
     echo '------------------- Policy Definition --------------------'
 
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicyDefinitions/policies.json --name policy-Deployment-1
+
     echo $DEPLOYMENT_NAME
-    echo '------------------- Policy Sets Definition --------------------'
+    echo '------------------- Policy Set Definition --------------------'
 
     echo $DEPLOYMENT_NAME
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
@@ -31,17 +33,14 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_not_allowed_resource_types.json --name policy-Deployment-17
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
-
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_tagging.json --name policy-Deployment-14
    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_allowed_vm_sizes.json --name policy-Deployment-15
-
-
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policies.json --name policy-Deployment-1
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_denyIP.json --name policy-Deployment-2
   
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./DENY-PublicEndpointsPolicySetDefinition.json --name policy-Deployment-3
+
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_tagging.json --name policy-Deployment-14
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_keyvault.json --name policy-Deployment-4
     
@@ -53,7 +52,7 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic.json --name policy-Deployment-8
 
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_ddos.json --name policy-Deployment-9
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_ddos.json --name policy-Deployment-9 --parameters ./Parameters/assignment_ddos.parameters.json
       
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_diagnostic_settings.json --name policy-Deployment-10
     
@@ -62,9 +61,9 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic_logs.json --name policy-Deployment-12
  
 
-    
- 
-    # echo '------------------- Policy Sets Assignments --------------------'
+    echo '------------------- Policy Set Assignment --------------------'
+
+    echo $DEPLOYMENT_NAME
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_ddos.json --name policy-set-assignment-deployment-9-test --parameters ./Parameters/assignment_ddos.parameters.json
  

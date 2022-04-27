@@ -7,14 +7,12 @@
         },
         "ddosRegion": {
             "value": "eastus"
-
         },
         "rgName": {
             "value": "test_RG_UKSouth"
-
         },
         "effect": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         }
     }
 }
