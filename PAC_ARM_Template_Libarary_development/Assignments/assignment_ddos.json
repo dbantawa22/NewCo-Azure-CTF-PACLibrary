@@ -56,7 +56,19 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').DDOSProtect]"
+                "policyDefinitionId": "[variables('policyDefinitions').DDOSProtect]",
+                "ddosName": {
+                    "name": "[parameters('ddosName')]"
+                },
+                "ddosRegion": {
+                    "name": "[parameters('ddosRegion')]"
+                },
+                "rgName": {
+                    "name": "[parameters('rgName')]"
+                },
+                "effect": {
+                    "name": "[parameters('effect')]"
+                }
             }
         }
     ],
