@@ -3,14 +3,14 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "ddosName": {
-            "value": null
+            "value": "ddosName"
         },
         "ddosRegion": {
-            "value": null
+            "value": "ddosRegion"
 
         },
         "rgName": {
-            "value": null
+            "value": "rgName"
 
         },
         "effect": {
