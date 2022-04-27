@@ -1,14 +1,26 @@
 {
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
-	"parameters": {  
-        },
+	"parameters": {
+		"effect": {
+			"type": "string",
+			"allowedValues": [
+				"Audit",
+				"Deny",
+				"Disabled"
+			],
+			"metadata": {
+				"displayName": "Effect",
+				"description": "Enable or disable the execution of the policy"
+			}
+		}
+	},
 	"resources": [
 		{
 			"type": "Microsoft.Authorization/policySetDefinitions",
 			"apiVersion": "2020-09-01",
 			"name": "Deny-public-IP",
-        	"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
 			"properties": {
 				"metadata": {
 					"version": "2.0.0",
@@ -19,17 +31,15 @@
 				"parameters": {
 					"effect": {
 						"type": "string",
+						"allowedValues": [
+							"Audit",
+							"Deny",
+							"Disabled"
+						],
 						"metadata": {
 							"displayName": "Effect",
 							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-						    "Audit",
-							"Deny",
-							"Disabled"
-						
-						],
-						"defaultValue": "Deny"
+						}
 					}
 				},
 				"policyDefinitions": [
