@@ -27,8 +27,7 @@
                             "AuditIfNotExists",
                             "Disabled"
 
-                        ],
-                        "defaultValue": "AuditIfNotExists"
+                        ]
                     },
                     "effect1": {
                         "type": "string",
@@ -40,8 +39,7 @@
                             "DeployIfNotExists",
                             "Disabled"
 
-                        ],
-                        "defaultValue": "DeployIfNotExists"
+                        ]
                     },
                     "virtualNetworkGatewayId": {
                         "type": "String",
