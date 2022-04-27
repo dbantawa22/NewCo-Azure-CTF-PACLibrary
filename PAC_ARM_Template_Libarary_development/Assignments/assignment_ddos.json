@@ -58,16 +58,16 @@
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').DDOSProtect]",
                 "ddosName": {
-                    "name": "[parameters('ddosName')]"
+                    "name": "[[parameters('ddosName')]"
                 },
                 "ddosRegion": {
-                    "name": "[parameters('ddosRegion')]"
+                    "name": "[[parameters('ddosRegion')]"
                 },
                 "rgName": {
-                    "name": "[parameters('rgName')]"
+                    "name": "[[parameters('rgName')]"
                 },
                 "effect": {
-                    "name": "[parameters('effect')]"
+                    "name": "[[parameters('effect')]"
                 }
             }
         }
