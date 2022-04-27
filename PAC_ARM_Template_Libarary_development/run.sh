@@ -20,7 +20,7 @@ connect_deployment()
 
     echo '------------------- Policy Definition --------------------'
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicyDefinitions/policies.json --name policy-Deployment-1
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicyDefinitions/policies.json --name policy-Deployment-1
 
     echo $DEPLOYMENT_NAME
     echo '------------------- Policy Set Definition --------------------'
