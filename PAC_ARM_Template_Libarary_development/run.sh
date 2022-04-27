@@ -36,7 +36,7 @@ connect_deployment()
    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_allowed_vm_sizes.json --name policy-Deployment-15
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-denyIP --template-file ./PolicySetDefinitions/policyset_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-denyIP --template-file ./PolicySetDefinitions/policyset_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
   
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./DENY-PublicEndpointsPolicySetDefinition.json --name policy-Deployment-3
 
@@ -65,7 +65,7 @@ connect_deployment()
 
     echo $DEPLOYMENT_NAME
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-ddos --template-file ./Assignments/assignment_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
 
