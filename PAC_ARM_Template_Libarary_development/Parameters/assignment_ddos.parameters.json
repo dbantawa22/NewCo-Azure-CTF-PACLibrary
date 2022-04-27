@@ -6,7 +6,7 @@
             "value": "ddosTest"
         },
         "ddosRegion": {
-            "value": "eastus"
+            "value": "uksouth"
         },
         "rgName": {
             "value": "test_RG_UKSouth"
