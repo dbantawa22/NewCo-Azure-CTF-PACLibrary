@@ -59,7 +59,7 @@
                         "policyDefinitionReferenceId": "Deploy-DDoSProtection",
                         "parameters": {
                              "ddosName": {
-                                "value": "[[parameters('ddosName')]"
+                                "value": "'ddosName"
                             },
                              "ddosRegion": {
                                 "value": "[[parameters('ddosRegion')]"

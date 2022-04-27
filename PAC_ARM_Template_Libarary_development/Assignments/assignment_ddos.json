@@ -13,9 +13,9 @@
         },
         "effect": {
             "type": "string"
-    }
+        }
     },
-    
+
     "variables": {
         "policyDefinitions": {
             "DDOSProtect": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/DDOS-Protect')]"
@@ -38,8 +38,9 @@
                 "ddosName": "[parameters('ddosName')]",
                 "ddosRegion": "[parameters('ddosRegion')]",
                 "rgName": "[parameters('rgName')]",
-                "effect":  "[parameters('effect')]"
+                "effect": "[parameters('effect')]"
             }
+
         }
     ],
     "outputs": {}
