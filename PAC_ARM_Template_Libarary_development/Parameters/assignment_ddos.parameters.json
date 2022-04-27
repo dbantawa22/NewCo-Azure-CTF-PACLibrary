@@ -14,7 +14,7 @@
 
         },
         "effect": {
-            "value": null
+            "value": "DeployIfNotExists"
         }
     }
 }
