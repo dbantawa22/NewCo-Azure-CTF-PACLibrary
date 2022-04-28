@@ -16,7 +16,7 @@ connect_deployment()
 
     LOCATION="uksouth"
     DEPLOYMENT_NAME="policy-"$LOCATION 
-    AZ_PAC_LIBRARY_PATH="https://raw.githubusercontent.com/dbantawa22/NewCo-Azure-CTF-PACLibrary/main/"
+    AZ_PAC_LIBRARY_PATH="https://raw.githubusercontent.com/dbantawa22/NewCo-Azure-CTF-PACLibrary/"
 
     echo '------------------- Policy Definition --------------------'
 
