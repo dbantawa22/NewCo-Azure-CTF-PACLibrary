@@ -31,9 +31,7 @@
                             "disabled",
 							"Disabled"
 						
-						],
-						"defaultValue": "Audit"
-					}
+						]					}
 				},
 				"policyDefinitions": [
 					{

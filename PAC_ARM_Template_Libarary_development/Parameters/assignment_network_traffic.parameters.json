@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "effect": {
+            "value": "AuditIfNotExists"
+        },
+        "effect1": {
+            "value": "DeployIfNotExists"
+        },
+        "virtualNetworkGatewayId": {
+            "value": "connect-vgw-uks1-01"
+        },
+        "requiredRoutes": {
+            "value": "default"
+        },
+        "vnetRegion": {
+            "value": "uksouth"
+        },
+        "routeTableName": {
+            "value": "identity-udr-uks1-0.0.0.0_0"
+        }
+    }
+}
