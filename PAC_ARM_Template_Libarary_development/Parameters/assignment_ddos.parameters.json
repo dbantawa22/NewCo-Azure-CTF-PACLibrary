@@ -13,9 +13,9 @@
         },
         "effect": {
             "value": "Disabled"
-        },
-        "principalId": {
-            "value": "d477bc25-9605-4f7b-9d57-183a8023aedd"
         }
+        // "principalId": {
+        //     "value": "d477bc25-9605-4f7b-9d57-183a8023aedd"
+        // }
     }
 }

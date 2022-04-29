@@ -34,10 +34,10 @@
                 "displayName": "Effect",
                 "description": "Enable or disable the execution of the policy"
             }
-        },
-        "principalId": {
-            "type": "string"
         }
+        // "principalId": {
+        //     "type": "string"
+        // }
     },
     "variables": {
         "policyDefinitions": {
@@ -80,20 +80,20 @@
                     }
                 }
             }
-        },
-        {
-            "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "2019-04-01",
-            "name": "[variables('roleAssignmentNames').DDOSProtect]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').DDOSProtect)]"
-            ],
-            "properties": {
-                "principalType": "ServicePrincipal",
-                "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
-                "principalId": "[parameters('principalId')]"
-            }
         }
+        // {
+        //     "type": "Microsoft.Authorization/roleAssignments",
+        //     "apiVersion": "2019-04-01",
+        //     "name": "[variables('roleAssignmentNames').DDOSProtect]",
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').DDOSProtect)]"
+        //     ],
+        //     "properties": {
+        //         "principalType": "ServicePrincipal",
+        //         "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+        //         "principalId": "[parameters('principalId')]"
+        //     }
+        // }
     ],
     "outputs": {}
 }
