@@ -34,9 +34,6 @@
                 "displayName": "Effect",
                 "description": "Enable or disable the execution of the policy"
             }
-            // "principalId": {
-            //     "type": "string"
-            // }
         }
     },
     "variables": {
@@ -57,6 +54,7 @@
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2019-09-01",
             "name": "[variables('policyAssignmentNames').DDOSProtect]",
+            "location": "[parameters('ddosRegion')]",
             "identity": {
                 "type": "SystemAssigned"
             },
@@ -91,8 +89,7 @@
             "properties": {
                 "principalType": "ServicePrincipal",
                 "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
-                // "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').DDOSProtect), '2019-09-01', 'Full' ).identity.principalId)]"
-                "principalId": "reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').DDOSProtect), '2019-09-01', 'Full' ).outputs.principalId.value, 'na'"
+                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').DDOSProtect), '2019-09-01', 'Full' ).identity.principalId)]"
             }
         }
     ],
