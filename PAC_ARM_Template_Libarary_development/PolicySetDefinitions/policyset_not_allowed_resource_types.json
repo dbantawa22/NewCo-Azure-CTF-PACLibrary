@@ -28,9 +28,7 @@
                             "Deny",
                             "Disabled"
 
-                        ],
-                        "defaultValue": "Deny"
-                    }
+                        ]                    }
                 },
                 "policyDefinitions": [
                     {

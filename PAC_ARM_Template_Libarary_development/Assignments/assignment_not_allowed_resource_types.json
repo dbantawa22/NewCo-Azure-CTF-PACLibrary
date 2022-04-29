@@ -2,7 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Audit",
+                "Deny",
+                "Disabled"
 
+            ]
+        }
     },
     "variables": {
         "policyDefinitions": {
@@ -22,7 +34,13 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').notallowedRT]"
+                "policyDefinitionId": "[variables('policyDefinitions').notallowedRT]",
+                "parameters": {
+
+                    "effect": {
+                        "value": "[parameters('effect')]"
+                    }
+                }
             }
         }
     ],

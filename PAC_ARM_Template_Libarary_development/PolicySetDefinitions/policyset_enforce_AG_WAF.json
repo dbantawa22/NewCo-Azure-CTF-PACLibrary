@@ -27,8 +27,7 @@
 							"Deny",
 							"Disabled",
 							"Audit"
-						],
-						"defaultValue": "Audit"
+						]
 					}
 				},
 				"policyDefinitions": [
