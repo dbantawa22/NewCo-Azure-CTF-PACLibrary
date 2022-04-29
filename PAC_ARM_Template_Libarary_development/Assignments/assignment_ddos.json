@@ -54,7 +54,7 @@
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2019-09-01",
             "name": "[variables('policyAssignmentNames').DDOSProtect]",
-            "location": "[parameters('ddosRegion')]",
+            "location": "[deployment().location]",
             "identity": {
                 "type": "SystemAssigned"
             },
