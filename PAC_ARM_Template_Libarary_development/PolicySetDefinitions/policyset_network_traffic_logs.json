@@ -25,8 +25,7 @@
                         },
                         "allowedValues": [
                             "Audit",
-                            "Disabled",
-                            "DeployIfNotExists"
+                            "Disabled"
 
                         ]                    }
                 },
