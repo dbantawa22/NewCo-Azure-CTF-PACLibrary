@@ -34,6 +34,12 @@
                 "displayName": "Effect",
                 "description": "Enable or disable the execution of the policy"
             }
+        },
+        "topLevelManagementGroupPrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide the ESLZ company prefix to the intermediate root management group containing the policy definitions."
+            }
         }
     },
     "variables": {
@@ -44,7 +50,10 @@
             "DDOSProtect": "DDOS-Protect",
             "description": "Protect against distributed denial of service attacks",
             "displayName": "Protect against distributed denial of service attacks"
-        }
+        },
+        "roleAssignmentNames": {
+            "deployDdoS": "[guid(concat(parameters('toplevelManagementGroupPrefix'), variables('policyAssignmentNames').DDOSProtect))]"
+         }
     },
     "resources": [
         {
@@ -74,7 +83,19 @@
                     }
                 }
             }
-
+        },
+        {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2019-04-01",
+            "name": "[variables('roleAssignmentNames').deployDdoS]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').deployDdoS)]"
+            ],
+            "properties": {
+                "principalType": "ServicePrincipal",
+                "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').deployDdoS), '2019-09-01', 'Full' ).identity.principalId)]"
+            }
         }
     ],
     "outputs": {}
