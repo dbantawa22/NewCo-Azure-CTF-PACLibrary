@@ -22,8 +22,8 @@
         },
         "policyAssignmentNames": {
             "notallowedRT": "Not-allowed-resource-types",
-            "description": "Not allowed resource types",
-            "displayName": "Not allowed resource types"
+            "description": "Not allowed RT",
+            "displayName": "Not allowed RT"
         }
     },
     "resources": [
