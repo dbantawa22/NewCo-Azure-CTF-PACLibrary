@@ -95,7 +95,7 @@
     ],
     "outputs": {
         "locationResult": {
-            "type": "array",
+            "type": "string",
             "value": "[deployment().location]"
         }
     }
