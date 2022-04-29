@@ -13,9 +13,6 @@
         },
         "effect": {
             "value": "Disabled"
-        },
-        "topLevelManagementGroupPrefix": {
-            "value": "MGMT_ROOT"
         }
     }
 }
