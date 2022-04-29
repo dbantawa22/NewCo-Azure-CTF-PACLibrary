@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "principalId": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2019-04-01",
+            "name": "[guid(concat('MGMT_ROOT', 'b24988ac-6180-42a0-ab88-20f7382dd24c'))]",
+            "properties": {
+                "principalType": "ServicePrincipal",
+                "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+                "principalId": "[parameters('principalId')]"
+            }
+        }
+    ]
+}
