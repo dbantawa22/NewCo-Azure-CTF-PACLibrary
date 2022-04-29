@@ -30,7 +30,7 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_allowed_locations.json --name policy-Deployment-16
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_not_allowed_resource_types.json --name policy-Deployment-17
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_not_allowed_resource_types.json --name policy-Deployment-17
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
    
