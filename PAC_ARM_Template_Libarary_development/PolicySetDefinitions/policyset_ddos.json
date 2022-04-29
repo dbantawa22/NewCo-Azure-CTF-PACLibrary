@@ -106,5 +106,11 @@
                 ]
             }
         }
-    ]
+    ],
+    "outputs": {
+        "locationResult": {
+            "type": "array",
+            "value": "[deployment().location]"
+        }
+    }
 }
