@@ -39,7 +39,6 @@
                     }
 
                 },
-                "PolicyDefinitionGroups": null,
                 "PolicyDefinitions": [
                     {
                         "policyDefinitionReferenceId": "CosmosDenyPaasPublicIP",
