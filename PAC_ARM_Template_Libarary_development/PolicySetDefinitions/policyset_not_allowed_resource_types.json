@@ -7,7 +7,7 @@
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
-            "name": "not-allowed-RT",
+            "name": "Not-allowed-RT",
             "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
             "properties": {
                 "metadata": {
