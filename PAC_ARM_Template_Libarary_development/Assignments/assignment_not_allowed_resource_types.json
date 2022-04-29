@@ -18,10 +18,10 @@
     },
     "variables": {
         "policyDefinitions": {
-            "notallowedRT": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Not-allowed-resource-types')]"
+            "notallowedRT": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/not-allowed-RT')]"
         },
         "policyAssignmentNames": {
-            "notallowedRT": "Not-allowed-resource-types",
+            "notallowedRT": "not-allowed-RT",
             "description": "Not allowed RT",
             "displayName": "Not allowed RT"
         }
