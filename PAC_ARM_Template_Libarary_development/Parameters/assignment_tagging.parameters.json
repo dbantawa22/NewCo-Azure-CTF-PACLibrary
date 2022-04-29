@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tagName1": {
+            "value": "OwnerID"
+        },
+        "tagName2": {
+            "value": "Data classification"
+        },
+        "tagName3": {
+            "value": "BU"
+        },
+        "tagValue1": {
+            "value": "user@spinco.com"
+        },
+        "tagValue2": {
+            "value": "SpinCo Data classifications"
+        }
+    }
+}

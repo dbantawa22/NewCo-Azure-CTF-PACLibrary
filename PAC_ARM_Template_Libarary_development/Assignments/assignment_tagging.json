@@ -2,7 +2,41 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-
+        "tagName1": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Tag Name",
+                "description": "Name of the tag, such as 'environment'"
+            }
+        },
+        "tagName2": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Tag Name",
+                "description": "Name of the tag, such as 'environment'"
+            }
+        },
+        "tagName3": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Tag Name",
+                "description": "Name of the tag, such as 'environment'"
+            }
+        },
+        "tagValue1": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Tag Value",
+                "description": "Value of the tag, such as 'production'"
+            }
+        },
+        "tagValue2": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Tag Value",
+                "description": "Value of the tag, such as 'production'"
+            }
+        }
     },
     "variables": {
         "policyDefinitions": {
@@ -22,7 +56,26 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').tagging]"
+                "policyDefinitionId": "[variables('policyDefinitions').tagging]",
+                "parameters": {
+
+                    "tagName1": {
+                        "value": "[parameters('tagName1')]"
+                    },
+                    "tagName2": {
+                        "value": "[parameters('tagName2')]"
+                    },
+                    "tagName3": {
+                        "value": "[parameters('tagName3')]"
+                    },
+                    "tagValue1": {
+                        "value": "[parameters('tagValue1')]"
+                    },
+                    "tagValue2": {
+                        "value": "[parameters('tagValue2')]"
+                    }
+
+                }
             }
         }
     ],
