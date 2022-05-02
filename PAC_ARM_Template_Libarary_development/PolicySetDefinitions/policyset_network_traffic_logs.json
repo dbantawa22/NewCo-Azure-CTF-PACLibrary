@@ -1,14 +1,12 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-    },
+    "parameters": {},
     "resources": [
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
             "name": "Enforce-Collection-Logs",
-            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
             "properties": {
                 "metadata": {
                     "version": "2.0.0",
@@ -18,7 +16,7 @@
                 "description": "Enforce collecting network traffic logs",
                 "parameters": {
                     "effect": {
-                        "type": "String",
+                        "type": "string",
                         "metadata": {
                             "displayName": "Effect",
                             "description": "Enable or disable the execution of the policy"
@@ -26,14 +24,16 @@
                         "allowedValues": [
                             "Audit",
                             "Disabled"
-                        ]
+                        ],
+                        "defaultValue": "Audit"
                     }
                 },
                 "policyDefinitions": [
-                    // {
-                    //     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a9b99dd8-06c5-4317-8629-9d86a3c6e7d9",
-                    //     "policyDefinitionReferenceId": "Deploy_Network_Watcher"
-                    // },
+                    {
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a9b99dd8-06c5-4317-8629-9d86a3c6e7d9",
+                        "policyDefinitionReferenceId": "Deploy_Network_Watcher",
+                        "parameters": {}
+                    },
                     {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2f080164-9f4d-497e-9db6-416dc9f7b48a",
                         "policyDefinitionReferenceId": "TrafficAnalysis_Network_Watcher",
@@ -44,7 +44,8 @@
                         }
                     }
                 ]
-            }
+            },
+            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]"
         }
     ]
 }
