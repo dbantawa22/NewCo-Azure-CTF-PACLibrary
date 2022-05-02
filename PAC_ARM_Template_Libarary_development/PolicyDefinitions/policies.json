@@ -6495,6 +6495,9 @@
                                         "properties": {
                                             "mode": "Incremental",
                                             "parameters": {
+                                                "location": {
+                                                    "value": "[[parameters('location')]"
+                                                },
                                                 "rgName": {
                                                     "value": "[[parameters('rgName')]"
                                                 },
@@ -6509,6 +6512,9 @@
                                                 "$schema": "http://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json",
                                                 "contentVersion": "1.0.0.0",
                                                 "parameters": {
+                                                    "location": {
+                                                        "type": "String"
+                                                    },
                                                     "rgName": {
                                                         "type": "String"
                                                     },
@@ -6524,7 +6530,7 @@
                                                         "type": "Microsoft.Resources/resourceGroups",
                                                         "apiVersion": "2018-05-01",
                                                         "name": "[[parameters('rgName')]",
-                                                        "location": "[[deployment().location]",
+                                                        "location": "[[parameters('location')]",
                                                         "properties": {}
                                                     },
                                                     {
