@@ -25,9 +25,12 @@
                         },
                         "allowedValues": [
                             "Audit",
-                            "Disabled"
+                            "Disabled",
+                            "DeployIfNotExists"
 
-                        ]                    }
+
+                        ]
+                    }
                 },
                 "policyDefinitions": [
                     {
