@@ -12,8 +12,8 @@
                     "version": "2.0.0",
                     "category": "Network"
                 },
-                "displayName": "Enforce collecting network traffic logs",
-                "description": "Enforce collecting network traffic logs",
+                "displayName": "Enforce collecting network traffic logs2",
+                "description": "Enforce collecting network traffic logs2",
                 "parameters": {
                     "effect": {
                         "type": "string",
