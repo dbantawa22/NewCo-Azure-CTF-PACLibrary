@@ -80,7 +80,7 @@
         },
         {
             "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "2019-04-01",
+            "apiVersion": "2019-04-01-preview",
             "name": "[variables('roleAssignmentNames').DDOSProtect]",
             "dependsOn": [
                 "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').DDOSProtect)]"
