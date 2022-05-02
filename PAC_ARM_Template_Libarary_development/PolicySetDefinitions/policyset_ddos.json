@@ -107,10 +107,5 @@
             }
         }
     ],
-    "outputs": {
-        "locationResult": {
-            "type": "string",
-            "value": "[deployment().location]"
-        }
-    }
+    "outputs": {}
 }
