@@ -18,7 +18,7 @@
                 "description": "Enforce collecting network traffic logs",
                 "parameters": {
                     "effect": {
-                        "type": "string",
+                        "type": "String",
                         "metadata": {
                             "displayName": "Effect",
                             "description": "Enable or disable the execution of the policy"
@@ -26,7 +26,8 @@
                         "allowedValues": [
                             "Audit",
                             "Disabled"
-                        ]
+                        ],
+                        "defaultValue": "Audit"
                     }
                 },
                 "policyDefinitions": [
