@@ -58,7 +58,7 @@ connect_deployment()
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_log_storage.json --name policy-Deployment-11
 
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic_logs.json --name policy-Deployment-12
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_network_traffic_logs.json --name policy-Deployment-12
  
 
     echo '------------------- Policy Set Assignment --------------------'
