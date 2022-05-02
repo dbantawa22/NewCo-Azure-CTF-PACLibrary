@@ -71,6 +71,9 @@
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').DDOSProtect]",
                 "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
                     "ddosName": {
                         "value": "[parameters('ddosName')]"
                     },
