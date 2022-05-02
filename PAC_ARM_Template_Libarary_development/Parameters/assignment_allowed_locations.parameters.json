@@ -6,16 +6,12 @@
             "value": [
                 "eastus2",
                 "eastus",
-                "westus2",
-                "northeurope",
-                "southuk"
+                "westus2"
+
             ]
         },
         "listOfAllowedLocationsRG": {
             "value": [
-                "eastus2",
-                "eastus",
-                "westus2",
                 "northeurope",
                 "southuk"
             ]

@@ -1,7 +1,20 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Audit",
+                "Disabled"
+
+            ]
+        }
+    },
     "resources": [
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
@@ -12,8 +25,8 @@
                     "version": "2.0.0",
                     "category": "Network"
                 },
-                "displayName": "Enforce collecting network traffic logs2",
-                "description": "Enforce collecting network traffic logs2",
+                "displayName": "Enforce collecting network traffic logs",
+                "description": "Enforce collecting network traffic logs",
                 "parameters": {
                     "effect": {
                         "type": "string",
@@ -24,8 +37,7 @@
                         "allowedValues": [
                             "Audit",
                             "Disabled"
-                        ],
-                        "defaultValue": "Audit"
+                        ]
                     }
                 },
                 "policyDefinitions": [
@@ -44,8 +56,7 @@
                         }
                     }
                 ]
-            },
-            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]"
+            }
         }
     ]
 }
