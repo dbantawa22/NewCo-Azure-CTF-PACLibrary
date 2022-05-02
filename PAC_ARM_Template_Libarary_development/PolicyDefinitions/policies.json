@@ -6423,6 +6423,14 @@
                         "displayName": "Deploy an Azure DDoS Protection Standard plan",
                         "mode": "All",
                         "parameters": {
+                            "location": {
+                                "type": "String",
+                                "metadata": {
+                                    "displayName": "location",
+                                    "description": "Deployment location for Managed Identity",
+                                    "strongType": "location"
+                                }
+                            },
                             "ddosName": {
                                 "type": "String",
                                 "metadata": {
@@ -6483,6 +6491,7 @@
                                         "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
                                     ],
                                     "deployment": {
+                                        "location": "[[parameters('location')]",
                                         "properties": {
                                             "mode": "Incremental",
                                             "parameters": {
