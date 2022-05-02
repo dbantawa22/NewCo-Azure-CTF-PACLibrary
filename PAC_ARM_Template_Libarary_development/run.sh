@@ -65,7 +65,7 @@ connect_deployment()
 
     echo $DEPLOYMENT_NAME
 
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name role-assignment-creation --template-file ./Assignments/roleAssignments.json --parameters ./Parameters/roleAssignments.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name role-assignment-creation --template-file ./Assignments/roleAssignments.json --parameters ./Parameters/roleAssignments.parameters.json
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
 
