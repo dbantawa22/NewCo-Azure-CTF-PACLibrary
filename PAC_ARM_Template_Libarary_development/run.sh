@@ -19,13 +19,11 @@ connect_deployment()
     AZ_PAC_LIBRARY_PATH="https://raw.githubusercontent.com/dbantawa22/NewCo-Azure-CTF-PACLibrary/main/"
 
     echo '------------------- Policy Definition --------------------'
-    
     echo $DEPLOYMENT_NAME
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
 
     echo '------------------- Policy Set Definition --------------------'
-
     echo $DEPLOYMENT_NAME
 
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
@@ -64,7 +62,6 @@ connect_deployment()
  
 
     echo '------------------- Policy Set Assignment --------------------'
-
     echo $DEPLOYMENT_NAME
 
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name role-assignment-creation --template-file ./Assignments/roleAssignments.json --parameters ./Parameters/roleAssignments.parameters.json
