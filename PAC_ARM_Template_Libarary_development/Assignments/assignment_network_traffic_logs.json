@@ -22,9 +22,6 @@
             "EnforceCollectionLogs": "Enforce-Collection-Logs",
             "description": "Enforce collecting network traffic logs",
             "displayName": "Enforce collecting network traffic logs"
-        },
-        "roleAssignmentNames": {
-            "EnforceCollectionLogs": "[guid(concat(concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT'), variables('policyAssignmentNames').EnforceCollectionLogs))]"
         }
     },
     "resources": [
@@ -32,7 +29,7 @@
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2021-06-01",
             "name": "[variables('policyAssignmentNames').EnforceCollectionLogs]",
-            "location": "[deployment().location]",
+            "location": "northeurope",
             "identity": {
                 "type": "UserAssigned",
                 "userAssignedIdentities": {
