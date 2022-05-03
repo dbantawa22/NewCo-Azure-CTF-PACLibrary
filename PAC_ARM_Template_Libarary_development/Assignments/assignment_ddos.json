@@ -60,11 +60,14 @@
     "resources": [
         {
             "type": "Microsoft.Authorization/policyAssignments",
-            "apiVersion": "2019-09-01",
+            "apiVersion": "2021-06-01",
             "name": "[variables('policyAssignmentNames').DDOSProtect]",
             "location": "[parameters('location')]",
             "identity": {
-                "type": "SystemAssigned"
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/deployment_test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uksouth-user-MI": {}
+                }
             },
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
@@ -88,20 +91,20 @@
                     }
                 }
             }
-        },
-        {
-            "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "2019-04-01-preview",
-            "name": "[variables('roleAssignmentNames').DDOSProtect]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').DDOSProtect)]"
-            ],
-            "properties": {
-                "principalType": "ServicePrincipal",
-                "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
-                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').DDOSProtect), '2019-09-01', 'Full' ).identity.principalId)]"
-            }
         }
+        // {
+        //     "type": "Microsoft.Authorization/roleAssignments",
+        //     "apiVersion": "2019-04-01-preview",
+        //     "name": "[variables('roleAssignmentNames').DDOSProtect]",
+        //     "dependsOn": [
+        //         "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').DDOSProtect)]"
+        //     ],
+        //     "properties": {
+        //         "principalType": "ServicePrincipal",
+        //         "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+        //         "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').DDOSProtect), '2019-09-01', 'Full' ).identity.principalId)]"
+        //     }
+        // }
     ],
     "outputs": {}
 }
