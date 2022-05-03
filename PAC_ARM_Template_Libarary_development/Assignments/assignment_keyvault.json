@@ -2,7 +2,33 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "effect": {
+        "keyvault_soft_delete_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Append",
+                "Deny",
+                "Disabled",
+                "Audit"
+            ]
+        },
+        "keyvault_purge_protection_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Append",
+                "Deny",
+                "Disabled",
+                "Audit"
+            ]
+        },
+        "keyvault_hsm_purge_protection_effect": {
             "type": "string",
             "metadata": {
                 "displayName": "Effect",
@@ -37,8 +63,14 @@
                 "policyDefinitionId": "[variables('policyDefinitions').ProtectKV]",
                 "parameters": {
 
-                    "effect": {
-                        "value": "[parameters('effect')]"
+                    "keyvault_soft_delete_effect": {
+                        "value": "[parameters('keyvault_soft_delete_effect')]"
+                    },
+                      "keyvault_purge_protection_effect": {
+                        "value": "[parameters('keyvault_purge_protection_effect')]"
+                    },
+                      "keyvault_hsm_purge_protection_effect": {
+                        "value": "[parameters('keyvault_hsm_purge_protection_effect')]"
                     }
                 }
             }
