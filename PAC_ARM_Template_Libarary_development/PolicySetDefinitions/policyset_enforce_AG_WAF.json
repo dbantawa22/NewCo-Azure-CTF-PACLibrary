@@ -30,7 +30,46 @@
 				"displayName": "Policy sets to enforce Azure Application Gateway Web Application Firewall",
 				"description": "Policy sets to enforce Azure Application Gateway Web Application Firewall",
 				"parameters": {
-					"effect": {
+					"Deny-AppGW-Without-WAF_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					},
+					"Deny-AppGW-WAF_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					},
+					"Enable-WAF-AppGW_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					},
+					"Azure-FrontDoor-Premium-WAF_effect": {
 						"type": "string",
 						"metadata": {
 							"displayName": "Effect",
@@ -43,6 +82,7 @@
 							"Audit"
 						]
 					}
+
 				},
 				"policyDefinitions": [
 					{
@@ -50,7 +90,7 @@
 						"policyDefinitionReferenceId": "Deny-AppGW-Without-WAF",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('effect')]"
+								"value": "[[parameters('Deny-AppGW-Without-WAF_effect')]"
 							}
 						}
 					},
@@ -59,7 +99,7 @@
 						"policyDefinitionReferenceId": "Deny-AppGW-WAF",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('effect')]"
+								"value": "[[parameters('Deny-AppGW-WAF_effect')]"
 							}
 						}
 					},
@@ -68,7 +108,7 @@
 						"policyDefinitionReferenceId": "Deny-AppGW-WAF-FrontDoor",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('effect')]"
+								"value": "[[parameters('Deny-AppGW-WAF-FrontDoor_effect')]"
 							}
 						}
 					},
@@ -77,7 +117,7 @@
 						"policyDefinitionReferenceId": "Enable-WAF-AppGW",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('effect')]"
+								"value": "[[parameters('Enable-WAF-AppGW_effect')]"
 							}
 						}
 					},
@@ -86,7 +126,7 @@
 						"policyDefinitionReferenceId": "Azure-FrontDoor-Premium-WAF",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('effect')]"
+								"value": "[[parameters('Azure-FrontDoor-Premium-WAF_effect')]"
 							}
 						}
 					}
