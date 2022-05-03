@@ -2,6 +2,59 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+          "Deploy_VNET_Gateway_effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy"
+                        },
+                        "allowedValues": [
+                            "AuditIfNotExists",
+                            "Disabled"
+
+                        ]
+                    },
+                    "Deploy_Route_Table_effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy"
+                        },
+                        "allowedValues": [
+                            "DeployIfNotExists",
+                            "Disabled"
+
+                        ]
+                    },
+                    "virtualNetworkGatewayId": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Virtual network gateway Id",
+                            "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
+                        }
+                    },
+
+                    "requiredRoutes": {
+                        "type": "Array",
+                        "metadata": {
+                            "displayName": "requiredRoutes",
+                            "description": "Routes that must exist in compliant route tables deployed by this policy"
+                        }
+                    },
+                    "vnetRegion": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "vnetRegion",
+                            "description": "Only VNets in this region will be evaluated against this policy"
+                        }
+                    },
+                    "routeTableName": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "routeTableName",
+                            "description": "Name of the route table automatically deployed by this policy"
+                        }
+                    }
     },
     "resources": [
         {
@@ -17,7 +70,7 @@
                 "displayName": "Enforce network traffic control",
                 "description": "This policy sets enforces network traffic control",
                 "parameters": {
-                    "effect": {
+                    "Deploy_VNET_Gateway_effect": {
                         "type": "string",
                         "metadata": {
                             "displayName": "Effect",
@@ -29,7 +82,7 @@
 
                         ]
                     },
-                    "effect1": {
+                    "Deploy_Route_Table_effect": {
                         "type": "string",
                         "metadata": {
                             "displayName": "Effect",
@@ -77,7 +130,7 @@
                         "policyDefinitionReferenceId": "Deploy_VNET_Gateway",
                         "parameters": {
                             "effect": {
-                                "value": "[[parameters('effect')]"
+                                "value": "[[parameters('Deploy_VNET_Gateway_effect')]"
                             },
                             "virtualNetworkGatewayId": {
                                 "value": "[[parameters('virtualNetworkGatewayId')]"
@@ -89,7 +142,7 @@
                         "policyDefinitionReferenceId": "Deploy_Route_Table",
                         "parameters": {
                             "effect": {
-                                "value": "[[parameters('effect1')]"
+                                "value": "[[parameters('Deploy_Route_Table_effect')]"
                             },
                             "requiredRoutes": {
                                 "value": "[[parameters('requiredRoutes')]"

@@ -1,7 +1,21 @@
 {
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
-	"parameters": {},
+	"parameters": {
+		"effect": {
+			"type": "string",
+			"metadata": {
+				"displayName": "Effect",
+				"description": "Enable or disable the execution of the policy"
+			},
+			"allowedValues": [
+				"Append",
+				"Deny",
+				"Disabled",
+				"Audit"
+			]
+		}
+	},
 	"resources": [
 		{
 			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
@@ -58,7 +72,7 @@
 							}
 						}
 					},
-							{
+					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/564feb30-bf6a-4854-b4bb-0d2d2d1e6c66",
 						"policyDefinitionReferenceId": "Enable-WAF-AppGW",
 						"parameters": {
@@ -67,7 +81,7 @@
 							}
 						}
 					},
-							{
+					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/dfc212af-17ea-423a-9dcb-91e2cb2caa6b",
 						"policyDefinitionReferenceId": "Azure-FrontDoor-Premium-WAF",
 						"parameters": {

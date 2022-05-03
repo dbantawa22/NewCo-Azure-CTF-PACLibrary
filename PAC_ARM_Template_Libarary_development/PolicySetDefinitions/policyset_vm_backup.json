@@ -17,7 +17,7 @@
                 "displayName": "Back up virtual machines",
                 "description": "Back up virtual machines",
                 "parameters": {
-                    "effect": {
+                    "Configure_Backup_With_Tag_effect": {
                         "type": "string",
                         "metadata": {
                             "displayName": "Effect",
@@ -31,11 +31,24 @@
                             "disabled",
                             "Disabled"
 
-                        ],
-                        "defaultValue": "DeployIfNotExists"
+                        ]
                     },
+                    "Configure_Backup_Without_Tag_effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy"
+                        },
+                        "allowedValues": [
+                            "auditIfNotExists",
+                            "AuditIfNotExists",
+                            "deployIfNotExists",
+                            "DeployIfNotExists",
+                            "disabled",
+                            "Disabled"
 
-
+                        ]
+                    },
                     "inclusionTagName": {
                         "type": "String",
                         "metadata": {
@@ -77,7 +90,7 @@
 
 
                             "effect": {
-                                "value": "[[parameters('effect')]"
+                                "value": "[[parameters('Configure_Backup_With_Tag_effect')]"
                             }
                         }
                     },
@@ -100,7 +113,7 @@
                                 ]
                             },
                             "effect": {
-                                "value": "[[parameters('effect')]"
+                                "value": "[[parameters('Configure_Backup_Without_Tag_effect')]"
                             }
 
 
