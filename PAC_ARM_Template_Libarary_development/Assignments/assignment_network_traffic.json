@@ -58,7 +58,7 @@
             }
         },
         "disableBgpPropagation": {
-            "type": "Boolean",
+            "type": "Bool",
             "metadata": {
                 "displayName": "DisableBgpPropagation",
                 "description": "Disable BGP Propagation"
