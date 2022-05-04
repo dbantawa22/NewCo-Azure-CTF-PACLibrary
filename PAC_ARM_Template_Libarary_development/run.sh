@@ -80,7 +80,19 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic_logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
+    ### az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
+    
+    echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
+    echo $DEPLOYMENT_NAME
+
+    az account set --name "Vitor MSDN Premium"
+    az account show
+
+    az deployment sub create --location eastus --name policy-set-assignment-allowed_locations_eastus --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus.parameters.json
+    az deployment sub create --location eastus2 --name policy-set-assignment-allowed_locations_eastus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus2.parameters.json
+    az deployment sub create --location northeurope --name policy-set-assignment-allowed_locations_northeurope --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_neu.parameters.json
+    az deployment sub create --location southuk --name policy-set-assignment-allowed_locations_southuk --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_suk.parameters.json
+    az deployment sub create --location westus2 --name policy-set-assignment-allowed_locations_westus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_wus2.parameters.json
 
 }
 
