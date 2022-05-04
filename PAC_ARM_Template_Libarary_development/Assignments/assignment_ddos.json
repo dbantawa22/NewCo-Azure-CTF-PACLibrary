@@ -52,9 +52,6 @@
             "DDOSProtect": "DDOS-Protect",
             "description": "Protect against distributed denial of service attacks",
             "displayName": "Protect against distributed denial of service attacks"
-        },
-        "roleAssignmentNames": {
-            "DDOSProtect": "[guid(concat(concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT'), variables('policyAssignmentNames').DDOSProtect))]"
         }
     },
     "resources": [
@@ -92,19 +89,6 @@
                 }
             }
         }
-        // {
-        //     "type": "Microsoft.Authorization/roleAssignments",
-        //     "apiVersion": "2019-04-01-preview",
-        //     "name": "[variables('roleAssignmentNames').DDOSProtect]",
-        //     "dependsOn": [
-        //         "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').DDOSProtect)]"
-        //     ],
-        //     "properties": {
-        //         "principalType": "ServicePrincipal",
-        //         "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
-        //         "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').DDOSProtect), '2019-09-01', 'Full' ).identity.principalId)]"
-        //     }
-        // }
     ],
     "outputs": {}
 }

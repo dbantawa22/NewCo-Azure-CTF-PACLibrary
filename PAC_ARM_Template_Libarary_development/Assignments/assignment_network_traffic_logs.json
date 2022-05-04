@@ -47,19 +47,6 @@
                 }
             }
         }
-        // {
-        //     "type": "Microsoft.Authorization/roleAssignments",
-        //     "apiVersion": "2019-04-01-preview",
-        //     "name": "[variables('roleAssignmentNames').EnforceCollectionLogs]",
-        //     "dependsOn": [
-        //         "[resourceId('Microsoft.Authorization/policyAssignments', variables('policyAssignmentNames').EnforceCollectionLogs)]"
-        //     ],
-        //     "properties": {
-        //         "principalType": "ServicePrincipal",
-        //         "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
-        //         "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').EnforceCollectionLogs), '2019-09-01', 'Full' ).identity.principalId)]"
-        //     }
-        // }
     ],
     "outputs": {
         "deploymentLocation": {
