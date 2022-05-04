@@ -1,36 +1,36 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "tagName1": {
+     "parameters": {
+        "Require_Tag_value_Resources_tagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Name",
                 "description": "Name of the tag, such as 'environment'"
             }
         },
-        "tagName2": {
+        "Require_Tag_value_Resource_Groups_tagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Name",
                 "description": "Name of the tag, such as 'environment'"
             }
         },
-        "tagName3": {
+        "Inherit_Tag_value_Resource_Groups_tagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Name",
                 "description": "Name of the tag, such as 'environment'"
             }
         },
-        "tagValue1": {
+        "Require_Tag_value_Resources_tagValue": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Value",
                 "description": "Value of the tag, such as 'production'"
             }
         },
-        "tagValue2": {
+        "Require_Tag_value_Resource_Groups_tagValue": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Value",
@@ -59,20 +59,20 @@
                 "policyDefinitionId": "[variables('policyDefinitions').tagging]",
                 "parameters": {
 
-                    "tagName1": {
-                        "value": "[parameters('tagName1')]"
+                    "Require_Tag_value_Resources_tagName": {
+                        "value": "[parameters('Require_Tag_value_Resources_tagName')]"
                     },
-                    "tagName2": {
-                        "value": "[parameters('tagName2')]"
+                    "Require_Tag_value_Resource_Groups_tagName": {
+                        "value": "[parameters('Require_Tag_value_Resource_Groups_tagName')]"
                     },
-                    "tagName3": {
-                        "value": "[parameters('tagName3')]"
+                    "Inherit_Tag_value_Resource_Groups_tagName": {
+                        "value": "[parameters('Inherit_Tag_value_Resource_Groups_tagName')]"
                     },
-                    "tagValue1": {
-                        "value": "[parameters('tagValue1')]"
+                    "Require_Tag_value_Resources_tagValue": {
+                        "value": "[parameters('Require_Tag_value_Resources_tagValue')]"
                     },
-                    "tagValue2": {
-                        "value": "[parameters('tagValue2')]"
+                    "Require_Tag_value_Resource_Groups_tagValue": {
+                        "value": "[parameters('Require_Tag_value_Resource_Groups_tagValue')]"
                     }
 
                 }

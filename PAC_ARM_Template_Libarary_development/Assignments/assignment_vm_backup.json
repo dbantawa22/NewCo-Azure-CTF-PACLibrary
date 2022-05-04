@@ -2,7 +2,55 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        
+        "Configure_Backup_With_Tag_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "auditIfNotExists",
+                "AuditIfNotExists",
+                "deployIfNotExists",
+                "DeployIfNotExists",
+                "disabled",
+                "Disabled"
+
+            ]
+        },
+        "Configure_Backup_Without_Tag_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "auditIfNotExists",
+                "AuditIfNotExists",
+                "deployIfNotExists",
+                "DeployIfNotExists",
+                "disabled",
+                "Disabled"
+
+            ]
+        },
+        "inclusionTagName": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Inclusion Tag Name",
+                "description": "Name of the tag to use for including VMs in the scope of this policy. This should be used along with the Inclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy"
+            },
+            "defaultValue": ""
+        },
+
+        "exclusionTagName": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Exclusion Tag Name",
+                "description": "Name of the tag to use for excluding VMs from the scope of this policy. This should be used along with the Exclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
+            },
+            "defaultValue": ""
+        }
     },
     "variables": {
         "policyDefinitions": {
@@ -22,7 +70,22 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').VMBackup]"
+                "policyDefinitionId": "[variables('policyDefinitions').VMBackup]",
+                "parameters": {
+
+                    "Configure_Backup_With_Tag_effect": {
+                        "value": "[parameters('Configure_Backup_With_Tag_effect')]"
+                    },
+                    "Configure_Backup_Without_Tag_effect": {
+                        "value": "[parameters('Configure_Backup_Without_Tag_effect')]"
+                    },
+                    "inclusionTagName": {
+                        "value": "[parameters('inclusionTagName')]"
+                    },
+                    "exclusionTagName": {
+                        "value": "[parameters('exclusionTagName')]"
+                    }
+                }
             }
         }
     ],
