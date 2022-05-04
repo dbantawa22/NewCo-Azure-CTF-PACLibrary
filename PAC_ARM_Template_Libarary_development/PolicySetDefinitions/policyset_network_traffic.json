@@ -2,57 +2,64 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-          "Deploy_VNET_Gateway_effect": {
-                        "type": "string",
-                        "metadata": {
-                            "displayName": "Effect",
-                            "description": "Enable or disable the execution of the policy"
-                        },
-                        "allowedValues": [
-                            "AuditIfNotExists",
-                            "Disabled"
+        "Deploy_VNET_Gateway_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "AuditIfNotExists",
+                "Disabled"
 
-                        ]
-                    },
-                    "Deploy_Route_Table_effect": {
-                        "type": "string",
-                        "metadata": {
-                            "displayName": "Effect",
-                            "description": "Enable or disable the execution of the policy"
-                        },
-                        "allowedValues": [
-                            "DeployIfNotExists",
-                            "Disabled"
+            ]
+        },
+        "Deploy_Route_Table_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "DeployIfNotExists",
+                "Disabled"
 
-                        ]
-                    },
-                    "virtualNetworkGatewayId": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Virtual network gateway Id",
-                            "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
-                        }
-                    },
+            ]
+        },
+        "virtualNetworkGatewayId": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Virtual network gateway Id",
+                "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
+            }
+        },
 
-                    "requiredRoutes": {
-                        "type": "Array",
+        "requiredRoutes": {
+            "type": "Array",
+            "metadata": {
+                "displayName": "requiredRoutes",
+                "description": "Routes that must exist in compliant route tables deployed by this policy"
+            }
+        },
+        "vnetRegion": {
+            "type": "String",
+            "metadata": {
+                "displayName": "vnetRegion",
+                "description": "Only VNets in this region will be evaluated against this policy"
+            }
+        },
+        "routeTableName": {
+            "type": "String",
+            "metadata": {
+                "displayName": "routeTableName",
+                "description": "Name of the route table automatically deployed by this policy"
+            }
+        },
+          "disableBgpPropagation": {
+                        "type": "Boolean",
                         "metadata": {
-                            "displayName": "requiredRoutes",
-                            "description": "Routes that must exist in compliant route tables deployed by this policy"
-                        }
-                    },
-                    "vnetRegion": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "vnetRegion",
-                            "description": "Only VNets in this region will be evaluated against this policy"
-                        }
-                    },
-                    "routeTableName": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "routeTableName",
-                            "description": "Name of the route table automatically deployed by this policy"
+                            "displayName": "DisableBgpPropagation",
+                            "description": "Disable BGP Propagation"
                         }
                     }
     },
@@ -122,6 +129,13 @@
                             "displayName": "routeTableName",
                             "description": "Name of the route table automatically deployed by this policy"
                         }
+                    },
+                    "disableBgpPropagation": {
+                        "type": "Boolean",
+                        "metadata": {
+                            "displayName": "DisableBgpPropagation",
+                            "description": "Disable BGP Propagation"
+                        }
                     }
                 },
                 "policyDefinitions": [
@@ -152,6 +166,9 @@
                             },
                             "routeTableName": {
                                 "value": "[[parameters('routeTableName')]"
+                            },
+                            "disableBgpPropagation": {
+                                "value": "[[parameters('disableBgpPropagation')]"
                             }
                         }
                     }

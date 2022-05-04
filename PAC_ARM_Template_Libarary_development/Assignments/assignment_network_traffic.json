@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "effect": {
+        "Deploy_VNET_Gateway_effect": {
             "type": "string",
             "metadata": {
                 "displayName": "Effect",
@@ -15,7 +15,7 @@
             ],
             "defaultValue": "AuditIfNotExists"
         },
-        "effect1": {
+        "Deploy_Route_Table_effect": {
             "type": "string",
             "metadata": {
                 "displayName": "Effect",
@@ -56,6 +56,13 @@
                 "displayName": "routeTableName",
                 "description": "Name of the route table automatically deployed by this policy"
             }
+        },
+        "disableBgpPropagation": {
+            "type": "Boolean",
+            "metadata": {
+                "displayName": "DisableBgpPropagation",
+                "description": "Disable BGP Propagation"
+            }
         }
     },
     "variables": {
@@ -73,16 +80,23 @@
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2019-09-01",
             "name": "[variables('policyAssignmentNames').EnforceNetworkTraffic]",
+            "location": "[parameters('vnetRegion')]",
+            "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/deployment_test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uksouth-user-MI": {}
+                }
+            },
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').EnforceNetworkTraffic]",
                 "parameters": {
-                    "effect": {
-                        "value": "[parameters('effect')]"
+                    "Deploy_VNET_Gateway_effect": {
+                        "value": "[parameters('Deploy_VNET_Gateway_effect')]"
                     },
-                    "effect1": {
-                        "value": "[parameters('effect1')]"
+                    "Deploy_Route_Table_effect": {
+                        "value": "[parameters('Deploy_Route_Table_effect')]"
                     },
                     "virtualNetworkGatewayId": {
                         "value": "[parameters('virtualNetworkGatewayId')]"
@@ -95,8 +109,10 @@
                     },
                     "routeTableName": {
                         "value": "[parameters('routeTableName')]"
+                    },
+                    "disableBgpPropagation": {
+                        "value": "[parameters('disableBgpPropagation')]"
                     }
-
 
                 }
 
