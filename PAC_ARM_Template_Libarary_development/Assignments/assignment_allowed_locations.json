@@ -24,7 +24,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "allowedlocations": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Allowed-Locations')]"
+            "allowedlocations": "[concat('/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e' , '/providers/Microsoft.Authorization/policysetDefinitions/Allowed-Locations')]"
         },
         "policyAssignmentNames": {
             "allowedlocations": "Allowed-Locations",
