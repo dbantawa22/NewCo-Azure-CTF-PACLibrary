@@ -25,7 +25,7 @@
 			"type": "Microsoft.Authorization/policySetDefinitions",
 			"apiVersion": "2019-09-01",
 			"name": "Allowed-Locations",
-			"scope": "[concat('/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e')]",
+			"scope": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e",
 			"properties": {
 				"metadata": {
 					"version": "1.0.0",
