@@ -3,7 +3,6 @@
 
 connect_deployment()
 {
-    #AZURE_SUBSCRIPTION_ID = '4ce27a75-a843-43b4-99ed-006804c35d7e'
     AZURE_SUBSCRIPTION_ID="4ce27a75-a843-43b4-99ed-006804c35d7e"
     echo $AZURE_SUBSCRIPTION_ID
 
@@ -64,15 +63,6 @@ connect_deployment()
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
 
-    # az account set --name "Vitor MSDN Premium"
-    # az account show
-
-    # az deployment sub create --location eastus --name policy-set-definition-allowed_locations_eastus --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus.parameters.json
-    # az deployment sub create --location eastus2 --name policy-set-definition-allowed_locations_eastus2 --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus2.parameters.json
-    # az deployment sub create --location northeurope --name policy-set-definition-allowed_locations_northeurope --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_neu.parameters.json
-    # az deployment sub create --location uksouth --name policy-set-definition-allowed_locations_southuk --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_suk.parameters.json
-    # az deployment sub create --location westus2 --name policy-set-definition-allowed_locations_westus2 --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_wus2.parameters.json
-
 
     echo '------------------- Policy Set Assignment --------------------'
     echo $DEPLOYMENT_NAME
@@ -95,13 +85,27 @@ connect_deployment()
     echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
     echo $DEPLOYMENT_NAME
 
-    az account set --name "Vitor MSDN Premium"
-    az account show
-
+    az account set --subscription "aa7b5893-24b8-48f5-9be6-5544ef964417"
+    az account set --name "Vitor - Visual Studio Enterprise Subscription"
     az deployment sub create --location eastus --name policy-set-assignment-allowed_locations_eastus --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus.parameters.json
-    az deployment sub create --location eastus2 --name policy-set-assignment-allowed_locations_eastus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus2.parameters.json
+
+    # az account set --subscription "aa7b5893-24b8-48f5-9be6-5544ef964417"
+    # az account set --name "Vitor - Visual Studio Enterprise Subscription"
+    # az deployment sub create --location eastus2 --name policy-set-assignment-allowed_locations_eastus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus2.parameters.json
+    
+    
+    az account set --subscription "7d0ec199-2cbe-447f-a0ff-f0d813582a21"
+    az account set --name "Professional 1"
     az deployment sub create --location northeurope --name policy-set-assignment-allowed_locations_northeurope --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_neu.parameters.json
+    
+    
+    az account set --subscription "4ce27a75-a843-43b4-99ed-006804c35d7e"
+    az account set --name "Vitor MSDN Premium"
     az deployment sub create --location uksouth --name policy-set-assignment-allowed_locations_southuk --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_suk.parameters.json
+    
+    
+    az account set --subscription "0808dcbf-2e54-48d8-9ef9-7e899fd4eddc"
+    az account set --name "Vitor - Visual Studio Professional Subscription"
     az deployment sub create --location westus2 --name policy-set-assignment-allowed_locations_westus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_wus2.parameters.json
 
 }
