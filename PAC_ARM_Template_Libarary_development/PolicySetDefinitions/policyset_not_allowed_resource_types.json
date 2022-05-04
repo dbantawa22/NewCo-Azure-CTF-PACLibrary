@@ -2,12 +2,25 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Audit",
+                "Deny",
+                "Disabled"
+
+            ]
+        }
     },
     "resources": [
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
-            "name": "Not-allowed-resource-types",
+            "name": "Not-allowed-RT",
             "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
             "properties": {
                 "metadata": {
@@ -28,8 +41,7 @@
                             "Deny",
                             "Disabled"
 
-                        ],
-                        "defaultValue": "Deny"
+                        ]
                     }
                 },
                 "policyDefinitions": [

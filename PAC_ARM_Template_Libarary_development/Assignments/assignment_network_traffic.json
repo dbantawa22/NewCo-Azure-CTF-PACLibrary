@@ -2,18 +2,72 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-       
+        "effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "AuditIfNotExists",
+                "Disabled"
+
+            ],
+            "defaultValue": "AuditIfNotExists"
+        },
+        "effect1": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "DeployIfNotExists",
+                "Disabled"
+
+            ],
+            "defaultValue": "DeployIfNotExists"
+        },
+        "virtualNetworkGatewayId": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Virtual network gateway Id",
+                "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
+            }
+        },
+
+        "requiredRoutes": {
+            "type": "Array",
+            "metadata": {
+                "displayName": "requiredRoutes",
+                "description": "Routes that must exist in compliant route tables deployed by this policy"
+            }
+        },
+        "vnetRegion": {
+            "type": "String",
+            "metadata": {
+                "displayName": "vnetRegion",
+                "description": "Only VNets in this region will be evaluated against this policy"
+            }
+        },
+        "routeTableName": {
+            "type": "String",
+            "metadata": {
+                "displayName": "routeTableName",
+                "description": "Name of the route table automatically deployed by this policy"
+            }
+        }
     },
     "variables": {
         "policyDefinitions": {
             "EnforceNetworkTraffic": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Enforce-network-traffic')]"
-         },
+        },
         "policyAssignmentNames": {
             "EnforceNetworkTraffic": "Enforce-network-traffic",
-            "description": "This policy sets enforces network traffic control",
-             "displayName": "Enforce network traffic control"
-         }
-        },
+            "description": "This policy sets enforces network traffic control.",
+            "displayName": "Enforce network traffic control"
+        }
+    },
     "resources": [
         {
             "type": "Microsoft.Authorization/policyAssignments",
@@ -22,9 +76,32 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').EnforceNetworkTraffic]"
+                "policyDefinitionId": "[variables('policyDefinitions').EnforceNetworkTraffic]",
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('effect')]"
+                    },
+                    "effect1": {
+                        "value": "[parameters('effect1')]"
+                    },
+                    "virtualNetworkGatewayId": {
+                        "value": "[parameters('virtualNetworkGatewayId')]"
+                    },
+                    "requiredRoutes": {
+                        "value": "[parameters('requiredRoutes')]"
+                    },
+                    "vnetRegion": {
+                        "value": "[parameters('vnetRegion')]"
+                    },
+                    "routeTableName": {
+                        "value": "[parameters('routeTableName')]"
+                    }
+
+
+                }
+
             }
-        }        
+        }
     ],
     "outputs": {}
 }

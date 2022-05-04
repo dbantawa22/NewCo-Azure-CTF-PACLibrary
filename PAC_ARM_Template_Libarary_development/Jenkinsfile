@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DIR = "/var/lib/jenkins/workspace/Newco-CTF-PAC-CloudCore/PAC_ARM_Template_Libarary_development"
-  }
+      }
 
   stages {
 

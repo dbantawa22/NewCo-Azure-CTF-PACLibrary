@@ -2,6 +2,27 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+          "effect": {
+                        "type": "string",
+                        "metadata": {
+                            "displayName": "Effect",
+                            "description": "Enable or disable the execution of the policy"
+                        },
+                        "allowedValues": [
+                            "DeployIfNotExists",
+                            "Disabled"
+
+                        ]},
+
+                    "eventHubRuleId": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "Event Hub Authorization Rule Id",
+                            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+                            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
+                            "assignPermissions": true
+                        }
+                    }
     },
     "resources": [
         {
@@ -27,9 +48,7 @@
                             "DeployIfNotExists",
                             "Disabled"
 
-                        ],
-                        "defaultValue": "Disabled"
-                    },
+                        ]},
 
                     "eventHubRuleId": {
                         "type": "String",
