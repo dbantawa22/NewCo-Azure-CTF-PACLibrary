@@ -32,9 +32,7 @@ connect_deployment()
 
 
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
-
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
-
+  
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_not_allowed_resource_types.json --name policy-Deployment-17
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
@@ -62,6 +60,17 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_diagnostic_settings.json --name policy-Deployment-10
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_log_storage.json --name policy-Deployment-11
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
+
+
+    az account set --name "Vitor MSDN Premium"
+    az account show
+
+    az deployment sub create --location eastus --name policy-set-definition-allowed_locations_eastus --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus.parameters.json
+    az deployment sub create --location eastus2 --name policy-set-definition-allowed_locations_eastus2 --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus2.parameters.json
+    az deployment sub create --location northeurope --name policy-set-definition-allowed_locations_northeurope --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_neu.parameters.json
+    az deployment sub create --location southuk --name policy-set-definition-allowed_locations_southuk --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_suk.parameters.json
+    az deployment sub create --location westus2 --name policy-set-definition-allowed_locations_westus2 --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_wus2.parameters.json
 
 
     echo '------------------- Policy Set Assignment --------------------'
