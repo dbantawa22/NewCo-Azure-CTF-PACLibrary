@@ -12,7 +12,7 @@
             "value": "/subscriptions/aa7b5893-24b8-48f5-9be6-5544ef964417/resourceGroups/connect-rg-network-eus1-01/providers/Microsoft.Network/virtualNetworkGateways/connect-vgw-eus1-01"
         },
         "requiredRoutes": {
-            "value": "default"
+            "value": ["default"]
         },
         "vnetRegion": {
             "value": "uksouth"
