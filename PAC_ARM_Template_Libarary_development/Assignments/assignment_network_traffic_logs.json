@@ -29,7 +29,7 @@
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2021-06-01",
             "name": "[variables('policyAssignmentNames').EnforceCollectionLogs]",
-            "location": "northeurope",
+            "location": "[deployment().location]",
             "identity": {
                 "type": "UserAssigned",
                 "userAssignedIdentities": {
@@ -61,5 +61,10 @@
         //     }
         // }
     ],
-    "outputs": {}
+    "outputs": {
+        "deploymentLocation": {
+            "type": "string",
+            "value": "[deployment().location]"
+        }
+    }
 }
