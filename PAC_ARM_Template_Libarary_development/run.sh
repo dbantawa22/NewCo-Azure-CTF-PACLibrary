@@ -18,13 +18,14 @@ connect_deployment()
     DEPLOYMENT_NAME="policy-"$LOCATION 
     AZ_PAC_LIBRARY_PATH="https://raw.githubusercontent.com/dbantawa22/NewCo-Azure-CTF-PACLibrary/main/"
 
+
     echo '------------------- Policy Definition --------------------'
+    echo $DEPLOYMENT_NAME
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
 
-    echo $DEPLOYMENT_NAME
-    echo '------------------- Policy Set Definition --------------------'
 
+    echo '------------------- Policy Set Definition --------------------'
     echo $DEPLOYMENT_NAME
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --name policy-network_traffic_logs
@@ -62,10 +63,8 @@ connect_deployment()
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_log_storage.json --name policy-Deployment-11
 
- 
 
     echo '------------------- Policy Set Assignment --------------------'
-
     echo $DEPLOYMENT_NAME
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
@@ -82,7 +81,6 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
-
 
 }
 
