@@ -44,7 +44,7 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_tagging.json --name policy-Deployment-14
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_keyvault.json --name policy-Deployment-4
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_keyvault.json --name policy-Deployment-4
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_enforce_AG_WAF.json --name policy-Deployment-5
 
