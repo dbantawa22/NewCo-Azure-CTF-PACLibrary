@@ -4,6 +4,9 @@
   "parameters": {
     "effect": {
       "value": "Deny"
+    },
+    "keyvault_purge_protection_effect": {
+      "value": "Deny"
     }
   }
 }
