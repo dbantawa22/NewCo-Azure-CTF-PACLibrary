@@ -4,7 +4,14 @@
     "parameters": {
       "keyvault_soft_delete_effect": {
         "value": "Deny"
+      },
+      "keyvault_hsm_purge_protection_effect": {
+        "value": "Deny"
+      },
+      "keyvault_purge_protection_effect": {
+        "value": "Deny"
       }
+      
     }
   }
 
