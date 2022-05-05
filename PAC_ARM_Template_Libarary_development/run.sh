@@ -61,10 +61,10 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
     ## Policy Set - KV TESTING ##    
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
     
     ## Policy Set - VM Sizes TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-vms --template-file ./PolicySetDefinitions/policyset_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-vms --template-file ./PolicySetDefinitions/policyset_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
     
 
     echo '------------------- Policy Set Assignments --------------------'
@@ -88,12 +88,12 @@ connect_deployment()
 
     ## Assignment - KV TESTING ##    
    
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
    
 
 
     ## Assignment - VM Sizes TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed-vms --template-file ./Assignments/assignment_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed-vms --template-file ./Assignments/assignment_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
 
 
 
