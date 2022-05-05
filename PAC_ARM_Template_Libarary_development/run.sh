@@ -44,8 +44,6 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_tagging.json --name policy-Deployment-14
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_keyvault.json --name policy-Deployment-4
-    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_enforce_AG_WAF.json --name policy-Deployment-5
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_ipforwarding.json --name policy-Deployment-6
@@ -62,7 +60,12 @@ connect_deployment()
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
-
+    ## Policy Set - KV TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
+    
+    ## Policy Set - VM Sizes TESTING ##    
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-vms --template-file ./PolicySetDefinitions/policyset_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
+    
 
     echo '------------------- Policy Set Assignment --------------------'
     echo $DEPLOYMENT_NAME
@@ -74,7 +77,6 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./Assignments/assignment_diagnostic_settings.json --name policy-set-assignment-deployment-10
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic --template-file ./Assignments/assignment_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-not_allowed_resource_types --template-file ./Assignments/assignment_not_allowed_resource_types.json --parameters ./Parameters/assignment_not_allowed_resource_types.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic_logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
@@ -83,6 +85,13 @@ connect_deployment()
     ### az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
     
 
+
+    ## Assignment - KV TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
+
+
+    ## Assignment - VM Sizes TESTING ##    
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed-vms --template-file ./Assignments/assignment_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
 
 
 
