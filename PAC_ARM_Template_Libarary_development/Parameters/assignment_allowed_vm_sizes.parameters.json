@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "allowed_values": {
-        "value": []
+        "value": "[Dv2, DSv2]"
       }
     }
   }
