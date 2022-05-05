@@ -87,7 +87,7 @@ connect_deployment()
 
 
     ## Assignment - KV TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault-hsmpurgeprotection --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault_hsmpurgeprotection.parameters.json
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault-purgeprotection --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault_purgeprotection.parameters.json
 
