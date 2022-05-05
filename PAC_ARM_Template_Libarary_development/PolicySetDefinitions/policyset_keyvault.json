@@ -2,7 +2,7 @@
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"effect": {
+		"keyvault_soft_delete_effect": {
 			"type": "string",
 			"metadata": {
 				"displayName": "Effect",
@@ -38,7 +38,7 @@
 				"displayName": "Key vaults should have soft delete and purge protection enabled.",
 				"description": "Deleting a key vault without soft delete enabled permanently deletes all secrets, keys, and certificates stored in the key vault. Accidental deletion of a key vault can lead to permanent data loss. Soft delete allows you to recover an accidentally deleted key vault for a configurable retention period. No one inside your organization or Microsoft will be able to purge your key vaults during the soft delete retention period.",
 				"parameters": {
-					"effect": {
+					"keyvault_soft_delete_effect": {
 						"type": "string",
 						"metadata": {
 							"displayName": "Effect",
@@ -67,7 +67,7 @@
 						"policyDefinitionReferenceId": "keyvault_soft_delete",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('effect')]"
+								"value": "[[parameters('keyvault_soft_delete_effect')]"
 							}
 						}
 					},
