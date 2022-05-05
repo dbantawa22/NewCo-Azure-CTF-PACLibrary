@@ -100,7 +100,7 @@
 				"policyDefinitions": [
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
-						"policyDefinitionReferenceId": "keyvault_soft_delete",
+						"policyDefinitionReferenceId": "keyvault_soft_delete_effect",
 						"parameters": {
 							"effect": {
 								"value": "[[parameters('keyvault_soft_delete_effect')]"
@@ -109,7 +109,7 @@
 					},
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
-						"policyDefinitionReferenceId": "keyvault_purge_protection",
+						"policyDefinitionReferenceId": "keyvault_purge_protection_effect",
 						"parameters": {
 							"effect": {
 								"value": "[[parameters('keyvault_purge_protection_effect')]"
@@ -118,7 +118,7 @@
 					},
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c39ba22d-4428-4149-b981-70acb31fc383",
-						"policyDefinitionReferenceId": "keyvault_hsm_purge_protection",
+						"policyDefinitionReferenceId": "keyvault_hsm_purge_protection_effect",
 						"parameters": {
 							"effect": {
 								"value": "[[parameters('keyvault_hsm_purge_protection_effect')]"
