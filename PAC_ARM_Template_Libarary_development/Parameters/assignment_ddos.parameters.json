@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "ddosName": {
+            "value": "ddosTest"
+        },
+        "ddosRegion": {
+            "value": "uksouth"
+        },
+        "rgName": {
+            "value": "test_RG_UKSouth"
+        },
+        "effect": {
+            "value": "Disabled"
+        }
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Deploy_VNET_Gateway_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "AuditIfNotExists",
+                "Disabled"
+
+            ],
+            "defaultValue": "AuditIfNotExists"
+        },
+        "Deploy_Route_Table_effect": {
+            "type": "string",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "DeployIfNotExists",
+                "Disabled"
+
+            ],
+            "defaultValue": "DeployIfNotExists"
+        },
+        "virtualNetworkGatewayId": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Virtual network gateway Id",
+                "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
+            }
+        },
+
+        "requiredRoutes": {
+            "type": "Array",
+            "metadata": {
+                "displayName": "requiredRoutes",
+                "description": "Routes that must exist in compliant route tables deployed by this policy"
+            }
+        },
+        "vnetRegion": {
+            "type": "String",
+            "metadata": {
+                "displayName": "vnetRegion",
+                "description": "Only VNets in this region will be evaluated against this policy"
+            }
+        },
+        "routeTableName": {
+            "type": "String",
+            "metadata": {
+                "displayName": "routeTableName",
+                "description": "Name of the route table automatically deployed by this policy"
+            }
+        },
+        "disableBgpPropagation": {
+            "type": "Bool",
+            "metadata": {
+                "displayName": "DisableBgpPropagation",
+                "description": "Disable BGP Propagation"
+            }
+        }
+    },
+    "variables": {
+        "policyDefinitions": {
+            "EnforceNetworkTraffic": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Enforce-network-traffic')]"
+        },
+        "policyAssignmentNames": {
+            "EnforceNetworkTraffic": "Enforce-network-traffic",
+            "description": "This policy sets enforces network traffic control.",
+            "displayName": "Enforce network traffic control"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policyAssignments",
+            "apiVersion": "2021-06-01",
+            "name": "[variables('policyAssignmentNames').EnforceNetworkTraffic]",
+            "location": "[deployment().location]",
+            "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/deployment_test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uksouth-user-MI": {}
+                }
+            },
+            "properties": {
+                "description": "[variables('policyAssignmentNames').description]",
+                "displayName": "[variables('policyAssignmentNames').displayName]",
+                "policyDefinitionId": "[variables('policyDefinitions').EnforceNetworkTraffic]",
+                "parameters": {
+                    "Deploy_VNET_Gateway_effect": {
+                        "value": "[parameters('Deploy_VNET_Gateway_effect')]"
+                    },
+                    "Deploy_Route_Table_effect": {
+                        "value": "[parameters('Deploy_Route_Table_effect')]"
+                    },
+                    "virtualNetworkGatewayId": {
+                        "value": "[parameters('virtualNetworkGatewayId')]"
+                    },
+                    "requiredRoutes": {
+                        "value": "[parameters('requiredRoutes')]"
+                    },
+                    "vnetRegion": {
+                        "value": "[parameters('vnetRegion')]"
+                    },
+                    "routeTableName": {
+                        "value": "[parameters('routeTableName')]"
+                    },
+                    "disableBgpPropagation": {
+                        "value": "[parameters('disableBgpPropagation')]"
+                    }
+
+                }
+
+            }
+        }
+    ],
+    "outputs": {}
+}
