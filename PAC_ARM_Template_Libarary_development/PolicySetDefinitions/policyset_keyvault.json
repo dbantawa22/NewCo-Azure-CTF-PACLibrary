@@ -2,7 +2,45 @@
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-	
+		"keyvault_soft_delete_effect": {
+			"type": "string",
+			"metadata": {
+				"displayName": "Effect",
+				"description": "Enable or disable the execution of the policy"
+			},
+			"allowedValues": [
+				"Append",
+				"Deny",
+				"Disabled",
+				"Audit"
+			]
+		},
+		"keyvault_purge_protection_effect": {
+			"type": "string",
+			"metadata": {
+				"displayName": "Effect",
+				"description": "Enable or disable the execution of the policy"
+			},
+			"allowedValues": [
+				"Append",
+				"Deny",
+				"Disabled",
+				"Audit"
+			]
+		},
+		"keyvault_hsm_purge_protection_effect": {
+			"type": "string",
+			"metadata": {
+				"displayName": "Effect",
+				"description": "Enable or disable the execution of the policy"
+			},
+			"allowedValues": [
+				"Append",
+				"Deny",
+				"Disabled",
+				"Audit"
+			]
+		}
 	},
 	"resources": [
 		{
@@ -62,7 +100,7 @@
 				"policyDefinitions": [
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
-						"policyDefinitionReferenceId": "keyvault_soft_delete_effect",
+						"policyDefinitionReferenceId": "keyvault_soft_delete",
 						"parameters": {
 							"effect": {
 								"value": "[[parameters('keyvault_soft_delete_effect')]"
@@ -71,7 +109,7 @@
 					},
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
-						"policyDefinitionReferenceId": "keyvault_purge_protection_effect",
+						"policyDefinitionReferenceId": "keyvault_purge_protection",
 						"parameters": {
 							"effect": {
 								"value": "[[parameters('keyvault_purge_protection_effect')]"
@@ -80,7 +118,7 @@
 					},
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c39ba22d-4428-4149-b981-70acb31fc383",
-						"policyDefinitionReferenceId": "keyvault_hsm_purge_protection_effect",
+						"policyDefinitionReferenceId": "keyvault_hsm_purge_protection",
 						"parameters": {
 							"effect": {
 								"value": "[[parameters('keyvault_hsm_purge_protection_effect')]"
