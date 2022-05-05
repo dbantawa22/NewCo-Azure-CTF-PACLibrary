@@ -24,7 +24,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
 
 
-    echo '------------------- Policy Set Definition --------------------'
+    echo '------------------- Policy Set Definitions --------------------'
     echo $DEPLOYMENT_NAME
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --name policy-network_traffic_logs
@@ -67,7 +67,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-vms --template-file ./PolicySetDefinitions/policyset_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
     
 
-    echo '------------------- Policy Set Assignment --------------------'
+    echo '------------------- Policy Set Assignments --------------------'
     echo $DEPLOYMENT_NAME
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
