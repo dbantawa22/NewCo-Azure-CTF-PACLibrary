@@ -30,9 +30,11 @@
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').allowedVMs]",
+                "parameters": {
                 "listOfAllowedSKUs": {
                     "value": "[parameters('listOfAllowedSKUs')]"
 
+                }
                 }
             }
         }
