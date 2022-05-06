@@ -63,8 +63,10 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
     
     ## Policy Set - VM Sizes TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-vms --template-file ./PolicySetDefinitions/policyset_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-vms --template-file ./PolicySetDefinitions/policyset_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
     
+    ## Policy Set - Tagging TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-tagging --template-file ./PolicySetDefinitions/policyset_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
 
     echo '------------------- Policy Set Assignments --------------------'
     echo $DEPLOYMENT_NAME
@@ -96,7 +98,6 @@ connect_deployment()
 
 
 
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
 
 
 
