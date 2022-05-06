@@ -2,20 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "location": {
-            "value": "ddosTest"
+        "Configure_Backup_With_Tag_effect": {
+            "value": "OwnerID"
         },
-        "tag_name": {
-            "value": "ddosTest"
+        "Configure_Backup_Without_Tag_effect": {
+            "value": "user@spinco.com"
         },
-        "tag_value": {
-            "value": "ddosTest"
+        "inclusionTagName": {
+            "value": "OwnerID"
         },
-        "backup_policy": {
-            "value": "ddosTest"
-        },
-        "effect": {
-            "value": "ddosTest"
+        "exclusionTagName": {
+            "value": "user@spinco.com"
         }
     }
 }

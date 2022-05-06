@@ -34,8 +34,6 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_not_allowed_resource_types.json --name policy-Deployment-17
 
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_vm_backup.json --name policy-Deployment-13
-
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./policyset_allowed_vm_sizes.json --name policy-Deployment-15
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-denyIP --template-file ./PolicySetDefinitions/policyset_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
@@ -69,7 +67,10 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-tagging --template-file ./PolicySetDefinitions/policyset_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
 
     ## Policy Set - Diagnostic Settings TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-diagnostic-settings --template-file ./PolicySetDefinitions/policyset_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-diagnostic-settings --template-file ./PolicySetDefinitions/policyset_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
+
+    ## Policy Set - VM Backup TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-vm-backup --template-file ./PolicySetDefinitions/policyset_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
@@ -97,10 +98,10 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
 
     # ## Assignment - Diagnostic Settings TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-diagnostic-settings --template-file ./Assignments/assignment_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-diagnostic-settings --template-file ./Assignments/assignment_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
 
-
-
+    # ## Assignment - VM Backup TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm-backup.json --parameters ./Parameters/assignment_vm-backup.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
