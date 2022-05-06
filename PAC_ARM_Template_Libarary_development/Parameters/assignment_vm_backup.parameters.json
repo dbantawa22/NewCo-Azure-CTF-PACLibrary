@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "Configure_Backup_With_Tag_effect": {
-            "value": "OwnerID"
+            "value": "deployIfNotExists"
         },
         "Configure_Backup_Without_Tag_effect": {
-            "value": "user@spinco.com"
+            "value": "deployIfNotExists"
         },
         "inclusionTagName": {
             "value": "OwnerID"
         },
         "exclusionTagName": {
-            "value": "user@spinco.com"
+            "value": "OwnerID"
         }
     }
 }
