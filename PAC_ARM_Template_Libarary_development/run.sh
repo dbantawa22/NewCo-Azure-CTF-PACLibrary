@@ -101,7 +101,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-diagnostic-settings --template-file ./Assignments/assignment_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
 
     # ## Assignment - VM Backup TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm-backup.json --parameters ./Parameters/assignment_vm-backup.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
