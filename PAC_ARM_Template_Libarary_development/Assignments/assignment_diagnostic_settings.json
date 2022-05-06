@@ -215,7 +215,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "DiagnosticSettings": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deploy-Diagnostic-Settings')]"
+            "DiagnosticSettings": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Diagnostic-Settings')]"
         },
         "policyAssignmentNames": {
             "DiagnosticSettings": "Diagnostic-Settings",
