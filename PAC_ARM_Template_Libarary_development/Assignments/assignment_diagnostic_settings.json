@@ -227,6 +227,9 @@
         {
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2019-09-01",
+            "identity": {
+                "type": "SystemAssigned"
+            },
             "name": "[variables('policyAssignmentNames').DiagnosticSettings]",
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
