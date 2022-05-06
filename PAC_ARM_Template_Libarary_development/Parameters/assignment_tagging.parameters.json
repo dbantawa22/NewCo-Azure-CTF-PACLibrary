@@ -2,19 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "tagName1": {
+        "Inherit_Tag_value_Resource_Groups_tagName": {
             "value": "OwnerID"
         },
-        "tagName2": {
+        "Require_Tag_value_Resource_Groups_tagName": {
             "value": "Data classification"
         },
-        "tagName3": {
+        "Require_Tag_value_Resources_tagName": {
             "value": "BU"
         },
-        "tagValue1": {
+        "Require_Tag_value_Resource_Groups_tagValue": {
             "value": "user@spinco.com"
         },
-        "tagValue2": {
+        "Require_Tag_value_Resources_tagValue": {
             "value": "SpinCo Data classifications"
         }
     }
