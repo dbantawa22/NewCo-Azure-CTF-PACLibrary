@@ -387,9 +387,9 @@
 	"resources": [
 		{
 			"type": "Microsoft.Authorization/policySetDefinitions",
-			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
-			"apiVersion": "2019-09-01",
+			"apiVersion": "2020-09-01",
 			"name": "Deploy-Private-DNS-Zones",
+			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
 			"properties": {
 				"metadata": {
 					"version": "1.0.0",
