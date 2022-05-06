@@ -217,7 +217,7 @@
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
-            "name": "Deploy-Diagnostic-Settings",
+            "name": "DiagnosticSettings",
             "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
             "properties": {
                 "metadata": {
