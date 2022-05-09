@@ -70,7 +70,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-diagnostic-settings --template-file ./PolicySetDefinitions/policyset_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
 
     ## Policy Set - VM Backup TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-vm-backup --template-file ./PolicySetDefinitions/policyset_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-vm-backup --template-file ./PolicySetDefinitions/policyset_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
