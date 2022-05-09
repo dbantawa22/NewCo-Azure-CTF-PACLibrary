@@ -654,7 +654,7 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"deployIfNotExists",
+							"DeployIfNotExists",
 							"Disabled"
 						]
 					},
