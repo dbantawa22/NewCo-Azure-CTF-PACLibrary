@@ -45,8 +45,6 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_ipforwarding.json --name policy-Deployment-6
     
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-Deployment-7 --template-file ./DINE-PrivateDNSZonesPolicySetDefinition.json 
-
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network_traffic --template-file ./PolicySetDefinitions/policyset_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json 
    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_diagnostic_settings.json --name policy-Deployment-10
@@ -71,8 +69,12 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-vm-backup --template-file ./PolicySetDefinitions/policyset_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
     ## Policy Set - DDoS TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-ddos --template-file ./PolicySetDefinitions/policyset_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-ddos --template-file ./PolicySetDefinitions/policyset_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
     
+    ## Policy Set - DINE TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
+
+
     echo '------------------- Policy Set Assignments --------------------'
     echo $DEPLOYMENT_NAME
 
@@ -92,7 +94,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed-vms --template-file ./Assignments/assignment_allowed_vm_sizes.json --parameters ./Parameters/assignment_allowed_vm_sizes.parameters.json
 
     # ## Assignment - DDoS TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-ddos --template-file ./Assignments/assignment_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-ddos --template-file ./Assignments/assignment_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
 
     # ## Assignment - Tagging TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
@@ -102,6 +104,9 @@ connect_deployment()
 
     # ## Assignment - VM Backup TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
+
+    # ## Assignment - DINE TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-Private-DNS-Zone --template-file ./Assignments/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
