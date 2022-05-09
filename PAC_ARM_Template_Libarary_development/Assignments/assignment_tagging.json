@@ -52,13 +52,13 @@
                 "policyDefinitionId": "[variables('policyDefinitions').tagging]",
                 "parameters": {
 
-                    "Require_Tag_value_Resources_tagName": {
+                    "Require_Tag_On_Resources_tagName": {
                         "value": "[parameters('Require_Tag_On_Resources_tagName')]"
                     },
-                    "Require_Tag_value_Resource_Groups_tagName": {
+                    "Require_Tag_On_Resource_Groups_tagName": {
                         "value": "[parameters('Require_Tag_On_Resource_Groups_tagName')]"
                     },
-                    "Inherit_Tag_value_Resource_Groups_tagName": {
+                    "Inherit_Tag_From_Resource_Groups_tagName": {
                         "value": "[parameters('Inherit_Tag_From_Resource_Groups_tagName')]"
                     }
                 }
