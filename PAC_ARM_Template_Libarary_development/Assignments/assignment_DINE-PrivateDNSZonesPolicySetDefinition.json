@@ -467,9 +467,9 @@
                     // "azureCognitiveSearchPrivateDnsZoneId": {
                     //     "value": "[parameters('azureCognitiveSearchPrivateDnsZoneId')]"
                     // },
-                    "DINE-Private-DNS-Azure-File-Sync_effect": {
-                        "value": "[parameters('DINE-Private-DNS-Azure-File-Sync_effect')]"
-                    },
+                    // "DINE-Private-DNS-Azure-File-Sync_effect": {
+                    //     "value": "[parameters('DINE-Private-DNS-Azure-File-Sync_effect')]"
+                    // },
                     // "DINE-Private-DNS-Azure-Web_effect": {
                     //     "value": "[parameters('DINE-Private-DNS-Azure-Web_effect')]"
                     // },
