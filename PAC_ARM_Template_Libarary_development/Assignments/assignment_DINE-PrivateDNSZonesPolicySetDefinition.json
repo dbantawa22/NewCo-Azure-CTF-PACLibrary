@@ -162,17 +162,17 @@
         //         "description": "Private DNS Zone Identifier"
         //     }
         // },
-        "DINE-Private-DNS-Azure-File-Sync_effect": {
-            "type": "string",
-            "metadata": {
-                "displayName": "Effect",
-                "description": "Enable or disable the execution of the policy"
-            },
-            "allowedValues": [
-                "DeployIfNotExists",
-                "Disabled"
-            ]
-        },
+        // "DINE-Private-DNS-Azure-File-Sync_effect": {
+        //     "type": "string",
+        //     "metadata": {
+        //         "displayName": "Effect",
+        //         "description": "Enable or disable the execution of the policy"
+        //     },
+        //     "allowedValues": [
+        //         "DeployIfNotExists",
+        //         "Disabled"
+        //     ]
+        // },
         // "DINE-Private-DNS-Azure-Web_effect": {
         //     "type": "string",
         //     "metadata": {
