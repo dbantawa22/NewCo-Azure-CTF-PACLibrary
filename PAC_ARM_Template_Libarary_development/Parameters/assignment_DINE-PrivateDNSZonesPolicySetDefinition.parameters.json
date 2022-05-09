@@ -38,7 +38,6 @@
         "azureCognitiveServicesPrivateDnsZoneId": {
             "value": "ChanduTest.com"
         },
-
         "azureIotHubsPrivateDnsZoneId": {
             "value": "ChanduTest.com"
         },
@@ -70,58 +69,58 @@
             "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-App_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Private-Endpoints_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-Site-Recovery_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-IoT_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-KeyVault_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-SignalR_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-AppServices_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventGridTopics_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-DiskAccess_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-CognitiveServices_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-IoTHubs_effect": {
             "value": "deployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventGridDomains_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-RedisCache_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-ACR_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventHubNamespace_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-MachineLearningWorkspace_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-ServiceBusNamespace_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-CognitiveSearch_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         }
     }
 }
