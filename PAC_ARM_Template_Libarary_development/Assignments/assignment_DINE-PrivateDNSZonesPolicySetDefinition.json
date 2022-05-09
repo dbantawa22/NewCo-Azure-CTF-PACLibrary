@@ -389,7 +389,7 @@
             "DeployPrivateDNSZones": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deploy-Private-DNS-Zones')]"
         },
         "policyAssignmentNames": {
-            "DeployPrivateDNSZones": "Allowed-VM-Sizes",
+            "DeployPrivateDNSZones": "Deploy-Private-DNS-Zones",
             "displayName": "Configure Azure PaaS services to use private DNS zones",
             "description": "This policy initiative is a group of policies that ensures private endpoints to Azure PaaS services are integrated with Azure Private DNS zones"
 
