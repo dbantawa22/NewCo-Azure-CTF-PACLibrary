@@ -2,6 +2,13 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "location": {
+            "type": "String",
+            "metadata": {
+                "displayName": "location",
+                "description": "Provide name for location"
+            }
+        },
         "ddosName": {
             "type": "String",
             "metadata": {
@@ -51,7 +58,7 @@
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2019-09-01",
             "name": "[variables('policyAssignmentNames').DDOSProtect]",
-            "location": "[deployment().location]",
+            // "location": "[deployment().location]",
             "identity": {
                 "type": "SystemAssigned"
             },
@@ -60,6 +67,9 @@
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').DDOSProtect]",
                 "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
                     "ddosName": {
                         "value": "[parameters('ddosName')]"
                     },

@@ -50,6 +50,13 @@
                 "displayName": "Protect against distributed denial of service attacks",
                 "description": "Protect against distributed denial of service attacks",
                 "parameters": {
+                    "location": {
+                        "type": "String",
+                        "metadata": {
+                            "displayName": "location",
+                            "description": "Provide name for location"
+                        }
+                    },
                     "ddosName": {
                         "type": "String",
                         "metadata": {
@@ -89,6 +96,9 @@
                         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MGMT_ROOT/providers/Microsoft.Authorization/policyDefinitions/Deploy-DDoSProtection",
                         "policyDefinitionReferenceId": "Deploy-DDoSProtection",
                         "parameters": {
+                            "location": {
+                                "value": "[[parameters('location')]"
+                            },
                             "ddosName": {
                                 "value": "[[parameters('ddosName')]"
                             },
