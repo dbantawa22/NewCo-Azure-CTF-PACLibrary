@@ -91,7 +91,7 @@
             "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventGridTopics_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-DiskAccess_effect": {
             "value": "DeployIfNotExists"
