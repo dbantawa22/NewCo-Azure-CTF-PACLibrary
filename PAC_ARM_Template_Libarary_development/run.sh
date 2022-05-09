@@ -29,7 +29,6 @@ connect_deployment()
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --name policy-network_traffic_logs
 
-
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_not_allowed_resource_types.json --name policy-Deployment-17
@@ -39,7 +38,6 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-denyIP --template-file ./PolicySetDefinitions/policyset_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./DENY-PublicEndpointsPolicySetDefinition.json --name policy-Deployment-3
-
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_enforce_AG_WAF.json --name policy-Deployment-5
 
@@ -74,6 +72,9 @@ connect_deployment()
     ## Policy Set - DINE TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
+    # ## Assignment - IP Forwarding TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-IP-Forwarding --template-file ./PolicySetDefinitions/policyset_ipforwarding.json
+
 
     echo '------------------- Policy Set Assignments --------------------'
     echo $DEPLOYMENT_NAME
@@ -84,8 +85,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-not_allowed_resource_types --template-file ./Assignments/assignment_not_allowed_resource_types.json --parameters ./Parameters/assignment_not_allowed_resource_types.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic_logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
-    ### az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
-
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
     ## Assignment - KV TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-keyvault --template-file ./Assignments/assignment_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
@@ -97,7 +97,7 @@ connect_deployment()
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-ddos --template-file ./Assignments/assignment_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
 
     # ## Assignment - Tagging TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
 
     # ## Assignment - Diagnostic Settings TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-diagnostic-settings --template-file ./Assignments/assignment_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
@@ -105,8 +105,11 @@ connect_deployment()
     # ## Assignment - VM Backup TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
-    # ## Assignment - DNS Zone DINE TESTING ##    
+    # ## Assignment - DNS Zone DINE TESTING ##
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-Private-DNS-Zone --template-file ./Assignments/assignment_DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
+
+    # ## Assignment - IP Forwarding TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-IP-Forwarding --template-file ./Assignments/assignment_ipforwarding.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
@@ -120,16 +123,13 @@ connect_deployment()
     # # az account set --name "Vitor - Visual Studio Enterprise Subscription"
     # # az deployment sub create --location eastus2 --name policy-set-assignment-allowed_locations_eastus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_eus2.parameters.json
     
-    
     # az account set --subscription "7d0ec199-2cbe-447f-a0ff-f0d813582a21"
     # az account set --name "Professional 1"
     # az deployment sub create --location northeurope --name policy-set-assignment-allowed_locations_northeurope --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_neu.parameters.json
     
-    
     # az account set --subscription "4ce27a75-a843-43b4-99ed-006804c35d7e"
     # az account set --name "Vitor MSDN Premium"
     # az deployment sub create --location uksouth --name policy-set-assignment-allowed_locations_southuk --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_suk.parameters.json
-    
     
     # az account set --subscription "0808dcbf-2e54-48d8-9ef9-7e899fd4eddc"
     # az account set --name "Vitor - Visual Studio Professional Subscription"
