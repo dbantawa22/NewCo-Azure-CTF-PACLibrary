@@ -6,7 +6,8 @@
             "type": "String",
             "metadata": {
                 "displayName": "location",
-                "description": "Deployment location for Managed Identity"
+                "description": "Deployment location for Managed Identity",
+                "strongType": "location"
             }
         },
         "ddosName": {
@@ -61,7 +62,8 @@
                         "type": "String",
                         "metadata": {
                             "displayName": "location",
-                            "description": "Provide name for location"
+                            "description": "Deployment location for Managed Identity",
+                            "strongType": "location"
                         }
                     },
                     "ddosName": {
