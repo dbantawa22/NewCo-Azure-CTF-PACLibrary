@@ -94,7 +94,7 @@
             "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-DiskAccess_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-CognitiveServices_effect": {
             "value": "DeployIfNotExists"
