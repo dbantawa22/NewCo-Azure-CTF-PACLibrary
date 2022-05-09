@@ -67,7 +67,7 @@
             "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-Web_effect": {
-            "value": "deployIfNotExists"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-App_effect": {
             "value": "deployIfNotExists"
