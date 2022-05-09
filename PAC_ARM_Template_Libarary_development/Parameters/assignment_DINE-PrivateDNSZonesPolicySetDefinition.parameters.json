@@ -76,7 +76,7 @@
             "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-Site-Recovery_effect": {
-            "value": "DeployIfNotExists"
+            "value": "deployIfNotExists"
         },
         "DINE-Private-DNS-Azure-IoT_effect": {
             "value": "DeployIfNotExists"
