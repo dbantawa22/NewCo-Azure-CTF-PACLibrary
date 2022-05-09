@@ -79,7 +79,7 @@
             "value": "deployIfNotExists"
         },
         "DINE-Private-DNS-Azure-IoT_effect": {
-            "value": "DeployIfNotExists"
+            "value": "deployIfNotExists"
         },
         "DINE-Private-DNS-Azure-KeyVault_effect": {
             "value": "deployIfNotExists"
