@@ -3,125 +3,125 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "azureFilePrivateDnsZoneId": {
-            "value": "[parameters('azureFilePrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureWebPrivateDnsZoneId": {
-            "value": "[parameters('azureWebPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureBatchPrivateDnsZoneId": {
-            "value": "[parameters('azureBatchPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureAppPrivateDnsZoneId": {
-            "value": "[parameters('azureAppPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureAsrPrivateDnsZoneId": {
-            "value": "[parameters('azureAsrPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureIotPrivateDnsZoneId": {
-            "value": "[parameters('azureIotPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureKeyVaultPrivateDnsZoneId": {
-            "value": "[parameters('azureKeyVaultPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureSignalRPrivateDnsZoneId": {
-            "value": "[parameters('azureSignalRPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureAppServicesPrivateDnsZoneId": {
-            "value": "[parameters('azureAppServicesPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureEventGridTopicsPrivateDnsZoneId": {
-            "value": "[parameters('azureEventGridTopicsPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureDiskAccessPrivateDnsZoneId": {
-            "value": "[parameters('azureDiskAccessPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureCognitiveServicesPrivateDnsZoneId": {
-            "value": "[parameters('azureCognitiveServicesPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
 
         "azureIotHubsPrivateDnsZoneId": {
-            "value": "[parameters('azureIotHubsPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureEventGridDomainsPrivateDnsZoneId": {
-            "value": "[parameters('azureEventGridDomainsPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureRedisCachePrivateDnsZoneId": {
-            "value": "[parameters('azureRedisCachePrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureAcrPrivateDnsZoneId": {
-            "value": "[parameters('azureAcrPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureEventHubNamespacePrivateDnsZoneId": {
-            "value": "[parameters('azureEventHubNamespacePrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureMachineLearningWorkspacePrivateDnsZoneId": {
-            "value": "[parameters('azureMachineLearningWorkspacePrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureServiceBusNamespacePrivateDnsZoneId": {
-            "value": "[parameters('azureServiceBusNamespacePrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "azureCognitiveSearchPrivateDnsZoneId": {
-            "value": "[parameters('azureCognitiveSearchPrivateDnsZoneId')]"
+            "value": "ChanduTest.com"
         },
         "DINE-Private-DNS-Azure-File-Sync_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-File-Sync_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-Web_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-Web_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-App_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-App_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Private-Endpoints_effect": {
-            "value": "[parameters('DINE-Private-DNS-Private-Endpoints_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-Site-Recovery_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-Site-Recovery_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-IoT_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-IoT_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-KeyVault_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-KeyVault_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-SignalR_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-SignalR_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-AppServices_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-AppServices_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventGridTopics_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-EventGridTopics_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-DiskAccess_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-DiskAccess_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-CognitiveServices_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-CognitiveServices_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-IoTHubs_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-IoTHubs_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventGridDomains_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-EventGridDomains_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-RedisCache_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-RedisCache_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-ACR_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-ACR_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-EventHubNamespace_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-EventHubNamespace_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-MachineLearningWorkspace_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-MachineLearningWorkspace_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-ServiceBusNamespace_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-ServiceBusNamespace_effect')]"
+            "value": "DeployIfNotExists"
         },
         "DINE-Private-DNS-Azure-CognitiveSearch_effect": {
-            "value": "[parameters('DINE-Private-DNS-Azure-CognitiveSearch_effect')]"
+            "value": "DeployIfNotExists"
         }
     }
 }
