@@ -753,10 +753,10 @@
     },
     "variables": {
         "policyDefinitions": {
-            "DeployDiagnosticsLogAnalytics": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deploy-Diagnostics-LogAnalytics')]"
+            "DeployDiagnosticsLogAnalytics": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deploy-Diagnostics')]"
         },
         "policyAssignmentNames": {
-            "DeployDiagnosticsLogAnalytics": "Deploy-Diagnostics-LogAnalytics",
+            "DeployDiagnosticsLogAnalytics": "Deploy-Diagnostics",
             "description": "This policy set deploys the configurations of application Azure resources to forward diagnostic logs and metrics to an Azure Log Analytics workspace. See the list of policies of the services that are included ",
             "displayName": "Deploy Diagnostic Settings to Azure Services"
 
