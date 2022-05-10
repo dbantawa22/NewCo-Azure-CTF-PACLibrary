@@ -196,7 +196,7 @@
 		{
 			"type": "Microsoft.Authorization/policySetDefinitions",
 			"apiVersion": "2020-09-01",
-			"name": "Deny-public-IP",
+			"name": "Deny_Audit_Resources",
 			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
 			"properties": {
 				"metadata": {
