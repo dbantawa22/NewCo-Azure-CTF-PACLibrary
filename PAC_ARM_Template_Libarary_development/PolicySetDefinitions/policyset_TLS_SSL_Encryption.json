@@ -330,12 +330,15 @@
             ]
         }
     },
+    "variables": {
+        "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]"
+    },
     "resources": [
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
             "name": "TSL-SSL-Encryption",
-            "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
+            "scope": "variables('scope')",
             "properties": {
                 "metadata": {
                     "version": "1.0.0",
@@ -702,7 +705,7 @@
                 },
                 "PolicyDefinitions": [
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-httpsonly')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-httpsonly')]",
                         "policyDefinitionReferenceId": "AppServiceHttpEffect",
                         "parameters": {
                             "effect": {
@@ -711,7 +714,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-latestTLS')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-latestTLS')]",
                         "policyDefinitionReferenceId": "AppServiceminTlsVersion",
                         "parameters": {
                             "effect": {
@@ -750,7 +753,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceApiApp-http')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceApiApp-http')]",
                         "policyDefinitionReferenceId": "APIAppServiceHttpsEffect",
                         "parameters": {
                             "effect": {
@@ -759,7 +762,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceFunctionApp-http')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceFunctionApp-http')]",
                         "policyDefinitionReferenceId": "FunctionServiceHttpsEffect",
                         "parameters": {
                             "effect": {
@@ -798,7 +801,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-MySql-http')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-MySql-http')]",
                         "policyDefinitionReferenceId": "MySQLEnableSSLEffect",
                         "parameters": {
                             "effect": {
@@ -810,7 +813,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deploy-PostgreSQL-sslEnforcement')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-PostgreSQL-sslEnforcement')]",
                         "policyDefinitionReferenceId": "PostgreSQLEnableSSLDeployEffect",
                         "parameters": {
                             "effect": {
@@ -822,7 +825,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-PostgreSql-http')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-PostgreSql-http')]",
                         "policyDefinitionReferenceId": "PostgreSQLEnableSSLEffect",
                         "parameters": {
                             "effect": {
@@ -834,7 +837,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-sslEnforcement')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-sslEnforcement')]",
                         "policyDefinitionReferenceId": "RedisTLSDeployEffect",
                         "parameters": {
                             "effect": {
@@ -846,7 +849,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort')]",
                         "policyDefinitionReferenceId": "RedisdisableNonSslPort",
                         "parameters": {
                             "effect": {
@@ -855,7 +858,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-Redis-http')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Redis-http')]",
                         "policyDefinitionReferenceId": "RedisDenyhttps",
                         "parameters": {
                             "effect": {
@@ -867,7 +870,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deploy-SqlMi-minTLS')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-SqlMi-minTLS')]",
                         "policyDefinitionReferenceId": "SQLManagedInstanceTLSDeployEffect",
                         "parameters": {
                             "effect": {
@@ -879,7 +882,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-SqlMi-minTLS')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-SqlMi-minTLS')]",
                         "policyDefinitionReferenceId": "SQLManagedInstanceTLSEffect",
                         "parameters": {
                             "effect": {
@@ -891,7 +894,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deploy-SQL-minTLS')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-SQL-minTLS')]",
                         "policyDefinitionReferenceId": "SQLServerTLSDeployEffect",
                         "parameters": {
                             "effect": {
@@ -903,7 +906,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-Sql-minTLS')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Sql-minTLS')]",
                         "policyDefinitionReferenceId": "SQLServerTLSEffect",
                         "parameters": {
                             "effect": {
@@ -915,7 +918,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deny-Storage-minTLS')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Storage-minTLS')]",
                         "policyDefinitionReferenceId": "StorageHttpsEnabledEffect",
                         "parameters": {
                             "effect": {
@@ -927,7 +930,7 @@
                         }
                     },
                     {
-                        "policyDefinitionId": "[concat(resources().scope, '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement')]",
+                        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement')]",
                         "policyDefinitionReferenceId": "StorageDeployHttpsEnabledEffect",
                         "parameters": {
                             "effect": {
