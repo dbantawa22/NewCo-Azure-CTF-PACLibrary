@@ -69,14 +69,17 @@ connect_deployment()
     ## Policy Set - DDoS TESTING ##    
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-ddos --template-file ./PolicySetDefinitions/policyset_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
     
-    ## Policy Set - DINE TESTING ##    
+    ## Policy Set - Private DNS TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
-    # ## Assignment - IP Forwarding TESTING ##    
+    # ## Policy Set - IP Forwarding TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-IP-Forwarding --template-file ./PolicySetDefinitions/policyset_ipforwarding.json
 
-    # ## Assignment - TLS SSL Encryption in Transit TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-TLS-SSL --template-file ./PolicySetDefinitions/policyset_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
+    # ## Policy Set - TLS SSL Encryption in Transit TESTING ##    
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-TLS-SSL --template-file ./PolicySetDefinitions/policyset_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
+
+    # ## Policy Set - Deny Audit Resources with Encryption TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Deny-Audit-Resources-with-Encryption --template-file ./PolicySetDefinitions/policyset_deny_audit_resources.json --parameters ./Parameters/assignment_deny_audit_resources.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
@@ -115,7 +118,10 @@ connect_deployment()
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-IP-Forwarding --template-file ./Assignments/assignment_ipforwarding.json
 
     # ## Assignment - TLS SSL Encryption in Transit TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-TLS-SSL --template-file ./Assignments/assignment_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-TLS-SSL --template-file ./Assignments/assignment_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
+
+    # ## Assignment - Deny Audit Resources with Encryption TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Deny-Audit-Resources-with-Encryption --template-file ./Assignments/assignment_deny_audit_resources.json --parameters ./Parameters/assignment_deny_audit_resources.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
