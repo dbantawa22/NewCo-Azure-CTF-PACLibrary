@@ -200,8 +200,8 @@
 			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
 			"properties": {
 				"metadata": {
-					"version": "2.0.0",
-					"category": "Network"
+					"version": "1.0.0",
+					"category": "Encryption"
 				},
 				"description": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
 				"displayName": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
