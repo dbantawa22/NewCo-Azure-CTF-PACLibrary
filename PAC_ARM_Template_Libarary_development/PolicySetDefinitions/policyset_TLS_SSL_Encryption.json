@@ -337,7 +337,7 @@
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2020-09-01",
-            "name": "TSL-SSL-Encryption",
+            "name": "TLS-SSL-Encryption",
             "scope": "[variables('scope')]",
             "properties": {
                 "metadata": {

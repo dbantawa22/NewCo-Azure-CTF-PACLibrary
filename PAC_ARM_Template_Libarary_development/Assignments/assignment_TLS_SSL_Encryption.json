@@ -360,10 +360,10 @@
     },
     "variables": {
         "policyDefinitions": {
-            "TSLSSLEncryption": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/TSL-SSL-Encryption')]"
+            "TLSSSLEncryption": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/TLS-SSL-Encryption')]"
         },
         "policyAssignmentNames": {
-            "TSLSSLEncryption": "TSL-SSL-Encryption",
+            "TLSSSLEncryption": "TLS-SSL-Encryption",
             "description": "Choose either Deploy if not exist and append in combination with audit or Select Deny in the Policy effect. Deny polices shift left. Deploy if not exist and append enforce but can be changed, and because missing existence condition require then the combination of Audit.",
             "displayName": "Deny, Deploy, or Append TLS requirements and SSL enforcement on resources without Encryption in transit"
         }
@@ -372,7 +372,7 @@
         {
             "type": "Microsoft.Authorization/policyAssignments",
             "apiVersion": "2021-06-01",
-            "name": "[variables('policyAssignmentNames').TSLSSLEncryption]",
+            "name": "[variables('policyAssignmentNames').TLSSSLEncryption]",
             "location": "[deployment().location]",
             "identity": {
                 "type": "UserAssigned",
@@ -383,7 +383,7 @@
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
-                "policyDefinitionId": "[variables('policyDefinitions').TSLSSLEncryption]",
+                "policyDefinitionId": "[variables('policyDefinitions').TLSSSLEncryption]",
                 "parameters": {
                     "AppServiceHttpEffect": {
                         "value": "[parameters('AppServiceHttpEffect')]"
