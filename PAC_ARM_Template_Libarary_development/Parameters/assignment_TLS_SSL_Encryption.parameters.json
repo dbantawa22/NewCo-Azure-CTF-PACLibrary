@@ -82,6 +82,9 @@
         },
         "StorageMinimumTlsVersion": {
             "value": "TLS1_2"
+        },
+        "StorageHttpsEnabledEffect": {
+            "value": "Audit"
         }
     }
 }
