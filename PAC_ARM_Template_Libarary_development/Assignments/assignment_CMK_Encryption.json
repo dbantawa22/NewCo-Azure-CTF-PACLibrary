@@ -194,10 +194,10 @@
 	},
 	"variables": {
 		"policyDefinitions": {
-			"DenyAuditResources": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deny_Audit_Resources')]"
+			"CMKEncryption": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/CMK_Encryption')]"
 		},
 		"policyAssignmentNames": {
-			"DenyAuditResources": "Deny_Audit_Resources",
+			"CMKEncryption": "CMK_Encryption",
 			"description": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
 			"displayName": "Deny or Audit resources without Encryption with a customer-managed key (CMK)"
 		}
@@ -206,7 +206,7 @@
 		{
 			"type": "Microsoft.Authorization/policyAssignments",
 			"apiVersion": "2021-06-01",
-			"name": "[variables('policyAssignmentNames').DenyAuditResources]",
+			"name": "[variables('policyAssignmentNames').CMKEncryption]",
 			"location": "[deployment().location]",
 			"identity": {
 				"type": "UserAssigned",
@@ -217,7 +217,7 @@
 			"properties": {
 				"description": "[variables('policyAssignmentNames').description]",
 				"displayName": "[variables('policyAssignmentNames').displayName]",
-				"policyDefinitionId": "[variables('policyDefinitions').DenyAuditResources]",
+				"policyDefinitionId": "[variables('policyDefinitions').CMKEncryption]",
 				"parameters": {
 					"ACRCmkEffect": {
 						"value": "[parameters('ACRCmkEffect')]"

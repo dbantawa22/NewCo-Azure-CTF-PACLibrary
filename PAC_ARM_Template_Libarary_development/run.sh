@@ -79,7 +79,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-TLS-SSL --template-file ./PolicySetDefinitions/policyset_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
 
     # ## Policy Set - Deny Audit Resources with Encryption TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Deny-Audit-Resources-with-Encryption --template-file ./PolicySetDefinitions/policyset_deny_audit_resources.json --parameters ./Parameters/assignment_deny_audit_resources.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-CMK-Encryption --template-file ./PolicySetDefinitions/policyset_CMK_Encryption.json --parameters ./Parameters/assignment_CMK_Encryption.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
@@ -121,7 +121,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-TLS-SSL --template-file ./Assignments/assignment_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
 
     # ## Assignment - Deny Audit Resources with Encryption TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-Deny-Audit-Resources-with-Encryption --template-file ./Assignments/assignment_deny_audit_resources.json --parameters ./Parameters/assignment_deny_audit_resources.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-CMK_Encryption --template-file ./Assignments/assignment_CMK_Encryption.json --parameters ./Parameters/assignment_CMK_Encryption.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
