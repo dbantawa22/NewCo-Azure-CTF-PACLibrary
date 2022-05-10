@@ -76,10 +76,13 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-IP-Forwarding --template-file ./PolicySetDefinitions/policyset_ipforwarding.json
 
     # ## Policy Set - TLS SSL Encryption in Transit TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-TLS-SSL --template-file ./PolicySetDefinitions/policyset_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-TLS-SSL --template-file ./PolicySetDefinitions/policyset_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
 
     # ## Policy Set - Deny Audit Resources with Encryption TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-CMK-Encryption --template-file ./PolicySetDefinitions/policyset_CMK_Encryption.json --parameters ./Parameters/assignment_CMK_Encryption.parameters.json
+
+    # ## Policy Set - Deploy Diagnostic Settings for Azure Resources TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-deploy-DiagnosticSettings --template-file ./PolicySetDefinitions/policyset_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
@@ -118,10 +121,13 @@ connect_deployment()
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-IP-Forwarding --template-file ./Assignments/assignment_ipforwarding.json
 
     # ## Assignment - TLS SSL Encryption in Transit TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-TLS-SSL --template-file ./Assignments/assignment_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-TLS-SSL --template-file ./Assignments/assignment_TLS_SSL_Encryption.json --parameters ./Parameters/assignment_TLS_SSL_Encryption.parameters.json
 
     # ## Assignment - Deny Audit Resources with Encryption TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-CMK_Encryption --template-file ./Assignments/assignment_CMK_Encryption.json --parameters ./Parameters/assignment_CMK_Encryption.parameters.json
+
+    # ## Assignment - Deploy Diagnostic Settings for Azure Resources TESTING ##    
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-definition-deploy-DiagnosticSettings --template-file ./Assignments/assignment_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
@@ -146,6 +152,7 @@ connect_deployment()
     # az account set --subscription "0808dcbf-2e54-48d8-9ef9-7e899fd4eddc"
     # az account set --name "Vitor - Visual Studio Professional Subscription"
     # az deployment sub create --location westus2 --name policy-set-assignment-allowed_locations_westus2 --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations_wus2.parameters.json
+
 
 }
 

@@ -751,6 +751,10 @@
             }
         }
     },
+    "variables": {
+        "scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]"
+    },
+
     "resources": [
         {
             "type": "Microsoft.Authorization/policySetDefinitions",
