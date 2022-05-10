@@ -15810,7 +15810,7 @@
                             }
                         ]
                     },
-                    "name": "Enforce-EncryptTransit"
+                    "name": "TLS-SSL-Encryption"
                 },
                 {
                     "properties": {
