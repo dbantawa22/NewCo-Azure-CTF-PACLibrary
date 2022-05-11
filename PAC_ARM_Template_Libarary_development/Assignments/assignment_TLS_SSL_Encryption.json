@@ -4,7 +4,6 @@
     "parameters": {
         "AppServiceHttpEffect": {
             "type": "String",
-            "defaultValue": "Append",
             "allowedValues": [
                 "Append",
                 "Disabled"
@@ -16,7 +15,6 @@
         },
         "AppServiceTlsVersionEffect": {
             "type": "String",
-            "defaultValue": "Append",
             "allowedValues": [
                 "Append",
                 "Disabled"
@@ -28,7 +26,6 @@
         },
         "AppServiceminTlsVersion": {
             "type": "String",
-            "defaultValue": "1.2",
             "allowedValues": [
                 "1.2",
                 "1.0",
@@ -45,7 +42,6 @@
                 "description": "App Service API App. Only Audit, deny not possible as it is a related resource.  Upgrade to the latest TLS version."
             },
             "type": "String",
-            "defaultValue": "AuditIfNotExists",
             "allowedValues": [
                 "AuditIfNotExists",
                 "Disabled"
@@ -57,7 +53,6 @@
                 "description": "Choose Deny or Audit in combination with Append policy. Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -70,7 +65,6 @@
                 "description": "Only Audit, deny not possible as it is a related resource. Upgrade to the latest TLS version."
             },
             "type": "String",
-            "defaultValue": "AuditIfNotExists",
             "allowedValues": [
                 "AuditIfNotExists",
                 "Disabled"
@@ -82,7 +76,6 @@
                 "description": "App Service Function App. Choose Deny or Audit in combination with Append policy. Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -95,7 +88,6 @@
                 "description": "Only Audit, deny not possible as it is a related resource. Upgrade to the latest TLS version."
             },
             "type": "String",
-            "defaultValue": "AuditIfNotExists",
             "allowedValues": [
                 "AuditIfNotExists",
                 "Disabled"
@@ -107,7 +99,6 @@
                 "description": "Choose Deny or Audit in combination with Append policy. Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -120,7 +111,6 @@
                 "description": "This policy enforces HTTPS ingress in a Kubernetes cluster. This policy is generally available for Kubernetes Service (AKS), and preview for AKS Engine and Azure Arc enabled Kubernetes. For instructions on using this policy, visit https://aka.ms/kubepolicydoc."
             },
             "type": "String",
-            "defaultValue": "deny",
             "allowedValues": [
                 "audit",
                 "deny",
@@ -129,7 +119,6 @@
         },
         "MySQLEnableSSLDeployEffect": {
             "type": "String",
-            "defaultValue": "DeployIfNotExists",
             "allowedValues": [
                 "DeployIfNotExists",
                 "Disabled"
@@ -145,7 +134,6 @@
                 "description": "Azure Database for MySQL supports connecting your Azure Database for MySQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -154,7 +142,6 @@
         },
         "MySQLminimalTlsVersion": {
             "type": "String",
-            "defaultValue": "TLS1_2",
             "allowedValues": [
                 "TLS1_2",
                 "TLS1_0",
@@ -168,7 +155,6 @@
         },
         "PostgreSQLEnableSSLDeployEffect": {
             "type": "String",
-            "defaultValue": "DeployIfNotExists",
             "allowedValues": [
                 "DeployIfNotExists",
                 "Disabled"
@@ -184,7 +170,6 @@
                 "description": "Azure Database for PostgreSQL supports connecting your Azure Database for PostgreSQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -193,7 +178,6 @@
         },
         "PostgreSQLminimalTlsVersion": {
             "type": "String",
-            "defaultValue": "TLS1_2",
             "allowedValues": [
                 "TLS1_2",
                 "TLS1_0",
@@ -207,7 +191,6 @@
         },
         "RedisTLSDeployEffect": {
             "type": "String",
-            "defaultValue": "Append",
             "allowedValues": [
                 "Append",
                 "Disabled"
@@ -219,7 +202,6 @@
         },
         "RedisMinTlsVersion": {
             "type": "String",
-            "defaultValue": "1.2",
             "allowedValues": [
                 "1.2",
                 "1.0",
@@ -236,7 +218,6 @@
                 "description": "Azure Cache for Redis. Audit enabling of only connections via SSL to Azure Cache for Redis. Use of secure connections ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Deny",
@@ -245,7 +226,6 @@
         },
         "SQLManagedInstanceTLSDeployEffect": {
             "type": "String",
-            "defaultValue": "DeployIfNotExists",
             "allowedValues": [
                 "DeployIfNotExists",
                 "Disabled"
@@ -257,7 +237,6 @@
         },
         "SQLManagedInstanceMinTlsVersion": {
             "type": "String",
-            "defaultValue": "1.2",
             "allowedValues": [
                 "1.2",
                 "1.0",
@@ -274,7 +253,6 @@
                 "description": "Setting minimal TLS version to 1.2 improves security by ensuring your SQL Managed Instance can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -283,7 +261,6 @@
         },
         "SQLServerTLSDeployEffect": {
             "type": "String",
-            "defaultValue": "DeployIfNotExists",
             "allowedValues": [
                 "DeployIfNotExists",
                 "Disabled"
@@ -295,7 +272,6 @@
         },
         "SQLServerminTlsVersion": {
             "type": "String",
-            "defaultValue": "1.2",
             "allowedValues": [
                 "1.2",
                 "1.0",
@@ -312,7 +288,6 @@
                 "description": "Setting minimal TLS version to 1.2 improves security by ensuring your Azure SQL Database can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Disabled",
@@ -325,7 +300,6 @@
                 "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
             },
             "type": "String",
-            "defaultValue": "DeployIfNotExists",
             "allowedValues": [
                 "DeployIfNotExists",
                 "Disabled"
@@ -333,7 +307,6 @@
         },
         "StorageMinimumTlsVersion": {
             "type": "String",
-            "defaultValue": "TLS1_2",
             "allowedValues": [
                 "TLS1_2",
                 "TLS1_1",
@@ -350,7 +323,6 @@
                 "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
             },
             "type": "String",
-            "defaultValue": "Audit",
             "allowedValues": [
                 "Audit",
                 "Deny",
