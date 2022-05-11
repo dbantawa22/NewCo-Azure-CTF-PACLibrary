@@ -39,18 +39,14 @@
             "metadata": {
                 "displayName": "Inclusion Tag Name",
                 "description": "Name of the tag to use for including VMs in the scope of this policy. This should be used along with the Inclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy"
-            },
-            "defaultValue": ""
-        },
+            }        },
 
         "exclusionTagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Exclusion Tag Name",
                 "description": "Name of the tag to use for excluding VMs from the scope of this policy. This should be used along with the Exclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
-            },
-            "defaultValue": ""
-        }
+            }        }
     },
     "resources": [
         {
@@ -103,18 +99,14 @@
                         "metadata": {
                             "displayName": "Inclusion Tag Name",
                             "description": "Name of the tag to use for including VMs in the scope of this policy. This should be used along with the Inclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy"
-                        },
-                        "defaultValue": ""
-                    },
+                        }                    },
 
                     "exclusionTagName": {
                         "type": "String",
                         "metadata": {
                             "displayName": "Exclusion Tag Name",
                             "description": "Name of the tag to use for excluding VMs from the scope of this policy. This should be used along with the Exclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
-                        },
-                        "defaultValue": ""
-                    }
+                        }                    }
                 },
                 "policyDefinitions": [
                     {
