@@ -3,65 +3,65 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "azureFilePrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureWebPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureBatchPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureAppPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureAsrPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureIotPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureKeyVaultPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureSignalRPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureAppServicesPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureEventGridTopicsPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureDiskAccessPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureCognitiveServicesPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
 
         "azureIotHubsPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureEventGridDomainsPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureRedisCachePrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureAcrPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureEventHubNamespacePrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureMachineLearningWorkspacePrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureServiceBusNamespacePrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "azureCognitiveSearchPrivateDnsZoneId": {
-            "value": "ChanduTest.com"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_rg_uksouth/providers/Microsoft.Network/privateDnsZones/chandutest.com"
         },
         "DINE-Private-DNS-Azure-File-Sync_effect": {
             "value": "DeployIfNotExists"

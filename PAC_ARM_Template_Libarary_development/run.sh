@@ -21,7 +21,7 @@ connect_deployment()
     echo '------------------- Policy Definition --------------------'
     echo $DEPLOYMENT_NAME
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
 
 
     echo '------------------- Policy Set Definition --------------------'
@@ -70,7 +70,7 @@ connect_deployment()
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-ddos --template-file ./PolicySetDefinitions/policyset_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
     
     ## Policy Set - Private DNS TESTING ##    
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
     # ## Policy Set - IP Forwarding TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-IP-Forwarding --template-file ./PolicySetDefinitions/policyset_ipforwarding.json
@@ -82,7 +82,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-CMK-Encryption --template-file ./PolicySetDefinitions/policyset_CMK_Encryption.json --parameters ./Parameters/assignment_CMK_Encryption.parameters.json
 
     # ## Policy Set - Deploy Diagnostic Settings for Azure Resources TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-deploy-DiagnosticSettings --template-file ./PolicySetDefinitions/policyset_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-deploy-DiagnosticSettings --template-file ./PolicySetDefinitions/policyset_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
@@ -115,7 +115,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
     # ## Assignment - DNS Zone DINE TESTING ##
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-Private-DNS-Zone --template-file ./Assignments/assignment_DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-Private-DNS-Zone --template-file ./Assignments/assignment_DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
     # ## Assignment - IP Forwarding TESTING ##
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-IP-Forwarding --template-file ./Assignments/assignment_ipforwarding.json
@@ -127,7 +127,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-CMK_Encryption --template-file ./Assignments/assignment_CMK_Encryption.json --parameters ./Parameters/assignment_CMK_Encryption.parameters.json
 
     # ## Assignment - Deploy Diagnostic Settings for Azure Resources TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-definition-deploy-DiagnosticSettings --template-file ./Assignments/assignment_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-definition-deploy-DiagnosticSettings --template-file ./Assignments/assignment_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
