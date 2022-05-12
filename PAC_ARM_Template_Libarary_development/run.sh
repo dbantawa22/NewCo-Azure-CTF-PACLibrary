@@ -41,16 +41,17 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_ipforwarding.json --name policy-Deployment-6
     
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network_traffic --template-file ./PolicySetDefinitions/policyset_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json 
-   
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_diagnostic_settings.json --name policy-Deployment-10
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_log_storage.json --name policy-Deployment-11
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
-    ## Assignment - Network Traffic Logs TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-logs --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
+    ## Policy Set - Network Traffic Control TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-control --template-file ./PolicySetDefinitions/policyset_network_traffic_control.json --parameters ./Parameters/assignment_network_traffic_control.parameters.json 
+   
+    ## Policy Set - Network Traffic Logs TESTING ##
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-logs --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     ## Policy Set - KV TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
@@ -91,11 +92,13 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic --template-file ./Assignments/assignment_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-not_allowed_resource_types --template-file ./Assignments/assignment_not_allowed_resource_types.json --parameters ./Parameters/assignment_not_allowed_resource_types.parameters.json
     
+    ## Assignment - Network Traffic Control TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network-traffic-control --template-file ./Assignments/assignment_network_traffic_control.json --parameters ./Parameters/assignment_network_traffic_control.parameters.json
+
     ## Assignment - Network Traffic Logs TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network-traffic-logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network-traffic-logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
