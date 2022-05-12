@@ -50,7 +50,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
     ## Assignment - Network Traffic Logs TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-logs --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-logs --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     ## Policy Set - KV TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
