@@ -27,8 +27,6 @@ connect_deployment()
     echo '------------------- Policy Set Definition --------------------'
     echo $DEPLOYMENT_NAME
     
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --name policy-network_traffic_logs
-
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_not_allowed_resource_types.json --name policy-Deployment-17
@@ -51,6 +49,9 @@ connect_deployment()
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
+    ## Assignment - Network Traffic Logs TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --name policy-network_traffic_logs
+
     ## Policy Set - KV TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
     
@@ -70,7 +71,7 @@ connect_deployment()
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-ddos --template-file ./PolicySetDefinitions/policyset_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
     
     ## Policy Set - Private DNS TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Private-DNS-Zone --template-file ./PolicySetDefinitions/DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
     # ## Policy Set - IP Forwarding TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-IP-Forwarding --template-file ./PolicySetDefinitions/policyset_ipforwarding.json
@@ -92,7 +93,9 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic --template-file ./Assignments/assignment_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-not_allowed_resource_types --template-file ./Assignments/assignment_not_allowed_resource_types.json --parameters ./Parameters/assignment_not_allowed_resource_types.parameters.json
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic_logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
+    
+    ## Assignment - Network Traffic Logs TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic_logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
@@ -115,7 +118,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-vm-backup --template-file ./Assignments/assignment_vm_backup.json --parameters ./Parameters/assignment_vm_backup.parameters.json
 
     # ## Assignment - DNS Zone DINE TESTING ##
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-Private-DNS-Zone --template-file ./Assignments/assignment_DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-Private-DNS-Zone --template-file ./Assignments/assignment_DINE-PrivateDNSZonesPolicySetDefinition.json --parameters ./Parameters/assignment_DINE-PrivateDNSZonesPolicySetDefinition.parameters.json
 
     # ## Assignment - IP Forwarding TESTING ##
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-IP-Forwarding --template-file ./Assignments/assignment_ipforwarding.json
