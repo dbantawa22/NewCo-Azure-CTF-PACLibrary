@@ -58,10 +58,10 @@
 				},
     "variables": {
         "policyDefinitions": {
-            "EnforceAG": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/CDN-Enforce-Azure-AG')]"
+            "EnforceAG": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Enforce-Azure-AG')]"
         },
         "policyAssignmentNames": {
-            "EnforceAG": "CDN-Enforce-Azure-AG",
+            "EnforceAG": "Enforce-Azure-AG",
             "description": "Policy sets to enforce Azure Application Gateway Web Application Firewall",
             "displayName": "Policy sets to enforce Azure Application Gateway Web Application Firewall"
         }

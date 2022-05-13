@@ -61,7 +61,7 @@
 			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
 			"type": "Microsoft.Authorization/policySetDefinitions",
 			"apiVersion": "2019-09-01",
-			"name": "CDN-Enforce-Azure-AG",
+			"name": "Enforce-Azure-AG",
 			"properties": {
 				"metadata": {
 					"version": "2.0.0",
