@@ -9,7 +9,6 @@
 				"description": "Enable or disable the execution of the policy"
 			},
 			"allowedValues": [
-				"Append",
 				"Deny",
 				"Disabled",
 				"Audit"
@@ -22,7 +21,6 @@
 				"description": "Enable or disable the execution of the policy"
 			},
 			"allowedValues": [
-				"Append",
 				"Deny",
 				"Disabled",
 				"Audit"
@@ -35,7 +33,6 @@
 				"description": "Enable or disable the execution of the policy"
 			},
 			"allowedValues": [
-				"Append",
 				"Deny",
 				"Disabled",
 				"Audit"
@@ -48,7 +45,6 @@
 				"description": "Enable or disable the execution of the policy"
 			},
 			"allowedValues": [
-				"Append",
 				"Deny",
 				"Disabled",
 				"Audit"
@@ -61,7 +57,6 @@
 				"description": "Enable or disable the execution of the policy"
 			},
 			"allowedValues": [
-				"Append",
 				"Deny",
 				"Disabled",
 				"Audit"
@@ -90,7 +85,6 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"Append",
 							"Deny",
 							"Disabled",
 							"Audit"
@@ -103,7 +97,6 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"Append",
 							"Deny",
 							"Disabled",
 							"Audit"
@@ -116,7 +109,6 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"Append",
 							"Deny",
 							"Disabled",
 							"Audit"
@@ -129,7 +121,6 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"Append",
 							"Deny",
 							"Disabled",
 							"Audit"
@@ -142,7 +133,6 @@
 							"description": "Enable or disable the execution of the policy"
 						},
 						"allowedValues": [
-							"Append",
 							"Deny",
 							"Disabled",
 							"Audit"
@@ -150,14 +140,14 @@
 					}
 
 				},
-				
+
 				"policyDefinitions": [
 					{
 						"policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MGMT_ROOT/providers/Microsoft.Authorization/policyDefinitions/Deny-AppGW-Without-WAF",
 						"policyDefinitionReferenceId": "Deny-AppGW-Without-WAF",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('Deny-AppGW-Without-WAF_effect')]"
+								"value": "[[parameters'(Deny-AppGW-Without-WAF_effect')]"
 							}
 						}
 					},

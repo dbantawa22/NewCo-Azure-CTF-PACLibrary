@@ -4,19 +4,19 @@
     "parameters": {
       
         "Deny-AppGW-WAF_effect": {
-            "value": "Append"
+            "value": "Deny"
         },
         "Deny-AppGW-Without-WAF_effect": {
-            "value": "Append"
+            "value": "Deny"
         },
         "Enable-WAF-AppGW_effect": {
-            "value": "Append"
+            "value": "Deny"
         },
         "Azure-FrontDoor-Premium-WAF_effect": {
-            "value": "Append"
+            "value": "Deny"
         },
         "Deny-AppGW-WAF-FrontDoor_effect": {
-            "value": "Append"
+            "value": "Deny"
         }
     }
 }
