@@ -14,7 +14,7 @@
             ]
         },
         "backupPolicyId": {
-            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_RG_UKSouth/providers/Microsoft.RecoveryServices/vaults/rec-vault-policy-test/backupPolicies/rec-vault-policy-test/DefaultPolicy"
+            "value": "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/test_RG_UKSouth/providers/Microsoft.RecoveryServices/vaults/rec-vault-policy-test/backupPolicies/DefaultPolicy"
         },
         "Configure_Backup_With_Tag_effect": {
             "value": "deployIfNotExists"
