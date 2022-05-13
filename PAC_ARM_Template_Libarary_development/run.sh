@@ -106,11 +106,7 @@ connect_deployment()
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-ddos --template-file ./Assignments/assignment_ddos.json --parameters ./Parameters/assignment_ddos.parameters.json
 
     # ## Assignment - Tagging TESTING ##    
-<<<<<<< HEAD
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
-=======
     #az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-tagging --template-file ./Assignments/assignment_tagging.json --parameters ./Parameters/assignment_tagging.parameters.json
->>>>>>> ce4042d970073a97a4629f236f036876c5578da8
 
     # ## Assignment - Diagnostic Settings TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-diagnostic-settings --template-file ./Assignments/assignment_diagnostic_settings.json --parameters ./Parameters/assignment_diagnostic_settings.parameters.json
