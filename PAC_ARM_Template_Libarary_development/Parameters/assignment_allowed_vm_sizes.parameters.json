@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "listOfAllowedSKUs": {
-        "value": ["Dv2", "DSv2"]
+        "value": ["D2_v2", "DS2_v2"]
       }
     }
   }
