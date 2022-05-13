@@ -2,20 +2,60 @@
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"effect": {
-			"type": "string",
-			"metadata": {
-				"displayName": "Effect",
-				"description": "Enable or disable the execution of the policy"
-			},
-			"allowedValues": [
-				"Append",
-				"Deny",
-				"Disabled",
-				"Audit"
-			]
-		}
-	},
+					"Deny-AppGW-Without-WAF_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					},
+					"SpecifiedMode-WAF_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					},
+					"Enable-WAF-AppGW_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					},
+					"Azure-FrontDoor-Premium-WAF_effect": {
+						"type": "string",
+						"metadata": {
+							"displayName": "Effect",
+							"description": "Enable or disable the execution of the policy"
+						},
+						"allowedValues": [
+							"Append",
+							"Deny",
+							"Disabled",
+							"Audit"
+						]
+					}
+
+				},
 	"resources": [
 		{
 			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
@@ -43,7 +83,7 @@
 							"Audit"
 						]
 					},
-					"Deny-AppGW-WAF_effect": {
+					"SpecifiedMode-WAF_effect": {
 						"type": "string",
 						"metadata": {
 							"displayName": "Effect",
@@ -96,10 +136,10 @@
 					},
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/12430be1-6cc8-4527-a9a8-e3d38f250096",
-						"policyDefinitionReferenceId": "Deny-AppGW-WAF",
+						"policyDefinitionReferenceId": "SpecifiedMode-WAF_effect",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('Deny-AppGW-WAF_effect')]"
+								"value": "[[parameters('SpecifiedMode-WAF_effect')]"
 							}
 						}
 					},
@@ -112,15 +152,7 @@
 							}
 						}
 					},
-					{
-						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/564feb30-bf6a-4854-b4bb-0d2d2d1e6c66",
-						"policyDefinitionReferenceId": "Enable-WAF-AppGW",
-						"parameters": {
-							"effect": {
-								"value": "[[parameters('Enable-WAF-AppGW_effect')]"
-							}
-						}
-					},
+				
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/dfc212af-17ea-423a-9dcb-91e2cb2caa6b",
 						"policyDefinitionReferenceId": "Azure-FrontDoor-Premium-WAF",
