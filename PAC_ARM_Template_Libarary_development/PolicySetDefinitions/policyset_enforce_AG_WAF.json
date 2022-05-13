@@ -2,19 +2,19 @@
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"Deny-AppGW-Without-WAF_effect": {
-			"type": "string",
-			"metadata": {
-				"displayName": "Effect",
-				"description": "Enable or disable the execution of the policy"
-			},
-			"allowedValues": [
-				"Append",
-				"Deny",
-				"Disabled",
-				"Audit"
-			]
-		},
+		// "Deny-AppGW-Without-WAF_effect": {
+		// 	"type": "string",
+		// 	"metadata": {
+		// 		"displayName": "Effect",
+		// 		"description": "Enable or disable the execution of the policy"
+		// 	},
+		// 	"allowedValues": [
+		// 		"Append",
+		// 		"Deny",
+		// 		"Disabled",
+		// 		"Audit"
+		// 	]
+		// },
 		"Deny-AppGW-WAF_effect": {
 			"type": "string",
 			"metadata": {
@@ -83,19 +83,19 @@
 				"displayName": "Policy sets to enforce Azure Application Gateway Web Application Firewall",
 				"description": "Policy sets to enforce Azure Application Gateway Web Application Firewall",
 				"parameters": {
-					"Deny-AppGW-Without-WAF_effect": {
-						"type": "string",
-						"metadata": {
-							"displayName": "Effect",
-							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-							"Append",
-							"Deny",
-							"Disabled",
-							"Audit"
-						]
-					},
+					// "Deny-AppGW-Without-WAF_effect": {
+					// 	"type": "string",
+					// 	"metadata": {
+					// 		"displayName": "Effect",
+					// 		"description": "Enable or disable the execution of the policy"
+					// 	},
+					// 	"allowedValues": [
+					// 		"Append",
+					// 		"Deny",
+					// 		"Disabled",
+					// 		"Audit"
+					// 	]
+					// },
 					"Deny-AppGW-WAF_effect": {
 						"type": "string",
 						"metadata": {
@@ -151,15 +151,15 @@
 
 				},
 				"policyDefinitions": [
-					{
-						"policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MGMT_ROOT/providers/Microsoft.Authorization/policyDefinitions/Deny-AppGW-Without-WAF",
-						"policyDefinitionReferenceId": "Deny-AppGW-Without-WAF",
-						"parameters": {
-							"effect": {
-								"value": "[[parameters('Deny-AppGW-Without-WAF_effect')]"
-							}
-						}
-					},
+					// {
+					// 	"policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MGMT_ROOT/providers/Microsoft.Authorization/policyDefinitions/Deny-AppGW-Without-WAF",
+					// 	"policyDefinitionReferenceId": "Deny-AppGW-Without-WAF",
+					// 	"parameters": {
+					// 		"effect": {
+					// 			"value": "[[parameters('Deny-AppGW-Without-WAF_effect')]"
+					// 		}
+					// 	}
+					// },
 					{
 						"policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/12430be1-6cc8-4527-a9a8-e3d38f250096",
 						"policyDefinitionReferenceId": "Deny-AppGW-WAF",
