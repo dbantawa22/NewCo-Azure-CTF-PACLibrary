@@ -8,7 +8,6 @@
         "SpecifiedMode-WAF_effect": {
             "value": "Deny"
         },
- 
         "Azure-FrontDoor-Premium-WAF_effect": {
             "value": "Deny"
         },
