@@ -101,7 +101,7 @@
                     "Azure-FrontDoor-Premium-WAF_effect": {
                         "value": "[parameters('Azure-FrontDoor-Premium-WAF_effect')]"
                     },
-                    " Deny-AppGW-WAF-FrontDoor_effect": {
+                    "Deny-AppGW-WAF-FrontDoor_effect": {
                         "value": "[parameters('Deny-AppGW-WAF-FrontDoor_effect')]"
                     }
                 }
