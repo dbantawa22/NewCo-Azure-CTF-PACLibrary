@@ -5,16 +5,13 @@
         "Deny-AppGW-Without-WAF_effect": {
             "value": "Deny"
         },
-        "SpecifiedMode-WAF_effect": {
-            "value": "Deny"
-        },
-        "modeRequirement": {
-            "value": "Detection"
-        },
-        "Azure-FrontDoor-Premium-WAF_effect": {
+        "Deny-AppGW-WAF_effect": {
             "value": "Deny"
         },
         "Enable-WAF-AppGW_effect": {
+            "value": "Deny"
+        },
+        "Azure-FrontDoor-Premium-WAF_effect": {
             "value": "Deny"
         }
     }
