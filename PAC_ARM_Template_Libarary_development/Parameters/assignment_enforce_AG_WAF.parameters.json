@@ -9,9 +9,6 @@
         "Deny-AppGW-Without-WAF_effect": {
             "value": "Deny"
         },
-        "Enable-WAF-AppGW_effect": {
-            "value": "Deny"
-        },
         "Azure-FrontDoor-Premium-WAF_effect": {
             "value": "Deny"
         },
