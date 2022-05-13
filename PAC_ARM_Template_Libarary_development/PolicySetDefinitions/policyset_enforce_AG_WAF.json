@@ -189,9 +189,6 @@
 							"parameters": {
 								"effect": {
 									"value": "[[parameters('SpecifiedMode-WAF_effect')]"
-								},
-								"modeRequirement": {
-									"value": "[[parameters('modeRequirement')]"
 								}
 
 							}
