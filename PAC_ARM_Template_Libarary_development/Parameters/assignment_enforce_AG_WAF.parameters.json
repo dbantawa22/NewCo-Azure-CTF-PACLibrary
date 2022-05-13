@@ -14,7 +14,7 @@
         "Azure-FrontDoor-Premium-WAF_effect": {
             "value": "Deny"
         },
-        " Deny-AppGW-WAF-FrontDoor_effect": {
+        "Deny-AppGW-WAF-FrontDoor_effect": {
             "value": "Deny"
         }
     }
