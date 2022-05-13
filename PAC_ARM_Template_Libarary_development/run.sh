@@ -21,14 +21,12 @@ connect_deployment()
     echo '------------------- Policy Definition --------------------'
     echo $DEPLOYMENT_NAME
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
 
 
     echo '------------------- Policy Set Definition --------------------'
     echo $DEPLOYMENT_NAME
     
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --name policy-network_traffic_logs
-
     # az deployment sub create --name $DEPLOYMENT_NAME --location $LOCATION --template-uri $AZ_PAC_LIBRARY_PATH"BICEP-azure-security-policies-subscription/main"
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file  ./PolicySetDefinitions/policyset_not_allowed_resource_types.json --name policy-Deployment-17
@@ -41,13 +39,17 @@ connect_deployment()
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_ipforwarding.json --name policy-Deployment-6
     
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network_traffic --template-file ./PolicySetDefinitions/policyset_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json 
-   
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_diagnostic_settings.json --name policy-Deployment-10
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --template-file ./policyset_log_storage.json --name policy-Deployment-11
     
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-allowed-locations --template-file ./PolicySetDefinitions/policyset_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
+
+    ## Policy Set - Network Traffic Control TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-control --template-file ./PolicySetDefinitions/policyset_network_traffic_control.json --parameters ./Parameters/assignment_network_traffic_control.parameters.json 
+   
+    ## Policy Set - Network Traffic Logs TESTING ##
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-network-traffic-logs --template-file ./PolicySetDefinitions/policyset_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     ## Policy Set - KV TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-kv --template-file ./PolicySetDefinitions/policyset_keyvault.json --parameters ./Parameters/assignment_keyvault.parameters.json
@@ -81,18 +83,30 @@ connect_deployment()
 
     # ## Policy Set - Deploy Diagnostic Settings for Azure Resources TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-deploy-DiagnosticSettings --template-file ./PolicySetDefinitions/policyset_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
+<<<<<<< HEAD
 
     # ## Policy Set - WAF TESTING ##    
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Enforce-AG-WAF --template-file ./PolicySetDefinitions/policyset_enforce_AG_WAF.json ./Parameters/assignment_enforce_AG_WAF.parameters.json
+=======
+>>>>>>> 289f4098e01614c0d23e3ca75cbb9df4b51fd7c8
 
 
     echo '------------------- Policy Set Assignments --------------------'
     echo $DEPLOYMENT_NAME
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-denyIP --template-file ./Assignments/assignment_denyIP.json --parameters ./Parameters/assignment_denyIP.parameters.json
+<<<<<<< HEAD
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic --template-file ./Assignments/assignment_network_traffic.json --parameters ./Parameters/assignment_network_traffic.parameters.json
+=======
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
+>>>>>>> 289f4098e01614c0d23e3ca75cbb9df4b51fd7c8
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-not_allowed_resource_types --template-file ./Assignments/assignment_not_allowed_resource_types.json --parameters ./Parameters/assignment_not_allowed_resource_types.parameters.json
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network_traffic_logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
+    
+    ## Assignment - Network Traffic Control TESTING ##
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network-traffic-control --template-file ./Assignments/assignment_network_traffic_control.json --parameters ./Parameters/assignment_network_traffic_control.parameters.json
+
+    ## Assignment - Network Traffic Logs TESTING ##
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-network-traffic-logs --template-file ./Assignments/assignment_network_traffic_logs.json --parameters ./Parameters/assignment_network_traffic_logs.parameters.json
 
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-allowed_locations --template-file ./Assignments/assignment_allowed_locations.json --parameters ./Parameters/assignment_allowed_locations.parameters.json
 
@@ -128,9 +142,12 @@ connect_deployment()
 
     # ## Assignment - Deploy Diagnostic Settings for Azure Resources TESTING ##    
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-definition-deploy-DiagnosticSettings --template-file ./Assignments/assignment_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
+<<<<<<< HEAD
 
     # ## Assignment - WAF TESTING ##    
     az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
+=======
+>>>>>>> 289f4098e01614c0d23e3ca75cbb9df4b51fd7c8
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'

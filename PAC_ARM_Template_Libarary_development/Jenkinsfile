@@ -9,7 +9,7 @@ pipeline {
 
    stage('Az Authentication') {
       steps {
-        sh 'az login --service-principal -u d477bc25-9605-4f7b-9d57-183a8023aedd -p Gen7Q~McGigoaFDq1RR_Xm3AwipWq3btGsZ7P -t 2eaefbef-4530-46a0-9c3a-1bae7a45d64d'
+        sh 'az login --service-principal -u 39947df1-0378-4ae1-a93b-5910fd42a9cf -p NNM8Q~ql4vDNxE1il2h3Hzlj5bXDB_Fpz8EHjbAo -t 2eaefbef-4530-46a0-9c3a-1bae7a45d64d'
 
       }
     }
