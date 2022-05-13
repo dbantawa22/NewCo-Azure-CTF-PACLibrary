@@ -120,9 +120,7 @@
                                 "value": "[[parameters('inclusionTagName')]"
                             },
                             "inclusionTagValue": {
-                                "value": [
-                                    "[[parameters('inclusionTagValue')]"
-                                ]
+                                "value": "[[parameters('inclusionTagValue')]"
                             },
                             "backupPolicyId": {
                                 "value": "[[parameters('backupPolicyId')]"
