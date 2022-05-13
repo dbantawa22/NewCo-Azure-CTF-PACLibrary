@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "Deny-AppGW-Without-WAF_effect": {
-            "value": "[parameters('Deny-AppGW-Without-WAF_effect')]"
+            "value": "Deny"
         },
         "Deny-AppGW-WAF_effect": {
-            "value": "[parameters('Deny-AppGW-WAF_effect')]"
+            "value": "Deny"
         },
         "Enable-WAF-AppGW_effect": {
-            "value": "[parameters('Enable-WAF-AppGW_effect')]"
+            "value": "Deny"
         },
         "Azure-FrontDoor-Premium-WAF_effect": {
-            "value": "[parameters('Azure-FrontDoor-Premium-WAF_effect')]"
+            "value": "Deny"
         }
     }
 }
