@@ -6423,6 +6423,14 @@
                         "displayName": "Deploy an Azure DDoS Protection Standard plan",
                         "mode": "All",
                         "parameters": {
+                            "location": {
+                                "type": "String",
+                                "metadata": {
+                                    "displayName": "location",
+                                    "description": "Deployment location for Managed Identity",
+                                    "strongType": "location"
+                                }
+                            },
                             "ddosName": {
                                 "type": "String",
                                 "metadata": {
@@ -6483,10 +6491,13 @@
                                         "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
                                     ],
                                     "deployment": {
-                                        "location": "uksouth",
+                                        "location": "[[parameters('location')]",
                                         "properties": {
                                             "mode": "Incremental",
                                             "parameters": {
+                                                "location": {
+                                                    "value": "[[parameters('location')]"
+                                                },
                                                 "rgName": {
                                                     "value": "[[parameters('rgName')]"
                                                 },
@@ -6501,6 +6512,9 @@
                                                 "$schema": "http://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json",
                                                 "contentVersion": "1.0.0.0",
                                                 "parameters": {
+                                                    "location": {
+                                                        "type": "String"
+                                                    },
                                                     "rgName": {
                                                         "type": "String"
                                                     },
@@ -6516,7 +6530,7 @@
                                                         "type": "Microsoft.Resources/resourceGroups",
                                                         "apiVersion": "2018-05-01",
                                                         "name": "[[parameters('rgName')]",
-                                                        "location": "[[deployment().location]",
+                                                        "location": "[[parameters('location')]",
                                                         "properties": {}
                                                     },
                                                     {
@@ -15193,7 +15207,7 @@
                 {
                     "properties": {
                         "description": "Choose either Deploy if not exist and append in combination with audit or Select Deny in the Policy effect. Deny polices shift left. Deploy if not exist and append enforce but can be changed, and because missing exsistense condition require then the combination of Audit. ",
-                        "displayName": "Deny or Deploy and append TLS requirements and SSL enforcement on resources without Encryption in transit",
+                        "displayName": "Deny, Deploy, or Append TLS requirements and SSL enforcement on resources without Encryption in transit",
                         "parameters": {
                             "AppServiceHttpEffect": {
                                 "type": "String",
@@ -15796,7 +15810,7 @@
                             }
                         ]
                     },
-                    "name": "Enforce-EncryptTransit"
+                    "name": "TLS-SSL-Encryption"
                 },
                 {
                     "properties": {
