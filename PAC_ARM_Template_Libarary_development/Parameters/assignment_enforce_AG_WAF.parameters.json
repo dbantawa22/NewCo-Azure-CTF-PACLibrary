@@ -2,8 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "effect": {
-            "value": "Deny"
+        "Deny-AppGW-Without-WAF_effect": {
+            "value": "[parameters('Deny-AppGW-Without-WAF_effect')]"
+        },
+        "Deny-AppGW-WAF_effect": {
+            "value": "[parameters('Deny-AppGW-WAF_effect')]"
+        },
+        "Enable-WAF-AppGW_effect": {
+            "value": "[parameters('Enable-WAF-AppGW_effect')]"
+        },
+        "Azure-FrontDoor-Premium-WAF_effect": {
+            "value": "[parameters('Azure-FrontDoor-Premium-WAF_effect')]"
         }
     }
 }
