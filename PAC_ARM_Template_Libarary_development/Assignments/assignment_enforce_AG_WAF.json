@@ -2,19 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
 	"parameters": {
-		// "Deny-AppGW-Without-WAF_effect": {
-		// 	"type": "string",
-		// 	"metadata": {
-		// 		"displayName": "Effect",
-		// 		"description": "Enable or disable the execution of the policy"
-		// 	},
-		// 	"allowedValues": [
-		// 		"Append",
-		// 		"Deny",
-		// 		"Disabled",
-		// 		"Audit"
-		// 	]
-		// },
+		"Deny-AppGW-Without-WAF_effect": {
+			"type": "string",
+			"metadata": {
+				"displayName": "Effect",
+				"description": "Enable or disable the execution of the policy"
+			},
+			"allowedValues": [
+				"Append",
+				"Deny",
+				"Disabled",
+				"Audit"
+			]
+		},
 		"Deny-AppGW-WAF_effect": {
 			"type": "string",
 			"metadata": {
@@ -89,9 +89,9 @@
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').EnforceAG]",
                 "parameters": {
-                    // "Deny-AppGW-Without-WAF_effect": {
-                    //     "value": "[parameters('Deny-AppGW-Without-WAF_effect')]"
-                    // },
+                    "Deny-AppGW-Without-WAF_effect": {
+                        "value": "[parameters('Deny-AppGW-Without-WAF_effect')]"
+                    },
                     "Deny-AppGW-WAF_effect": {
                         "value": "[parameters('Deny-AppGW-WAF_effect')]"
                     },
