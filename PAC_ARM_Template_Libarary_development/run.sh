@@ -21,7 +21,7 @@ connect_deployment()
     echo '------------------- Policy Definition --------------------'
     echo $DEPLOYMENT_NAME
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
+    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
 
 
     echo '------------------- Policy Set Definition --------------------'
@@ -130,7 +130,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name assignment-definition-deploy-DiagnosticSettings --template-file ./Assignments/assignment_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
 
     # ## Assignment - WAF TESTING ##    
-    # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-assignment-enforce_AG_WAF --template-file ./Assignments/assignment_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
 
 
     # echo '------------------- Allowed Locations Assignments - with Parameters --------------------'
