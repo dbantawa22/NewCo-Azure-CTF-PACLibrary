@@ -21,7 +21,7 @@ connect_deployment()
     echo '------------------- Policy Definition --------------------'
     echo $DEPLOYMENT_NAME
 
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./PolicyDefinitions/policies.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-definition-deployment-policies-JSON --template-file ./Parameters/assignment_enforce_AG_WAF.parameters.json
 
 
     echo '------------------- Policy Set Definition --------------------'
