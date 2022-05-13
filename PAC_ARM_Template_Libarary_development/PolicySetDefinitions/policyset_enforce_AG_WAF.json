@@ -1,8 +1,8 @@
 {
 	"$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
-		"parameters": {
-					"Deny-AppGW-Without-WAF_effect": {
+	"parameters": {
+		"Deny-AppGW-Without-WAF_effect": {
 						"type": "string",
 						"metadata": {
 							"displayName": "Effect",
@@ -54,8 +54,7 @@
 							"Audit"
 						]
 					}
-
-				},
+	},
 	"resources": [
 		{
 			"scope": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT')]",
