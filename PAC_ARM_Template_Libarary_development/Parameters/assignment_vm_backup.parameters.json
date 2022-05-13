@@ -10,7 +10,8 @@
         },
         "inclusionTagValue": {
             "value": [
-                "raoul"
+                "raoul",
+                "test"
             ]
         },
         "backupPolicyId": {
