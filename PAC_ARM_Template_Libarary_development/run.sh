@@ -83,7 +83,7 @@ connect_deployment()
     # az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-deploy-DiagnosticSettings --template-file ./PolicySetDefinitions/policyset_deployDiagnosticSettings.json --parameters ./Parameters/assignment_deployDiagnosticSettings.parameters.json
 
     # ## Policy Set - WAF TESTING ##    
-    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Enforce-AG-WAF2 --template-file ./PolicySetDefinitions/policyset_enforce_AG_WAF.json --parameters PAC_ARM_Template_Libarary_development\Parameters\assignment_enforce_AG_WAF.parameters.json
+    az deployment mg create --location uksouth --management-group-id MGMT_ROOT --name policy-set-definition-Enforce-AG-WAF2 --template-file ./PolicySetDefinitions/policyset_enforce_AG_WAF.json --parameters ./Parameters/assignment_enforce_AG_WAF.parameters.json
 
 
     echo '------------------- Policy Set Assignments --------------------'
