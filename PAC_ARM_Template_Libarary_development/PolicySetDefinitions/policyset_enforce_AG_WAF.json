@@ -90,7 +90,7 @@
 						"policyDefinitionReferenceId": "Deny-AppGW-Without-WAF",
 						"parameters": {
 							"effect": {
-								"value": "[[parameters('Deny-AppGW-Without-WAF_effect')]"
+								"value": "[[Deny-AppGW-Without-WAF_effect')]"
 							}
 						}
 					},
