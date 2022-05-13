@@ -8,6 +8,9 @@
         "SpecifiedMode-WAF_effect": {
             "value": "Deny"
         },
+        "modeRequirement": {
+            "value": "Detection"
+        },
         "Azure-FrontDoor-Premium-WAF_effect": {
             "value": "Deny"
         },
