@@ -6,6 +6,9 @@
         "Deny-AppGW-WAF_effect": {
             "value": "Append"
         },
+        "Deny-AppGW-Without-WAF_effect": {
+            "value": "Append"
+        },
         "Enable-WAF-AppGW_effect": {
             "value": "Append"
         },
