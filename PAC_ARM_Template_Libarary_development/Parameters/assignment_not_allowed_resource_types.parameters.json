@@ -4,7 +4,9 @@
     "parameters": {
         "listOfResourceTypesNotAllowed": {
             "value": [
-                ""
+                "Microsoft.DocumentDB/databaseAccounts",
+                "Microsoft.Network/trafficmanagerprofiles",
+                "Microsoft.Network/frontDoors"
             ]
         },
         "effect": {
