@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
 
@@ -24,7 +24,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "allowedlocations": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Allowed-Locations')]"
+            "allowedlocations": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT' , '/providers/Microsoft.Authorization/policysetDefinitions/Allowed-Locations')]"
         },
         "policyAssignmentNames": {
             "allowedlocations": "Allowed-Locations",

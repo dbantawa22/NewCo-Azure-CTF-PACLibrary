@@ -180,7 +180,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -191,7 +191,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -202,7 +202,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -213,7 +213,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -224,7 +224,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -235,7 +235,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -247,7 +247,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -258,7 +258,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -269,7 +269,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -280,7 +280,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -291,7 +291,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -302,7 +302,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -313,7 +313,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -324,7 +324,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -335,7 +335,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -346,7 +346,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -357,7 +357,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -368,7 +368,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         },
@@ -379,7 +379,7 @@
                 "description": "Enable or disable the execution of the policy"
             },
             "allowedValues": [
-                "deployIfNotExists",
+                "DeployIfNotExists",
                 "Disabled"
             ]
         }
@@ -389,7 +389,7 @@
             "DeployPrivateDNSZones": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/Deploy-Private-DNS-Zones')]"
         },
         "policyAssignmentNames": {
-            "DeployPrivateDNSZones": "Allowed-VM-Sizes",
+            "DeployPrivateDNSZones": "Deploy-Private-DNS-Zones",
             "displayName": "Configure Azure PaaS services to use private DNS zones",
             "description": "This policy initiative is a group of policies that ensures private endpoints to Azure PaaS services are integrated with Azure Private DNS zones"
 
@@ -398,8 +398,15 @@
     "resources": [
         {
             "type": "Microsoft.Authorization/policyAssignments",
-            "apiVersion": "2019-09-01",
+              "apiVersion": "2021-06-01",
             "name": "[variables('policyAssignmentNames').DeployPrivateDNSZones]",
+            "location": "[deployment().location]",
+            "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "/subscriptions/4ce27a75-a843-43b4-99ed-006804c35d7e/resourceGroups/deployment_test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uksouth-user-MI": {}
+                }
+            },
             "properties": {
                 "description": "[variables('policyAssignmentNames').description]",
                 "displayName": "[variables('policyAssignmentNames').displayName]",
@@ -526,8 +533,8 @@
                     "DINE-Private-DNS-Azure-CognitiveSearch_effect": {
                         "value": "[parameters('DINE-Private-DNS-Azure-CognitiveSearch_effect')]"
                     }
-                }
-            }
+                
+            }}
 
         }
     ],

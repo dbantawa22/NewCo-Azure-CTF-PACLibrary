@@ -7,39 +7,21 @@
 			"metadata": {
 				"displayName": "Effect",
 				"description": "Enable or disable the execution of the policy"
-			},
-			"allowedValues": [
-				"Append",
-				"Deny",
-				"Disabled",
-				"Audit"
-			]
+			}
 		},
 		"keyvault_purge_protection_effect": {
 			"type": "string",
 			"metadata": {
 				"displayName": "Effect",
 				"description": "Enable or disable the execution of the policy"
-			},
-			"allowedValues": [
-				"Append",
-				"Deny",
-				"Disabled",
-				"Audit"
-			]
+			}
 		},
 		"keyvault_hsm_purge_protection_effect": {
 			"type": "string",
 			"metadata": {
 				"displayName": "Effect",
 				"description": "Enable or disable the execution of the policy"
-			},
-			"allowedValues": [
-				"Append",
-				"Deny",
-				"Disabled",
-				"Audit"
-			]
+			}
 		}
 	},
 	"resources": [
@@ -61,39 +43,21 @@
 						"metadata": {
 							"displayName": "Effect",
 							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-							"Append",
-							"Deny",
-							"Disabled",
-							"Audit"
-						]
+						}
 					},
 					"keyvault_purge_protection_effect": {
 						"type": "string",
 						"metadata": {
 							"displayName": "Effect",
 							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-							"Append",
-							"Deny",
-							"Disabled",
-							"Audit"
-						]
+						}
 					},
 					"keyvault_hsm_purge_protection_effect": {
 						"type": "string",
 						"metadata": {
 							"displayName": "Effect",
 							"description": "Enable or disable the execution of the policy"
-						},
-						"allowedValues": [
-							"Append",
-							"Deny",
-							"Disabled",
-							"Audit"
-						]
+						}
 					}
 
 				},

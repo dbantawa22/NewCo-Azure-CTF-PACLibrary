@@ -2,6 +2,14 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "listOfResourceTypesNotAllowed": {
+            "type": "Array",
+            "metadata": {
+                "description": "The list of resource types that cannot be deployed.",
+                "displayName": "Not allowed resource types",
+                "strongType": "resourceTypes"
+            }
+        },
         "effect": {
             "type": "string",
             "metadata": {
@@ -12,7 +20,6 @@
                 "Audit",
                 "Deny",
                 "Disabled"
-
             ]
         }
     },
@@ -36,7 +43,9 @@
                 "displayName": "[variables('policyAssignmentNames').displayName]",
                 "policyDefinitionId": "[variables('policyDefinitions').notallowedRT]",
                 "parameters": {
-
+                    "listOfResourceTypesNotAllowed": {
+                        "value": "[parameters('listOfResourceTypesNotAllowed')]"
+                    },
                     "effect": {
                         "value": "[parameters('effect')]"
                     }

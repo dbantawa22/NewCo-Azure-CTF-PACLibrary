@@ -4,21 +4,13 @@
     "parameters": {
         "listOfAllowedLocations": {
             "value": [
-                "eastus2",
-                "eastus",
-                "northeurope",
-                "southuk",
-                "westus2"
+                "northeurope"
             ]
         },
         "listOfAllowedLocationsRG": {
             "value": [
-                "eastus2",
-                "eastus",
-                "northeurope",
-                "southuk",
-                "westus2"
+                "northeurope"
             ]
         }
     }
-}
+}      

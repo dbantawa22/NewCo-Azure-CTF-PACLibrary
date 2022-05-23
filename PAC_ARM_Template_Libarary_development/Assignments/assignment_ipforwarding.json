@@ -6,7 +6,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "IPForward": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/CDN-Enforce-Azure-AG')]"
+            "IPForward": "[concat('/providers/Microsoft.Management/managementGroups/', 'MGMT_ROOT', '/providers/Microsoft.Authorization/policysetDefinitions/IP-forwarding')]"
         },
         "policyAssignmentNames": {
             "IPForward": "IP-Forwarding",

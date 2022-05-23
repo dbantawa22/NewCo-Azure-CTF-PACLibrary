@@ -2,39 +2,25 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "Require_Tag_value_Resources_tagName": {
+        "Require_Tag_On_Resources_tagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Name",
                 "description": "Name of the tag, such as 'environment'"
             }
         },
-        "Require_Tag_value_Resource_Groups_tagName": {
+        "Require_Tag_On_Resource_Groups_tagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Name",
                 "description": "Name of the tag, such as 'environment'"
             }
         },
-        "Inherit_Tag_value_Resource_Groups_tagName": {
+        "Inherit_Tag_From_Resource_Groups_tagName": {
             "type": "String",
             "metadata": {
                 "displayName": "Tag Name",
                 "description": "Name of the tag, such as 'environment'"
-            }
-        },
-        "Require_Tag_value_Resources_tagValue": {
-            "type": "String",
-            "metadata": {
-                "displayName": "Tag Value",
-                "description": "Value of the tag, such as 'production'"
-            }
-        },
-        "Require_Tag_value_Resource_Groups_tagValue": {
-            "type": "String",
-            "metadata": {
-                "displayName": "Tag Value",
-                "description": "Value of the tag, such as 'production'"
             }
         }
     },
@@ -49,77 +35,56 @@
                     "version": "2.0.0",
                     "category": "Tags"
                 },
-                "displayName": "Require Tag for resources and resource groups",
-                "description": "Require Tag for resources and resource groups",
+                "displayName": "Require a tag on resources and resource groups",
+                "description": "Require a tag on resources and resource groups",
                 "parameters": {
-                    "Require_Tag_value_Resources_tagName": {
+                    "Require_Tag_On_Resources_tagName": {
                         "type": "String",
                         "metadata": {
                             "displayName": "Tag Name",
                             "description": "Name of the tag, such as 'environment'"
                         }
                     },
-                    "Require_Tag_value_Resource_Groups_tagName": {
+                    "Require_Tag_On_Resource_Groups_tagName": {
                         "type": "String",
                         "metadata": {
                             "displayName": "Tag Name",
                             "description": "Name of the tag, such as 'environment'"
                         }
                     },
-                    "Inherit_Tag_value_Resource_Groups_tagName": {
+                    "Inherit_Tag_From_Resource_Groups_tagName": {
                         "type": "String",
                         "metadata": {
                             "displayName": "Tag Name",
                             "description": "Name of the tag, such as 'environment'"
-                        }
-                    },
-                    "Require_Tag_value_Resources_tagValue": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Tag Value",
-                            "description": "Value of the tag, such as 'production'"
-                        }
-                    },
-                    "Require_Tag_value_Resource_Groups_tagValue": {
-                        "type": "String",
-                        "metadata": {
-                            "displayName": "Tag Value",
-                            "description": "Value of the tag, such as 'production'"
                         }
                     }
-
                 },
                 "policyDefinitions": [
                     {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62",
-                        "policyDefinitionReferenceId": "Require_Tag_value_Resources",
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/871b6d14-10aa-478d-b590-94f262ecfa99",
+                        "policyDefinitionReferenceId": "Require a tag on resources",
                         "parameters": {
                             "tagName": {
-                                "value": "[[parameters('Require_Tag_value_Resources_tagName')]"
-                            },
-                            "tagValue": {
-                                "value": "[[parameters('Require_Tag_value_Resources_tagValue')]"
+                                "value": "[[parameters('Require_Tag_On_Resources_tagName')]"
                             }
                         }
                     },
                     {
-                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8ce3da23-7156-49e4-b145-24f95f9dcb46",
-                        "policyDefinitionReferenceId": "Require_Tag_value_Resource_Groups",
+                        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/96670d01-0a4d-4649-9c89-2d3abc0a5025",
+                        "policyDefinitionReferenceId": "Require a tag on resource groups",
                         "parameters": {
                             "tagName": {
-                                "value": "[[parameters('Require_Tag_value_Resource_Groups_tagName')]"
-                            },
-                            "tagValue": {
-                                "value": "[[parameters('Require_Tag_value_Resource_Groups_tagValue')]"
+                                "value": "[[parameters('Require_Tag_On_Resource_Groups_tagName')]"
                             }
                         }
                     },
                     {
                         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
-                        "policyDefinitionReferenceId": "Inherit_Tag_value_Resource_Groups",
+                        "policyDefinitionReferenceId": "Inherit a tag from the resource group if missing",
                         "parameters": {
                             "tagName": {
-                                "value": "[[parameters('Inherit_Tag_value_Resource_Groups_tagName')]"
+                                "value": "[[parameters('Inherit_Tag_From_Resource_Groups_tagName')]"
                             }
                         }
                     }
